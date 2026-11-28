@@ -1,0 +1,11 @@
+/* Full presentation uses the available page surface; focus reading keeps its own width. */
+:root[data-style="mobai"] .workspace-scroll.is-page-editor .page-document.is-full-width:not(.is-focus-reading) {
+  --wiki-fullwidth-gutter: clamp(24px, calc(10vw - 48px), 96px);
+}
+
+:root[data-style="mobai"] .workspace-scroll.is-page-editor .page-document.is-full-width:not(.is-focus-reading) > .page-document-header,
+:root[data-style="mobai"] .workspace-scroll.is-page-editor .page-document.is-full-width:not(.is-focus-reading) > .editor-hint,
+:root[data-style="mobai"] .workspace-scroll.is-page-editor .page-document.is-full-width:not(.is-focus-reading) > .life-editor,
+:root[data-style="mobai"] .workspace-scroll.is-page-editor .page-document.is-full-width:not(.is-focus-reading) > .editor-loading {
+  width: calc(100% - var(--wiki-fullwidth-gutter) - var(--wiki-fullwidth-gutter));
+}

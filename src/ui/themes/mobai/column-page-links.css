@@ -1,0 +1,31 @@
+/* Measure the link's own available width, including inside a synced editor. */
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > [data-content-type="column"]) > .bn-block-group [data-content-type="pageLink"] {
+  container: column-page-link / inline-size;
+}
+
+@container column-page-link (max-width: 240px) {
+  :root[data-style="mobai"] .life-page-link-block {
+    grid-template-columns: 17px minmax(0, 1fr);
+    column-gap: 4px;
+    padding-inline: 2px;
+  }
+
+  :root[data-style="mobai"] .life-page-link-block small {
+    display: none;
+  }
+
+  :root[data-style="mobai"] .life-page-link-block > span {
+    overflow-wrap: anywhere;
+  }
+
+  :root[data-style="mobai"] .life-page-link-block:focus-visible {
+    outline: 2px solid var(--mb-accent);
+    outline-offset: -2px;
+  }
+
+  @media (pointer: coarse) {
+    :root[data-style="mobai"] .life-page-link-block {
+      min-height: 44px;
+    }
+  }
+}

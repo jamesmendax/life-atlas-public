@@ -1,0 +1,65 @@
+.db-chart-surface [data-chart-axis] {
+  color: var(--mb-muted, currentColor);
+  font-size: 12px;
+  font-weight: 550;
+  overflow-wrap: anywhere;
+}
+
+.db-real-bar-category-title {
+  grid-column: 1;
+  padding: 2px 0 4px;
+}
+
+.db-real-bar-value-title {
+  grid-column: 2;
+  text-align: center;
+}
+
+.db-cartesian-axis-title {
+  text-align: center;
+}
+
+.db-cartesian-axis-title.db-axis-title-y {
+  align-self: center;
+  flex: none;
+  padding-inline-end: 4px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.db-cartesian-axis-title.db-axis-title-x {
+  padding-top: 3px;
+}
+
+:root[data-style="mobai"] .db-real-donut-wrap .db-real-donut-graphic.has-sector-labels {
+  flex: 0 0 min(100%, var(--chart-label-width));
+  aspect-ratio: auto;
+}
+
+.db-real-donut-graphic.has-sector-labels .db-real-donut {
+  width: 100%;
+  max-width: 100%;
+}
+
+.db-real-donut-graphic.has-sector-labels .db-real-donut-total {
+  width: 20%;
+}
+
+.db-real-donut-graphic.has-sector-labels .db-real-donut-total strong {
+  font-size: clamp(11px, 4cqi, 18px);
+}
+
+.db-chart-sector-label {
+  pointer-events: none;
+}
+
+.db-chart-sector-label path {
+  fill: none;
+  stroke: var(--mb-faint, currentColor);
+  stroke-width: .7;
+}
+
+.db-real-donut .db-chart-sector-label text {
+  fill: var(--mb-ink, currentColor);
+  font-size: 10px;
+}

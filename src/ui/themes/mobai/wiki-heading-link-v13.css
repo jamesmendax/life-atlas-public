@@ -1,0 +1,10 @@
+/* Heading mentions share the surrounding title's weight and text origin. */
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="heading"] .life-mention {
+  font-weight: inherit;
+  padding-inline: 0;
+}
+
+/* Native buttons otherwise center their own wrapped text. */
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="heading"] .life-mention > button {
+  text-align: inherit;
+}

@@ -1,0 +1,125 @@
+{
+  "formatVersion": 1,
+  "entries": [
+    {
+      "id": "life-atlas.focus-study",
+      "title": "专注学习页",
+      "description": "从本轮目标开始，把学习笔记和下次要做的事留在同一页。",
+      "type": "template",
+      "version": "1.0.0",
+      "minAppVersion": "1.1.0",
+      "packagePath": "packages/life-atlas.focus-study-1.0.0.atlaspack",
+      "previewPath": "previews/focus-study.png",
+      "size": 249393,
+      "sha256": "69241e81a97ac1ba2bfbfdcc2b96457b0f13bb2399f845c9942c84af6b43eb47"
+    },
+    {
+      "id": "life-atlas.pomodoro",
+      "title": "番茄钟",
+      "description": "在页面内倒计时，随时暂停，并在 25 分钟专注和 5 分钟休息间切换。",
+      "type": "component",
+      "version": "1.0.0",
+      "minAppVersion": "1.1.0",
+      "packagePath": "packages/life-atlas.pomodoro-1.0.0.atlaspack",
+      "previewPath": "previews/pomodoro.png",
+      "size": 1687,
+      "sha256": "d344cfe73e42c70d711768905b2d4c8d095a20ed11f98e37a005ee3edea58495"
+    },
+    {
+      "id": "life-atlas.travel-footprint",
+      "title": "交互式足迹点亮地图",
+      "description": "纯离线真实地理矢量版图：支持中国 34 省放大下钻至 475 个地级市点亮、400+ 著名景点搜索打卡、旅行备注，以及日本 47 县与全球 176 国。",
+      "type": "component",
+      "version": "1.0.0",
+      "minAppVersion": "1.2.0",
+      "packagePath": "packages/life-atlas.travel-footprint-1.0.0.atlaspack",
+      "previewPath": "previews/travel-footprint.png",
+      "size": 1494,
+      "sha256": "1f7add7aed145bc8c0b3fea335bbdd9e1b63f8874521f61c6d791be2bf0c6633"
+    },
+    {
+      "id": "life-atlas.habit-heatmap",
+      "title": "习惯打卡热力日历图",
+      "description": "GitHub 风格年度坚持热力矩阵，支持多习惯新建与切换、今日一键打卡/补卡、连续天数与近 30 天达成率统计。",
+      "type": "component",
+      "version": "1.0.0",
+      "minAppVersion": "1.2.0",
+      "packagePath": "packages/life-atlas.habit-heatmap-1.0.0.atlaspack",
+      "previewPath": "previews/habit-heatmap.png",
+      "size": 1351,
+      "sha256": "0348932c25bf48ff7d42c613cfc6a49db6899fb8ee9b71dd2d64b76fad96e478"
+    },
+    {
+      "id": "life-atlas.trip-itinerary",
+      "title": "旅行日程时间轴与登机牌",
+      "description": "数字登机牌与多日旅行时间轴，支持驾车/轨交/骑行/步行耗时估算、站点打卡与自定义新增行程。",
+      "type": "component",
+      "version": "1.0.0",
+      "minAppVersion": "1.2.0",
+      "packagePath": "packages/life-atlas.trip-itinerary-1.0.0.atlaspack",
+      "previewPath": "previews/trip-itinerary.png",
+      "size": 1334,
+      "sha256": "17bc969c928616e58aef3c2c36beac0ed2d5937defdf12d2ae17f13bf71da217"
+    },
+    {
+      "id": "life-atlas.travel-packing",
+      "title": "旅行智能打包清单",
+      "description": "内置城市漫游、海岛度假、商务差旅与户外露营 4 套打包预设，实时统计装入进度与预估重量。",
+      "type": "component",
+      "version": "1.0.0",
+      "minAppVersion": "1.2.0",
+      "packagePath": "packages/life-atlas.travel-packing-1.0.0.atlaspack",
+      "previewPath": "previews/travel-packing.png",
+      "size": 1484,
+      "sha256": "051e2cb00dd4189957be1b50b7c2cf12271e6b56f6f635cd50079e28bf229588"
+    },
+    {
+      "id": "life-atlas.world-clock",
+      "title": "世界时钟与跨区换算",
+      "description": "多城市模拟表盘与实时数字时钟，支持 ±12 小时时间旅行滑块一键换算全球任意时刻。",
+      "type": "component",
+      "version": "1.0.0",
+      "minAppVersion": "1.2.0",
+      "packagePath": "packages/life-atlas.world-clock-1.0.0.atlaspack",
+      "previewPath": "previews/world-clock.png",
+      "size": 1218,
+      "sha256": "68a3d7d86507af6d611177bf56eccfd995926fc98572062f00372e78eed685ee"
+    },
+    {
+      "id": "life-atlas.ambient-mixer",
+      "title": "白噪音专注混音台",
+      "description": "基于 Web Audio API 的纯离线声景合成器，支持细雨、森林、壁炉、咖啡馆、海浪与粉红专注音 6 轨自由混音。",
+      "type": "component",
+      "version": "1.0.0",
+      "minAppVersion": "1.2.0",
+      "packagePath": "packages/life-atlas.ambient-mixer-1.0.0.atlaspack",
+      "previewPath": "previews/ambient-mixer.png",
+      "size": 1347,
+      "sha256": "f9828f73d1e00309a14f85accabce73ec5b779223a9179298b7a9df9be3a23ff"
+    },
+    {
+      "id": "life-atlas.life-countdown",
+      "title": "时光进度条与重要倒计时",
+      "description": "精确呈现今年/本月/本周/今日的时间进度，并在页面内追踪多个多彩重要里程碑倒计时。",
+      "type": "component",
+      "version": "1.0.0",
+      "minAppVersion": "1.2.0",
+      "packagePath": "packages/life-atlas.life-countdown-1.0.0.atlaspack",
+      "previewPath": "previews/life-countdown.png",
+      "size": 1195,
+      "sha256": "1eded99d69b1fc0a90cdf89634565018687dccd9558064864d2ec1f17f9105d5"
+    },
+    {
+      "id": "life-atlas.flashcard-quote",
+      "title": "3D 间隔闪卡与每日金句",
+      "description": "3D 立体翻面学习卡片，支持不熟/模糊/已掌握分级复习，并可直接在页面内新增自定义知识卡片。",
+      "type": "component",
+      "version": "1.0.0",
+      "minAppVersion": "1.2.0",
+      "packagePath": "packages/life-atlas.flashcard-quote-1.0.0.atlaspack",
+      "previewPath": "previews/flashcard-quote.png",
+      "size": 1319,
+      "sha256": "69c30c20683b4bb8bac533ed1723ca8df756203bcf4ea59f3830e43945f02ac4"
+    }
+  ]
+}

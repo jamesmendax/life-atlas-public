@@ -1,0 +1,13 @@
+:root[data-style="mobai"] .db-table-scroll.is-virtual { max-height: 70vh; overflow: auto; overflow-anchor: none; }
+:root[data-style="mobai"] .db-table-scroll.is-virtual .db-table thead { position: sticky; top: 0; z-index: 1; background: var(--mb-paper); }
+:root[data-style="mobai"] .db-table-scroll.is-virtual:not(.is-wrapped-virtual) .db-table tbody tr[data-item-id] { height: 36px; }
+:root[data-style="mobai"] .db-table-scroll.is-virtual:not(.is-wrapped-virtual) .db-table tbody tr[data-item-id] > td { height: 36px; max-height: 36px; white-space: nowrap; }
+:root[data-style="mobai"] .db-table-scroll.is-virtual .db-table .db-virtual-spacer > td { min-height: 0; padding: 0; border: 0 !important; background: transparent; }
+:root[data-style="mobai"] .db-table .db-wrap-cell textarea.db-cell-input {
+  display: block;
+  field-sizing: content;
+  width: 100%;
+  height: auto;
+  resize: none;
+  overflow-wrap: anywhere;
+}

@@ -1,0 +1,44 @@
+html, body { width: 100%; height: auto; min-height: 0; margin: 0; overflow: visible; background: transparent; }
+.atlas-board {
+  --board-chrome: #f8f8fb; --board-border: #dedee8; --board-ink: #303043; --board-hover: #eeeeF7; --board-focus: #6453a0;
+  box-sizing: border-box; border: 1px solid var(--board-border); border-radius: 11px;
+  color: var(--board-ink); background: var(--board-chrome); font: 14px/1.4 system-ui, sans-serif;
+}
+[data-theme="dark"] .atlas-board {
+  --board-chrome: #232329; --board-border: #42414d; --board-ink: #f1eff8; --board-hover: #363544; --board-focus: #bbb6e9;
+}
+.atlas-board-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 8px; justify-content: space-between; padding: 7px 10px; border-bottom: 1px solid var(--board-border); }
+.atlas-board-bar h1 { margin: 0; font-size: 15px; }
+.atlas-board-actions { display: flex; flex-wrap: wrap; gap: 5px; }
+.atlas-board-actions button, .atlas-board-backup button {
+  min-height: 36px; padding: 4px 8px; border: 1px solid var(--board-border, GrayText); border-radius: 6px;
+  color: inherit; background: transparent; font: inherit; font-size: 12px; cursor: pointer;
+}
+.atlas-board-actions button:not(:disabled):hover { background: var(--board-hover); }
+.atlas-board-actions button:disabled { opacity: .55; cursor: default; }
+.atlas-board-actions button[aria-pressed="true"] { background: var(--board-hover); }
+.atlas-board-actions button:focus-visible { outline: 2px solid var(--board-focus); outline-offset: 2px; }
+.atlas-board-canvas { position: relative; height: clamp(340px, calc(46vw + 200px), 520px); border-radius: 0 0 10px 10px; overflow: clip; }
+.atlas-board[data-expanded] .atlas-board-canvas { height: clamp(460px, calc(56vw + 260px), 730px); }
+.atlas-board .excalidraw :is(button, input):focus-visible,
+.atlas-board .excalidraw .ToolIcon:has(input:focus-visible) { outline: 2px solid var(--board-focus); outline-offset: 1px; }
+.atlas-board-status { display: block; padding: 6px 10px; }
+.atlas-board-status:empty { display: none; }
+.atlas-board-backup {
+  box-sizing: border-box; width: min(490px, calc(100% - 20px)); max-height: calc(100% - 18px); overflow: auto;
+  padding: 15px; border: 1px solid GrayText; border-radius: 9px; background: Canvas; color: CanvasText;
+  font: 14px/1.4 system-ui, sans-serif;
+}
+.atlas-board-backup::backdrop { background: #1119; }
+.atlas-board-backup h2 { font-size: 17px; margin: 0 0 8px; }
+.atlas-board-backup textarea { display: block; box-sizing: border-box; width: 100%; min-height: 150px; max-height: 42vh; margin-bottom: 8px; resize: vertical; }
+@media (max-width: 398px) {
+  .atlas-board .excalidraw .App-toolbar--mobile > .Stack_horizontal {
+    display: grid; grid-template-columns: repeat(6, 35px); gap: 3px; justify-items: center;
+  }
+  .atlas-board .excalidraw .App-toolbar--mobile .App-toolbar__divider { display: none; }
+  .atlas-board .excalidraw .App-toolbar--mobile :is(.ToolIcon__icon, .App-toolbar__extra-tools-trigger) { min-width: 34px; min-height: 34px; }
+}
+@media (max-width: 255px) {
+  .atlas-board .excalidraw .App-toolbar--mobile > .Stack_horizontal { grid-template-columns: repeat(5, 35px); }
+}

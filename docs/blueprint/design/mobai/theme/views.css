@@ -1,0 +1,23 @@
+/* 墨白：文件夹视图、首页、最近访问、回收站。标题和页面一样是 40 px 粗体；列表一行一条，悬停灰底。 */
+:root[data-style="mobai"] .folder-view-header h1,
+:root[data-style="mobai"] .page-heading h1,
+:root[data-style="mobai"] .trash-view h1,
+:root[data-style="mobai"] .page-view h1 { font: 700 40px/1.2 var(--mb-sans) !important; letter-spacing: 0; color: var(--mb-ink); }
+:root[data-style="mobai"] .folder-view-header p, :root[data-style="mobai"] .page-heading p { color: var(--mb-muted); font: 400 14px/1.5 var(--mb-sans); }
+:root[data-style="mobai"] .folder-view-counts { color: var(--mb-faint); font: 400 12px/1.4 var(--mb-sans); }
+:root[data-style="mobai"] .folder-view-icon { border-radius: var(--mb-r2); }
+:root[data-style="mobai"] .folder-list-toolbar { border-bottom: 1px solid var(--mb-line); }
+:root[data-style="mobai"] .folder-list-label { font: 600 14px/1 var(--mb-sans); color: var(--mb-ink); }
+:root[data-style="mobai"] .folder-note-columns { color: var(--mb-muted); border-bottom: 1px solid var(--mb-line); font: 400 12px/1 var(--mb-sans); }
+:root[data-style="mobai"] .folder-note-row { border-radius: var(--mb-r2); border-bottom: 0; background: transparent; }
+:root[data-style="mobai"] .folder-note-row:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .folder-note-copy strong { font: 500 14px/1.4 var(--mb-sans); color: var(--mb-ink); }
+:root[data-style="mobai"] .folder-note-copy small { color: var(--mb-muted); }
+:root[data-style="mobai"] .folder-note-time { font: 400 12px/1 var(--mb-sans); color: var(--mb-muted); font-variant-numeric: tabular-nums; }
+:root[data-style="mobai"] .folder-note-icon { border-radius: var(--mb-r2); background: transparent; }
+/* “最近访问”卡片：Notion 首页那样的小卡片，白底、阴影、10 px 圆角 */
+:root[data-style="mobai"] .recent-card, :root[data-style="mobai"] .team-card { border: 0; border-radius: var(--mb-r3); background: var(--mb-raised); box-shadow: var(--mb-card); }
+:root[data-style="mobai"] .recent-card:hover, :root[data-style="mobai"] .team-card:hover { background: var(--mb-raised); box-shadow: var(--mb-card), 0 0 0 1px rgba(var(--mb-ink-rgb), 0.12); }
+:root[data-style="mobai"] .trash-row { border-radius: var(--mb-r2); border-bottom: 0; }
+:root[data-style="mobai"] .trash-row:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .trash-empty-state { color: var(--mb-muted); }

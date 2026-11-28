@@ -1,0 +1,58 @@
+appId: com.medax.lifeatlas
+productName: Life Atlas
+asar: true
+publish: null
+files:
+  - dist/client/**
+  - electron/**
+  - src/**/*.js
+  - "!src/editor/widgets/**"
+  - "!src/domain/pomodoro.js"
+  - package.json
+  - "!node_modules/tesseract.js-core/tesseract-core.{js,wasm,wasm.js}"
+  - "!node_modules/tesseract.js-core/tesseract-core-{simd,relaxedsimd}*"
+  - "!node_modules/tesseract.js-core/tesseract-core-lstm.wasm.js"
+asarUnpack:
+  - electron/main/ocr/worker.cjs
+  - electron/main/ocr/tessdata/**/*
+  - node_modules/tesseract.js-core/tesseract-core-lstm.js
+  - node_modules/tesseract.js-core/tesseract-core-lstm.wasm
+win:
+  icon: build/icon.ico
+  target:
+    - nsis
+    - dir
+nsis:
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Life Atlas
+  installerLanguages:
+    - zh_CN
+    - ja_JP
+    - en_US
+  include: build/installer.nsh
+  deleteAppDataOnUninstall: false
+extraResources:
+  - from: market/public
+    to: market
+    filter:
+      - catalog.json
+      - catalog-v2.json
+      - trusted-keys.json
+      - previews/thumbs/*.png
+extraFiles:
+  - from: node_modules/leaflet/LICENSE
+    to: licenses/leaflet-LICENSE.txt
+  - from: THIRD_PARTY_NOTICES.md
+    to: THIRD_PARTY_NOTICES.md
+  - from: build/licenses/SecLists-LICENSE.txt
+    to: licenses/SecLists-LICENSE.txt
+  - from: electron/main/ocr/third-party
+    to: licenses/ocr
+  - from: electron/main/ocr/tessdata/LICENSE
+    to: licenses/ocr/tessdata-LICENSE.txt

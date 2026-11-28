@@ -1,0 +1,21 @@
+/* Draw page-reference decoration once, on the actionable label. */
+:root[data-style="mobai"] .life-editor .bn-inline-content .life-mention[data-mention-type="pageMention"] {
+  text-decoration-line: none;
+}
+
+/* Link lines stay quieter than their text, including callouts and page links. */
+:root[data-style="mobai"] .life-editor .bn-inline-content a[href],
+:root[data-style="mobai"] .life-editor .bn-inline-content .life-mention[data-mention-type="pageMention"] > button,
+:root[data-style="mobai"] .life-editor .life-page-link-block > span:not([class*="glyph"]) {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: rgba(var(--mb-ink-rgb), 0.16);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+:root[data-style="mobai"] .life-editor .bn-inline-content a[href]:hover,
+:root[data-style="mobai"] .life-editor .bn-inline-content .life-mention[data-mention-type="pageMention"]:hover > button,
+:root[data-style="mobai"] .life-editor .life-page-link-block:hover > span:not([class*="glyph"]) {
+  text-decoration-color: rgba(var(--mb-ink-rgb), 0.22);
+}

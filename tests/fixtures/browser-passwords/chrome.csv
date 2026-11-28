@@ -1,0 +1,7 @@
+name,url,username,password,note
+Example Mail,https://mail.example.invalid,alice,csv-chrome-test-1,"note, with comma"
+"Quoted ""Name""",https://quoted.example.invalid,bob,csv-chrome-test-2,ordinary note
+Multi line,https://lines.example.invalid,charlie,csv-chrome-test-3,"first line
+second line"
+中文服务,https://zh.example.invalid,测试用户,csv-chrome-test-4,中文备注
+,https://fallback.example.invalid,delta,csv-chrome-test-5,empty name

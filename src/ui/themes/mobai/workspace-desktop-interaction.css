@@ -1,0 +1,15 @@
+:root[data-style="mobai"] .folder-note-row { position: relative; }
+:root[data-style="mobai"] .folder-note-row > button { border: 0; background: transparent; font: inherit; color: inherit; text-align: inherit; }
+:root[data-style="mobai"] .folder-note-row > .folder-note-main { padding: 0; }
+:root[data-style="mobai"] .folder-note-main::after { content: ""; position: absolute; inset: 0; cursor: pointer; }
+:root[data-style="mobai"] .folder-note-row > .folder-note-more { position: relative; padding: 4px; min-height: 28px; border-radius: 4px; }
+:root[data-style="mobai"] .folder-note-row > .folder-note-more:hover { background: var(--mb-hover); }
+@media (min-width: 761px) and (max-width: 980px) {
+  :root[data-style="mobai"] .folder-note-row > .folder-note-time:nth-child(2) { display: none; }
+  :root[data-style="mobai"] .folder-note-row > .folder-note-time:nth-child(3) { display: block; }
+}
+
+:root[data-style="mobai"] .global-search-dialog :is(.search-footer, .search-result-row time, .search-result-copy small,
+  .search-result-copy > span, .search-filter-tabs button:not(.is-active), .search-preview-meta) {
+  color: var(--mb-side-text);
+}

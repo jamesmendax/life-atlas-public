@@ -1,0 +1,12 @@
+:root[data-style="mobai"] .db-new-property-name, :root[data-style="mobai"] .db-new-property-fields > label { display: grid; gap: 5px; padding: 7px; color: var(--mb-muted); font-size: 12px; }
+:root[data-style="mobai"] .db-new-property-name input, :root[data-style="mobai"] .db-new-property-config input { width: 100%; min-width: 0; }
+:root[data-style="mobai"] .db-new-property-config { width: min(286px, calc(100vw - 16px)); padding: 8px; }
+:root[data-style="mobai"] .db-new-property-config header { display: flex; justify-content: space-between; align-items: center; padding: 3px 5px 6px; color: var(--mb-ink); }
+:root[data-style="mobai"] .db-new-property-config header button { border: 0; background: transparent; color: var(--mb-muted); font-size: 18px; }
+:root[data-style="mobai"] .db-new-property-type { display: flex; justify-content: space-between; padding: 9px 7px; color: var(--mb-muted); }
+:root[data-style="mobai"] .db-new-property-type span:last-child { color: var(--mb-ink); }
+:root[data-style="mobai"] .db-new-property-advanced { width: 100%; padding: 8px 7px; border: 0; border-radius: var(--mb-r2); background: transparent; color: var(--mb-ink); text-align: left; }
+:root[data-style="mobai"] .db-new-property-advanced:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .db-new-property-config footer { display: flex; justify-content: flex-end; gap: 6px; padding-top: 8px; border-top: 1px solid var(--mb-line); }
+:root[data-style="mobai"] .db-new-property-config footer button { min-height: 28px; padding: 4px 9px; border: 1px solid var(--mb-line-2); border-radius: var(--mb-r2); background: var(--mb-field); color: var(--mb-ink); }
+:root[data-style="mobai"] .db-new-property-config button:focus-visible, :root[data-style="mobai"] .db-new-property-config input:focus-visible, :root[data-style="mobai"] .db-new-property-name input:focus-visible { outline: 2px solid var(--mb-muted); outline-offset: 1px; box-shadow: none; }

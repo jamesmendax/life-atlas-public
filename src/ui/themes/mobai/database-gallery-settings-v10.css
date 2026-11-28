@@ -1,0 +1,9 @@
+:root[data-style="mobai"] .db-gallery-settings { display: grid; gap: 2px; }
+:root[data-style="mobai"] .db-gallery-choice-menu { position: fixed; z-index: 151; box-sizing: border-box; max-height: calc(100vh - 16px); overflow: auto; padding: 6px; border: 1px solid var(--mb-line-2); border-radius: var(--mb-r3); background: var(--mb-raised); box-shadow: var(--mb-pop); }
+:root[data-style="mobai"] .db-gallery-choice-menu button { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 28px; padding: 4px 7px; border: 0; border-radius: var(--mb-r2); background: none; color: var(--mb-ink); text-align: left; }
+:root[data-style="mobai"] .db-gallery-choice-menu button:hover, :root[data-style="mobai"] .db-gallery-choice-menu button:focus-visible { background: var(--mb-hover); }
+:root[data-style="mobai"] .db-gallery-choice-menu button span { flex: 1; }
+:root[data-style="mobai"] .db-gallery-fit i { position: relative; width: 28px; height: 16px; flex: none; border-radius: 10px; background: var(--mb-line-2); }
+:root[data-style="mobai"] .db-gallery-fit i::after { content: ""; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: var(--mb-raised); }
+:root[data-style="mobai"] .db-gallery-fit[aria-checked="true"] i { background: var(--mb-accent); }
+:root[data-style="mobai"] .db-gallery-fit[aria-checked="true"] i::after { left: 14px; }

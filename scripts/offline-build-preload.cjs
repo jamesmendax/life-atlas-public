@@ -1,0 +1,27 @@
+const http = require("node:http");
+const https = require("node:https");
+const net = require("node:net");
+const tls = require("node:tls");
+const dgram = require("node:dgram");
+const dns = require("node:dns");
+const dnsPromises = require("node:dns/promises");
+const { syncBuiltinESMExports } = require("node:module");
+
+const denied = () => { throw new Error("Offline desktop build refused network access"); };
+http.request = denied;
+http.get = denied;
+https.request = denied;
+https.get = denied;
+net.connect = denied;
+net.createConnection = denied;
+net.Socket.prototype.connect = denied;
+tls.connect = denied;
+dgram.createSocket = denied;
+dgram.Socket.prototype.send = denied;
+dgram.Socket.prototype.connect = denied;
+const dnsMethods = ["lookup", "lookupService", "resolve", "resolve4", "resolve6", "resolveAny", "resolveCaa", "resolveCname", "resolveMx", "resolveNaptr", "resolveNs", "resolvePtr", "resolveSoa", "resolveSrv", "resolveTlsa", "resolveTxt", "reverse"];
+for (const target of [dns, dns.Resolver.prototype]) for (const method of dnsMethods) if (typeof target[method] === "function") target[method] = denied;
+for (const target of [dnsPromises, dnsPromises.Resolver.prototype]) for (const method of dnsMethods) if (typeof target[method] === "function") target[method] = async () => denied();
+globalThis.fetch = async () => denied();
+syncBuiltinESMExports();
+console.log("OFFLINE_BUILD_NETWORK_GUARD enabled");

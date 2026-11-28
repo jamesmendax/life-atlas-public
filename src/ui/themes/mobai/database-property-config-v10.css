@@ -1,0 +1,33 @@
+:root[data-style="mobai"] .db-property-menu-identity { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 2px 3px 5px; padding: 5px 6px 8px; border-bottom: 1px solid var(--mb-line); color: var(--mb-ink); font: 500 13px/1.4 var(--mb-sans); }
+:root[data-style="mobai"] .db-property-menu-identity small { color: var(--mb-muted); font-weight: 400; }
+:root[data-style="mobai"] .db-status-config { width: min(286px, calc(100vw - 16px)); padding: 8px; }
+:root[data-style="mobai"] .db-status-config-header { display: flex; align-items: center; justify-content: space-between; padding: 2px 3px 6px; color: var(--mb-ink); }
+:root[data-style="mobai"] .db-status-config-header button, :root[data-style="mobai"] .db-status-group header button { width: 26px; height: 26px; border: 0; border-radius: var(--mb-r2); background: transparent; color: var(--mb-muted); font-size: 18px; }
+:root[data-style="mobai"] .db-status-config button:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .db-status-name, :root[data-style="mobai"] .db-status-default, :root[data-style="mobai"] .db-status-detail > label { display: grid; gap: 4px; margin: 3px 3px 8px; color: var(--mb-muted); font-size: 12px; }
+:root[data-style="mobai"] .db-status-name input, :root[data-style="mobai"] .db-status-default select, :root[data-style="mobai"] .db-status-detail input, :root[data-style="mobai"] .db-status-detail select { width: 100%; }
+:root[data-style="mobai"] .db-status-group { padding: 3px 0; }
+:root[data-style="mobai"] .db-status-group header { display: flex; justify-content: space-between; align-items: center; padding: 0 3px 0 7px; color: var(--mb-muted); font-size: 12px; }
+:root[data-style="mobai"] .db-status-option { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 31px; padding: 4px 7px; border: 0; border-radius: var(--mb-r2); background: transparent; color: var(--mb-muted); text-align: left; }
+:root[data-style="mobai"] .db-status-detail { display: grid; gap: 3px; }
+:root[data-style="mobai"] .db-status-back, :root[data-style="mobai"] .db-status-delete { min-height: 28px; padding: 4px 7px; border: 0; border-radius: var(--mb-r2); background: transparent; color: var(--mb-muted); text-align: left; }
+:root[data-style="mobai"] .db-status-delete { color: var(--mb-danger); }
+:root[data-style="mobai"] .db-status-colors { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; padding: 2px 0; }
+:root[data-style="mobai"] .db-status-colors > span { grid-column: 1 / -1; padding: 4px 4px 2px; color: var(--mb-muted); font-size: 12px; }
+:root[data-style="mobai"] .db-status-color { display: flex; align-items: center; gap: 6px; min-width: 0; min-height: 27px; padding: 3px 5px; border: 0; border-radius: var(--mb-r2); background: transparent; color: var(--mb-ink); text-align: left; }
+:root[data-style="mobai"] .db-status-color i { flex: none; width: 14px; height: 14px; border: 1px solid var(--mb-line-2); border-radius: 3px; background: var(--mb-tag-default); }
+:root[data-style="mobai"] .db-status-color > span { margin-left: auto; }
+:root[data-style="mobai"] .db-status-color[data-color="gray"] i { background: var(--mb-tag-gray); }
+:root[data-style="mobai"] .db-status-color[data-color="brown"] i { background: var(--mb-tag-brown); }
+:root[data-style="mobai"] .db-status-color[data-color="orange"] i { background: var(--mb-tag-orange); }
+:root[data-style="mobai"] .db-status-color[data-color="yellow"] i { background: var(--mb-tag-yellow); }
+:root[data-style="mobai"] .db-status-color[data-color="green"] i { background: var(--mb-tag-green); }
+:root[data-style="mobai"] .db-status-color[data-color="blue"] i { background: var(--mb-tag-blue); }
+:root[data-style="mobai"] .db-status-color[data-color="purple"] i { background: var(--mb-tag-purple); }
+:root[data-style="mobai"] .db-status-color[data-color="pink"] i { background: var(--mb-tag-pink); }
+:root[data-style="mobai"] .db-status-color[data-color="red"] i { background: var(--mb-tag-red); }
+:root[data-style="mobai"] .db-status-config footer { display: flex; justify-content: flex-end; gap: 6px; margin-top: 6px; padding-top: 8px; border-top: 1px solid var(--mb-line); }
+:root[data-style="mobai"] .db-status-config footer button { min-height: 28px; padding: 4px 9px; border: 1px solid var(--mb-line-2); border-radius: var(--mb-r2); background: var(--mb-field); color: var(--mb-ink); }
+:root[data-style="mobai"] .db-status-config footer .db-status-save { background: var(--mb-ink); color: var(--mb-paper); }
+:root[data-style="mobai"] .db-status-config footer .db-status-save:hover { background: var(--mb-muted); }
+:root[data-style="mobai"] .db-status-config button:focus-visible, :root[data-style="mobai"] .db-status-config input:focus-visible, :root[data-style="mobai"] .db-status-config select:focus-visible { outline: 2px solid var(--mb-muted); outline-offset: 1px; box-shadow: none; }

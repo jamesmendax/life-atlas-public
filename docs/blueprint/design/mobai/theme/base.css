@@ -1,0 +1,106 @@
+/* 墨白：全局字体、选区、焦点、滚动条、通用按钮和输入框。 */
+:root[data-style="mobai"],
+:root[data-style="mobai"] body,
+:root[data-style="mobai"] #root { background: var(--mb-paper); color: var(--mb-ink); font-family: var(--mb-sans); }
+:root[data-style="mobai"] body { -webkit-font-smoothing: antialiased; }
+:root[data-style="mobai"] ::selection { background: var(--mb-select-text); }
+:root[data-style="mobai"] :focus-visible { outline: 2px solid rgba(var(--mb-accent-rgb), 0.55); outline-offset: 1px; }
+/* 打字的地方（编辑器正文、标题、输入框）靠光标和输入框自己的焦点框表示焦点，不画外框 */
+:root[data-style="mobai"] [contenteditable]:focus-visible,
+:root[data-style="mobai"] textarea:focus-visible,
+:root[data-style="mobai"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="button"]):not([type="submit"]):focus-visible { outline: none; }
+:root[data-style="mobai"] * { scrollbar-color: rgba(var(--mb-ink-rgb), 0.18) transparent; scrollbar-width: thin; }
+
+/* 按钮：主按钮是蓝色实心，次按钮是细线框 */
+:root[data-style="mobai"] .primary-button {
+  height: 32px; padding: 0 12px; border: 0; border-radius: var(--mb-r2);
+  background: var(--mb-accent); color: #fff; font: 500 14px/1 var(--mb-sans); box-shadow: none;
+}
+:root[data-style="mobai"] .primary-button:hover { background: var(--mb-accent-hover); }
+:root[data-style="mobai"] .ghost-button {
+  height: 32px; padding: 0 12px; border: 0; border-radius: var(--mb-r2);
+  background: transparent; color: var(--mb-ink); font: 500 14px/1 var(--mb-sans); box-shadow: inset 0 0 0 1px var(--mb-line-2);
+}
+:root[data-style="mobai"] .ghost-button:hover { background: var(--mb-hover); box-shadow: inset 0 0 0 1px var(--mb-line-2); color: var(--mb-ink); }
+:root[data-style="mobai"] .ui-icon-button, :root[data-style="mobai"] .icon-button { color: var(--mb-muted); border-radius: var(--mb-r2); }
+:root[data-style="mobai"] .ui-icon-button:hover, :root[data-style="mobai"] .icon-button:hover { color: var(--mb-ink); background: var(--mb-hover); }
+
+/* 全应用的表单控件：字体、复选框颜色 */
+:root[data-style="mobai"] input:not([type="checkbox"]):not([type="radio"]):not(.page-title-input),
+:root[data-style="mobai"] select,
+:root[data-style="mobai"] textarea { font-family: var(--mb-sans); color: var(--mb-ink); }
+:root[data-style="mobai"] select { cursor: pointer; }
+:root[data-style="mobai"] select option { background: var(--mb-raised); color: var(--mb-ink); }
+@supports (appearance: base-select) {
+  :root[data-style="mobai"] select,
+  :root[data-style="mobai"] select::picker(select) { appearance: base-select; }
+  :root[data-style="mobai"] select {
+    align-items: center;
+    gap: 6px;
+  }
+  :root[data-style="mobai"] select::picker(select) {
+    margin-block: 4px;
+    padding: 4px;
+    border: 1px solid var(--mb-line-2);
+    border-radius: var(--mb-r3);
+    background: var(--mb-raised);
+    color: var(--mb-ink);
+    box-shadow: var(--mb-pop);
+    min-width: max(anchor-size(width), 132px);
+    max-height: min(320px, 50vh);
+    overflow-y: auto;
+    font-family: var(--mb-sans);
+  }
+  :root[data-style="mobai"] select::picker-icon {
+    margin-inline-start: auto;
+    color: var(--mb-muted);
+    font-size: 11px;
+    transition: transform 140ms ease;
+  }
+  :root[data-style="mobai"] select:open::picker-icon { transform: rotate(180deg); }
+  :root[data-style="mobai"] select option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 28px;
+    padding: 5px 10px;
+    border-radius: var(--mb-r2);
+    background: transparent;
+    color: var(--mb-ink);
+    font-size: 13px;
+    line-height: 1.4;
+    cursor: pointer;
+  }
+  :root[data-style="mobai"] select option:is(:hover, :focus-visible) { background: var(--mb-hover); }
+  :root[data-style="mobai"] select option:checked { background: var(--mb-select); color: var(--mb-ink); font-weight: 500; }
+  :root[data-style="mobai"] select option::checkmark { color: var(--mb-accent); font-size: 12px; }
+}
+:root[data-style="mobai"] input[type="checkbox"]:not(.bn-editor input),
+:root[data-style="mobai"] input[type="radio"] { accent-color: var(--mb-accent); }
+
+/* Notion 的输入框：浅灰底 + 一圈很淡的线，聚焦时蓝色光圈。给各处对话框、表单、设置面板复用 */
+:root[data-style="mobai"] .mb-field,
+:root[data-style="mobai"] [data-la-dialog] input:not([type="checkbox"]):not([type="radio"]),
+:root[data-style="mobai"] .new-folder-modal input:not([type="checkbox"]),
+:root[data-style="mobai"] .export-dialog select,
+:root[data-style="mobai"] .db-view-settings-panel select,
+:root[data-style="mobai"] .db-view-settings-panel input:not([type="checkbox"]):not([type="radio"]),
+:root[data-style="mobai"] .db-property-dialog select,
+:root[data-style="mobai"] .db-property-dialog input:not([type="checkbox"]):not([type="radio"]) {
+  min-height: 30px; padding: 3px 10px; border: 0 !important; border-radius: var(--mb-r2);
+  background: var(--mb-field) !important; box-shadow: inset 0 0 0 1px var(--mb-field-line) !important;
+  color: var(--mb-ink); font: 400 14px/1.4 var(--mb-sans);
+}
+:root[data-style="mobai"] .mb-field:focus,
+:root[data-style="mobai"] [data-la-dialog] input:focus,
+:root[data-style="mobai"] .new-folder-modal input:focus,
+:root[data-style="mobai"] .export-dialog select:focus,
+:root[data-style="mobai"] .db-view-settings-panel select:focus,
+:root[data-style="mobai"] .db-view-settings-panel input:focus,
+:root[data-style="mobai"] .db-property-dialog select:focus,
+:root[data-style="mobai"] .db-property-dialog input:focus { outline: 0; box-shadow: var(--mb-focus) !important; }
+
+/* 悬停提示 */
+:root[data-style="mobai"] .mantine-Tooltip-tooltip, :root[data-style="mobai"] .ui-tooltip {
+  background: var(--mb-tooltip-bg); color: var(--mb-tooltip-text); border-radius: var(--mb-r1); font: 500 12px/1.4 var(--mb-sans); box-shadow: none;
+}

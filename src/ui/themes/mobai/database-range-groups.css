@@ -1,0 +1,71 @@
+:root[data-style="mobai"] .db-timeline-view { padding-top: 26px; }
+:root[data-style="mobai"] .db-timeline-axis { background: none; left: 145px; }
+:root[data-style="mobai"] .db-timeline-axis > span, :root[data-style="mobai"] .db-timeline-today { position: absolute; inset-block: 0; border-left: 1px solid var(--mb-line); }
+:root[data-style="mobai"] .db-timeline-axis time { padding-left: 3px; white-space: nowrap; font-size: 10px; color: var(--mb-muted); }
+:root[data-style="mobai"] .db-timeline-today { border-color: var(--mb-accent); }
+:root[data-style="mobai"] .db-timeline-track .db-timeline-bar { min-width: 3px; box-sizing: border-box; padding-inline: 0; overflow: visible; container: timeline-bar / inline-size; }
+:root[data-style="mobai"] .db-timeline-bar > span { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-inline: 6px; }
+@container timeline-bar (width < 32px) {
+  :root[data-style="mobai"] .db-timeline-bar > span { display: none; }
+}
+:root[data-style="mobai"] .db-timeline-bar > button { position: absolute; top: 2px; z-index: 2; background: var(--mb-raised); touch-action: none; }
+:root[data-style="mobai"] .db-timeline-bar > button:disabled { visibility: hidden; }
+:root[data-style="mobai"] .db-timeline-bar:hover, :root[data-style="mobai"] .db-timeline-bar:focus-within { z-index: 3; }
+:root[data-style="mobai"] .db-timeline-bar > .db-timeline-resize-start { left: -7px; cursor: ew-resize; }
+:root[data-style="mobai"] .db-timeline-bar > .db-timeline-resize { right: -7px; cursor: ew-resize; }
+:root[data-style="mobai"] .db-timeline-bar > .db-drag-handle { left: 50%; transform: translateX(-50%); top: -9px; cursor: grab; }
+:root[data-style="mobai"] .db-timeline-bar > button:nth-of-type(3) { right: calc(100% + 7px); }
+:root[data-style="mobai"] .db-timeline-bar > button:nth-of-type(4) { left: calc(100% + 7px); }
+:root[data-style="mobai"] .db-timeline-toolbar > button { color: var(--mb-muted); background: transparent; border: 0; cursor: pointer; }
+:root[data-style="mobai"] .db-calendar-span { display: flex; align-items: center; gap: 1px; min-width: 0; padding: 0 2px; border-inline-start: 2px solid var(--mb-line); background: var(--mb-hover); border-radius: var(--mb-r1); }
+:root[data-style="mobai"] .db-calendar-continuation { flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: left; color: var(--mb-muted); background: transparent; border: 0; padding: 2px; }
+:root[data-style="mobai"] .db-calendar-chip { position: relative; }
+:root[data-style="mobai"] .db-cal-range-edge { padding: 0; width: 12px; min-width: 12px; height: 20px; border: 0; background: var(--mb-raised); color: var(--mb-muted); cursor: ew-resize; touch-action: none; opacity: 0; }
+:root[data-style="mobai"] .db-calendar-chip > button.db-cal-range-edge { position: absolute; top: 0; z-index: 3; width: 12px; }
+:root[data-style="mobai"] .db-calendar-chip > .edge-start { left: 0; }
+:root[data-style="mobai"] .db-calendar-chip > .edge-end { right: 0; }
+:root[data-style="mobai"] :is(.db-calendar-chip,.db-calendar-span):is(:hover,:focus-within) .db-cal-range-edge { opacity: 1; }
+:root[data-style="mobai"] .db-cal-range-edge:disabled { visibility: hidden; }
+:root[data-style="mobai"] .db-table-group th { position: static; padding: 6px 10px; background: var(--mb-raised); color: var(--mb-ink); text-align: left; font-weight: 600; }
+:root[data-style="mobai"] .db-table-group small, :root[data-style="mobai"] .db-board-lane h4 small { margin-left: 6px; color: var(--mb-muted); font-weight: 400; }
+:root[data-style="mobai"] .db-calendar-chip > .db-drag-handle { left: 12px; }
+:root[data-style="mobai"] .db-calendar-chip:has(.edge-end) > .db-date-picker { margin-right: 12px; }
+:root[data-style="mobai"] .db-board-view[data-swimlanes="true"] { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(204px,1fr); align-items: stretch; }
+:root[data-style="mobai"] .db-board-view[data-swimlanes="true"] > .db-board-column {
+  display: grid;
+  min-width: 0;
+  grid-row: 1 / span var(--board-lane-rows);
+  grid-template: subgrid / minmax(0, 1fr);
+  row-gap: 4px;
+}
+:root[data-style="mobai"] .db-board-view[data-swimlanes="true"] .db-board-cards { display: contents; }
+:root[data-style="mobai"] .db-board-lane { min-height: 48px; display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: 5px; padding-block: 4px 8px; border-top: 1px solid var(--mb-line); }
+:root[data-style="mobai"] .db-board-lane h4 { margin: 0; padding: 3px 4px; overflow-wrap: anywhere; font-size: 12px; color: var(--mb-muted); font-weight: 500; }
+:root[data-style="mobai"] .db-gallery-card { position: relative; }
+:root[data-style="mobai"] .db-gallery-card[data-dragover="true"] { outline: 2px solid var(--mb-accent); }
+:root[data-style="mobai"] .db-gallery-actions { position: absolute; top: 4px; right: 4px; z-index: 1; }
+:root[data-style="mobai"] .db-gallery-actions summary { opacity: 0; margin-left: auto; width: 24px; border-radius: var(--mb-r2); background: var(--mb-raised); color: var(--mb-muted); cursor: pointer; text-align: center; list-style: none; }
+:root[data-style="mobai"] .db-gallery-card:is(:hover,:focus-within) .db-gallery-actions summary, :root[data-style="mobai"] .db-gallery-actions[open] summary { opacity: 1; }
+:root[data-style="mobai"] .db-gallery-actions > div { display: grid; gap: 2px; width: 132px; padding: 4px; background: var(--mb-raised); box-shadow: var(--mb-card); border-radius: var(--mb-r2); }
+:root[data-style="mobai"] .db-gallery-actions button { text-align: left; color: var(--mb-ink); border: 0; background: transparent; cursor: pointer; }
+:root[data-style="mobai"] .db-gallery-actions button:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .db-gallery-actions button:disabled { color: var(--mb-faint); }
+:root[data-style="mobai"] .db-gallery-actions small, :root[data-style="mobai"] .db-gallery-sort-note, :root[data-style="mobai"] .db-gallery-image-position { color: var(--mb-muted); font-size: 12px; }
+:root[data-style="mobai"] .db-gallery-image-position { display: none; }
+:root[data-style="mobai"] .db-gallery-card:has(.db-gallery-preview[data-has-image="true"]) .db-gallery-image-position { display: grid; }
+:root[data-style="mobai"] .db-timeline-view[data-side-table] { min-width: calc(var(--db-timeline-side-width) + 500px); }
+:root[data-style="mobai"] .db-timeline-view[data-side-table] > .db-timeline-axis { left: var(--db-timeline-side-width); }
+:root[data-style="mobai"] .db-timeline-view[data-side-table] > .db-timeline-row { grid-template-columns: var(--db-timeline-side-width) minmax(500px, 1fr); }
+:root[data-style="mobai"] .db-timeline-scroll { overflow-x: auto; }
+:root[data-style="mobai"] .db-timeline-side { position: sticky; left: 0; display: grid; grid-template-columns: var(--db-timeline-columns); min-width: 0; height: 100%; border-bottom: 1px solid var(--mb-line); background: var(--mb-paper); }
+:root[data-style="mobai"] .db-timeline-side > span { display: flex; align-items: center; gap: 4px; min-width: 0; padding: 4px 8px; border-inline-end: 1px solid var(--mb-line); overflow: hidden; font-size: 12px; white-space: nowrap; }
+:root[data-style="mobai"] .db-timeline-side .db-timeline-label { padding-inline: 0; }
+:root[data-style="mobai"] .db-timeline-side-header, :root[data-style="mobai"] .db-timeline-side-footer { color: var(--mb-muted); }
+:root[data-style="mobai"] .db-timeline-side-header .db-timeline-side { background: var(--mb-hover-soft); }
+:root[data-style="mobai"] .db-timeline-side-header > .db-v9-sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+:root[data-style="mobai"] .db-timeline-load-more { margin: 6px 0; padding: 4px 9px; border: 1px solid var(--mb-line); border-radius: var(--mb-r2); background: var(--mb-raised); color: var(--mb-ink); }
+:root[data-style="mobai"] .db-timeline-table-settings { border: 1px solid var(--mb-line); border-radius: var(--mb-r2); padding: 5px; }
+:root[data-style="mobai"] .db-timeline-column-setting { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 5px; padding: 5px 0; border-top: 1px solid var(--mb-line); }
+:root[data-style="mobai"] .db-timeline-column-setting > label { flex: 1; min-width: 74px; }
+:root[data-style="mobai"] .db-timeline-column-setting > select { width: 85px; }
+:root[data-style="mobai"] .db-timeline-column-order { display: flex; }

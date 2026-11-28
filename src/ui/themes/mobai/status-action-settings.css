@@ -1,0 +1,13 @@
+:root[data-style="mobai"] .db-status-action {
+  margin-block-start: 6px;
+  border-block-start: 1px solid var(--mb-line);
+}
+
+:root[data-style="mobai"] .db-status-action > summary {
+  padding: 8px;
+  cursor: pointer;
+}
+
+:root[data-style="mobai"] .db-status-action > .db-property-form {
+  padding: 4px 8px 8px;
+}

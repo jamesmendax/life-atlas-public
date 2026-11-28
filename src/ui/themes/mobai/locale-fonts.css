@@ -1,0 +1,10 @@
+:root[data-style="mobai"][lang^="ja"] {
+  --mb-sans: "Yu Gothic UI", "Meiryo UI", "Segoe UI Variable Text", "Segoe UI", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Noto Sans SC Variable", sans-serif, "Segoe UI Emoji", "Apple Color Emoji";
+  --mb-serif: "Yu Mincho", Georgia, "Noto Serif SC Variable", serif;
+  --mb-mono: "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, "Yu Gothic UI", monospace;
+}
+
+:root[data-style="mobai"][lang^="en"] {
+  --mb-sans: "Segoe UI Variable Text", "Segoe UI", "DM Sans", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Noto Sans SC Variable", sans-serif, "Segoe UI Emoji", "Apple Color Emoji";
+  --mb-serif: Georgia, "Times New Roman", "Noto Serif SC Variable", serif;
+}

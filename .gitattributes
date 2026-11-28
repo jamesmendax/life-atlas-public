@@ -1,0 +1,73 @@
+.gitattributes text eol=lf
+
+# These files are byte-for-byte captures from released builds.
+tests/fixtures/compatibility/**/*.lifeatlas binary
+tests/fixtures/compatibility/**/live-profile.zip binary
+tests/fixtures/compatibility/**/vault.json -text
+tests/fixtures/workspace-v10.json -text
+tests/fixtures/browser-passwords/chrome.csv -text
+tests/fixtures/browser-passwords/edge.csv -text
+tests/fixtures/browser-passwords/firefox.csv -text
+
+# These existing tests retain the line endings of their frozen baseline.
+tests/backup-format.test.mjs -text whitespace=cr-at-eol
+tests/trash-groups.test.mjs -text whitespace=cr-at-eol
+tests/vault-ui-boundaries.test.mjs -text whitespace=cr-at-eol
+tests/workspace-copy-boundaries.test.mjs -text whitespace=cr-at-eol
+
+# The eight foundation styles have an exact source mirror in the blueprint.
+docs/blueprint/design/mobai/theme/base.css text eol=lf
+docs/blueprint/design/mobai/theme/database.css text eol=lf
+docs/blueprint/design/mobai/theme/editor.css text eol=lf
+docs/blueprint/design/mobai/theme/overlays.css text eol=lf
+docs/blueprint/design/mobai/theme/page.css text eol=lf
+docs/blueprint/design/mobai/theme/shell.css text eol=lf
+docs/blueprint/design/mobai/theme/tokens.css text eol=lf
+docs/blueprint/design/mobai/theme/views.css text eol=lf
+src/ui/themes/mobai/base.css text eol=lf
+src/ui/themes/mobai/database.css text eol=lf
+src/ui/themes/mobai/editor.css text eol=lf
+src/ui/themes/mobai/overlays.css text eol=lf
+src/ui/themes/mobai/page.css text eol=lf
+src/ui/themes/mobai/shell.css text eol=lf
+src/ui/themes/mobai/tokens.css text eol=lf
+src/ui/themes/mobai/views.css text eol=lf
+
+# The signed Market archives record these exact payload bytes, including line endings.
+MAP_DATA_SOURCES.md -text whitespace=cr-at-eol
+market/community/dot-carbon/assets/attribution.md -text whitespace=cr-at-eol
+market/community/dot-carbon/assets/licenses/notices.txt -text whitespace=cr-at-eol,-blank-at-eol
+market/community/dot-carbon/ui.css -text whitespace=cr-at-eol
+market/community/dot-carbon/ui.js -text whitespace=cr-at-eol
+market/community/dot-decision/assets/attribution.md -text whitespace=cr-at-eol
+market/community/dot-decision/ui.css -text
+market/community/dot-decision/ui.js -text
+market/community/dot-mingzhang/assets/attribution.md -text whitespace=cr-at-eol
+market/community/dot-mingzhang/ui.css -text
+market/community/dot-mingzhang/ui.js -text
+market/community/dot-whiteboard/assets/attribution.md -text whitespace=cr-at-eol
+market/community/dot-whiteboard/assets/licenses/notices.txt -text whitespace=cr-at-eol,-blank-at-eol
+market/community/dot-whiteboard/ui.css -text
+market/community/dot-whiteboard/ui.js -text
+market/official/focus-study/template.json -text
+market/official/travel-footprint/SOURCES.md -text whitespace=cr-at-eol
+market/official/travel-footprint/cc-by-4.0.txt -text whitespace=cr-at-eol
+market/official/travel-footprint/odbl-1.0.txt -text whitespace=cr-at-eol
+market/official/trip-itinerary/qrcode-generator.LICENSE.txt -text whitespace=cr-at-eol
+market/public/previews/ambient-mixer.js -text
+market/public/previews/flashcard-quote.js -text
+market/public/previews/habit-heatmap.js -text
+market/public/previews/life-countdown.js -text
+market/public/previews/pomodoro.js -text
+market/public/previews/travel-footprint.js -text
+market/public/previews/travel-packing.js -text
+market/public/previews/trip-itinerary.js -text
+market/public/previews/world-clock.js -text
+src/assets/ne_110m_land.json -text whitespace=cr-at-eol
+src/editor/widgets/footprint-data/macau-parishes.json -text whitespace=cr-at-eol
+src/editor/widgets/trip-data/README.md -text whitespace=cr-at-eol
+src/editor/widgets/trip-data/chengdu-transit.json -text whitespace=cr-at-eol
+src/editor/widgets/trip-data/china-places.json -text whitespace=cr-at-eol
+src/editor/widgets/trip-data/example-routes.json -text whitespace=cr-at-eol
+src/editor/widgets/trip-data/place-labels.json -text whitespace=cr-at-eol
+src/editor/widgets/trip-data/regional-streets.json -text whitespace=cr-at-eol

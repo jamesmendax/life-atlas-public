@@ -1,0 +1,147 @@
+/* 墨白：编辑器正文与区块，贴近 Notion：16 px / 1.5 正文，粗体无衬线标题，灰底标注、代码块，网格表格。 */
+:root[data-style="mobai"] .bn-root {
+  --bn-font-family: var(--mb-sans);
+  --bn-border-radius: 6px;
+  --bn-colors-editor-text: var(--mb-ink);
+  --bn-colors-editor-background: transparent;
+  --bn-colors-menu-text: var(--mb-ink);
+  --bn-colors-menu-background: var(--mb-raised);
+  --bn-colors-tooltip-text: var(--mb-tooltip-text);
+  --bn-colors-tooltip-background: var(--mb-tooltip-bg);
+  --bn-colors-hovered-text: var(--mb-ink);
+  --bn-colors-hovered-background: var(--mb-hover);
+  --bn-colors-selected-text: var(--mb-ink);
+  --bn-colors-selected-background: var(--mb-select);
+  --bn-colors-disabled-text: var(--mb-faint);
+  --bn-colors-disabled-background: var(--mb-hover);
+  --bn-colors-shadow: rgba(15, 15, 15, 0.2);
+  --bn-colors-border: var(--mb-line);
+  --bn-colors-side-menu: var(--mb-faint);
+  --bn-colors-highlights-gray-text: var(--mb-u-gray); --bn-colors-highlights-gray-background: var(--mb-u-gray-bg);
+  --bn-colors-highlights-brown-text: var(--mb-u-brown); --bn-colors-highlights-brown-background: var(--mb-u-brown-bg);
+  --bn-colors-highlights-red-text: var(--mb-u-red); --bn-colors-highlights-red-background: var(--mb-u-red-bg);
+  --bn-colors-highlights-orange-text: var(--mb-u-orange); --bn-colors-highlights-orange-background: var(--mb-u-orange-bg);
+  --bn-colors-highlights-yellow-text: var(--mb-u-yellow); --bn-colors-highlights-yellow-background: var(--mb-u-yellow-bg);
+  --bn-colors-highlights-green-text: var(--mb-u-green); --bn-colors-highlights-green-background: var(--mb-u-green-bg);
+  --bn-colors-highlights-blue-text: var(--mb-u-blue); --bn-colors-highlights-blue-background: var(--mb-u-blue-bg);
+  --bn-colors-highlights-purple-text: var(--mb-u-purple); --bn-colors-highlights-purple-background: var(--mb-u-purple-bg);
+  --bn-colors-highlights-pink-text: var(--mb-u-pink); --bn-colors-highlights-pink-background: var(--mb-u-pink-bg);
+}
+:root[data-style="mobai"] .life-editor .bn-editor { font: 400 16px/1.5 var(--mb-sans); color: var(--mb-ink); background: transparent; }
+:root[data-style="mobai"] .life-editor .bn-inline-content strong { color: inherit; font-weight: 600; }
+:root[data-style="mobai"] .life-editor .bn-inline-content code {
+  padding: 0.2em 0.4em; border-radius: 4px; font: 85%/1 var(--mb-mono); color: var(--mb-code-text);
+  background: var(--mb-code-bg); box-shadow: none;
+}
+:root[data-style="mobai"] .life-editor a { color: inherit; text-decoration: underline; text-decoration-color: rgba(var(--mb-ink-rgb), 0.4); text-underline-offset: 2px; }
+:root[data-style="mobai"] .life-editor a:hover { text-decoration-color: rgba(var(--mb-ink-rgb), 0.8); }
+/* 标题：粗体无衬线，H1 30 / H2 24 / H3 20 px */
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="heading"] { margin-top: 1em; }
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="heading"] .bn-inline-content { font-family: var(--mb-sans) !important; font-weight: 600 !important; color: var(--mb-ink); letter-spacing: 0; }
+:root[data-style="mobai"] .life-editor .bn-block-content[data-level="1"] .bn-inline-content { font-size: 30px !important; line-height: 1.3 !important; }
+:root[data-style="mobai"] .life-editor .bn-block-content[data-level="2"] .bn-inline-content { font-size: 24px !important; line-height: 1.3 !important; }
+:root[data-style="mobai"] .life-editor .bn-block-content[data-level="3"] .bn-inline-content { font-size: 20px !important; line-height: 1.3 !important; }
+:root[data-style="mobai"] .life-editor .bn-block-content[data-level="4"] .bn-inline-content,
+:root[data-style="mobai"] .life-editor .bn-block-content[data-level="5"] .bn-inline-content,
+:root[data-style="mobai"] .life-editor .bn-block-content[data-level="6"] .bn-inline-content { font-size: 17px !important; line-height: 1.4 !important; }
+/* 待办：16 px 方框，勾选后蓝底白勾，文字变灰加删除线 */
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="checkListItem"] input[type="checkbox"] {
+  appearance: none; -webkit-appearance: none; width: 16px; height: 16px; margin: 0; flex: none; border-radius: 3px; cursor: pointer;
+  background: transparent; box-shadow: inset 0 0 0 1.5px rgba(var(--mb-ink-rgb), 0.85); display: grid; place-items: center;
+}
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="checkListItem"] input[type="checkbox"]:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="checkListItem"] input[type="checkbox"]:checked {
+  box-shadow: none;
+  background: var(--mb-accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.4l2.6 2.6L12 5.6' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat;
+}
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="checkListItem"][data-checked="true"] .bn-inline-content { color: var(--mb-muted); text-decoration: line-through; text-decoration-color: rgba(var(--mb-ink-rgb), 0.25); }
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="checkListItem"] > div:first-child { display: flex; align-items: center; align-self: flex-start; height: 1.5em; margin-right: 8px; }
+/* 列表：圆点和数字跟正文同色 */
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="bulletListItem"]::before,
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="numberedListItem"]::before { color: var(--mb-ink); }
+/* 引用：左边 3 px 竖线，字号 1.2 倍 */
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="quote"] blockquote {
+  margin: 4px 0; padding: 0 0 0 14px; border-left: 3px solid currentColor !important; box-shadow: none;
+  font: 400 1.2em/1.5 var(--mb-sans); color: var(--mb-ink);
+}
+/* 折叠列表 */
+:root[data-style="mobai"] .life-editor .bn-toggle-button { color: var(--mb-ink); border-radius: 4px; }
+:root[data-style="mobai"] .life-editor .bn-toggle-button:hover { background: var(--mb-hover); }
+/* 代码块：浅灰底，没有边框 */
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="codeBlock"] {
+  border-radius: 4px !important; background: var(--mb-paper-2) !important; box-shadow: none; color: var(--mb-ink);
+}
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="codeBlock"] pre,
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="codeBlock"] code { font: 400 13.6px/1.6 var(--mb-mono) !important; color: var(--mb-ink); background: transparent !important; tab-size: 2; }
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="codeBlock"] select { color: var(--mb-muted); background: transparent; border: 0; font: 400 12px/1 var(--mb-sans); }
+/* 表格区块：每个格子一圈浅灰细线，第一行是表头（浅灰底） */
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="table"] table { border-collapse: collapse; border: 0; }
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="table"] td,
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="table"] th {
+  border: 1px solid var(--mb-line) !important; padding: 7px 9px; font-size: 14px; line-height: 1.5; color: var(--mb-ink); background: transparent;
+}
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="table"] tr:first-child td,
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="table"] tr:first-child th { background: var(--mb-paper-2); font-weight: 600; color: var(--mb-ink); }
+/* 标注：浅灰底，4 px 圆角，图标在左边 */
+:root[data-style="mobai"] .life-callout {
+  border: 0 !important; border-radius: 4px; background: var(--mb-u-gray-bg); color: var(--mb-ink); padding: 16px 16px 16px 12px; box-shadow: none;
+}
+:root[data-style="mobai"] .life-callout-gray { background: var(--mb-u-gray-bg); } :root[data-style="mobai"] .life-callout-brown { background: var(--mb-u-brown-bg); }
+:root[data-style="mobai"] .life-callout-blue { background: var(--mb-u-blue-bg); } :root[data-style="mobai"] .life-callout-yellow { background: var(--mb-u-yellow-bg); }
+:root[data-style="mobai"] .life-callout-red { background: var(--mb-u-red-bg); } :root[data-style="mobai"] .life-callout-green { background: var(--mb-u-green-bg); }
+:root[data-style="mobai"] .life-callout-icon { border-radius: 4px; }
+:root[data-style="mobai"] .life-callout-icon:hover { background: var(--mb-hover); }
+/* 公式区块（WP-14 换成 KaTeX 之前是源码样式） */
+:root[data-style="mobai"] .life-equation-block { border: 0; border-radius: 4px; background: transparent; box-shadow: none; color: var(--mb-ink); }
+:root[data-style="mobai"] .life-equation-block:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .life-equation-sigma { color: var(--mb-muted); }
+:root[data-style="mobai"] .life-equation-block code { font-family: var(--mb-mono); color: var(--mb-ink); background: transparent; }
+/* 页面链接块、提及：带下划线的页面名，悬停灰底 */
+:root[data-style="mobai"] .life-page-link-block { border-radius: 4px; color: var(--mb-ink); font-weight: 500; }
+:root[data-style="mobai"] .life-page-link-block:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .life-page-link-block span:not([class*="glyph"]) { text-decoration: underline; text-decoration-color: rgba(var(--mb-ink-rgb), 0.25); text-underline-offset: 3px; }
+:root[data-style="mobai"] .life-mention { color: var(--mb-ink); background: transparent; border-radius: 3px; box-shadow: none; font-weight: 500; text-decoration: underline; text-decoration-color: rgba(var(--mb-ink-rgb), 0.25); text-underline-offset: 3px; }
+:root[data-style="mobai"] .life-mention:hover { background: var(--mb-hover); }
+/* 同步区块：平时只有很淡的轮廓，悬停时出现 Notion 那样的红橙色外框，头部一行小字和“···”按钮 */
+:root[data-style="mobai"] .life-synced-source { border: 0 !important; border-radius: 4px; background: transparent; box-shadow: inset 0 0 0 1px var(--mb-line); transition: box-shadow 120ms ease; }
+:root[data-style="mobai"] .life-synced-source:hover, :root[data-style="mobai"] .life-synced-source:focus-within { box-shadow: inset 0 0 0 2px rgba(235, 87, 87, 0.45); }
+:root[data-style="mobai"] .life-synced-source > header { min-height: 26px; padding: 2px 8px; border: 0 !important; background: transparent; color: var(--mb-faint); font: 400 12px/1.4 var(--mb-sans); opacity: 0; transition: opacity 120ms ease; }
+:root[data-style="mobai"] .life-synced-source:hover > header, :root[data-style="mobai"] .life-synced-source:focus-within > header { opacity: 1; }
+:root[data-style="mobai"] .life-synced-source > header span { color: #e16259; font-size: 12px; }
+:root[data-style="mobai"] .life-synced-source > header small { color: var(--mb-faint); font-size: 12px; }
+:root[data-style="mobai"] .life-synced-source .life-source-actions { border: 0; border-radius: var(--mb-r3); background: var(--mb-raised); box-shadow: var(--mb-pop); }
+:root[data-style="mobai"] .life-synced-source .life-source-actions button { border-radius: var(--mb-r2); color: var(--mb-ink); font-size: 14px; }
+:root[data-style="mobai"] .life-synced-source .life-source-actions button:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .life-synced-block { border-radius: 4px; box-shadow: inset 0 0 0 1px var(--mb-line); background: transparent; color: var(--mb-ink); }
+:root[data-style="mobai"] .life-synced-block:hover { box-shadow: inset 0 0 0 2px rgba(235, 87, 87, 0.45); }
+:root[data-style="mobai"] .life-synced-block > span { color: #e16259; }
+:root[data-style="mobai"] .life-synced-block > small { color: var(--mb-faint); font-size: 12px; }
+/* 侧边“+ ⋮⋮”手柄：灰色，悬停时灰底 */
+:root[data-style="mobai"] .life-editor .bn-side-menu { color: var(--mb-faint); }
+:root[data-style="mobai"] .life-editor .bn-side-menu .mantine-UnstyledButton-root { color: var(--mb-faint); border-radius: 4px; }
+:root[data-style="mobai"] .life-editor .bn-side-menu .mantine-UnstyledButton-root:hover { background: var(--mb-hover); color: var(--mb-muted); }
+/* BlockNote 的弹出菜单（斜杠菜单、格式工具条、链接工具条、区块菜单） */
+:root[data-style="mobai"] .bn-container .bn-suggestion-menu,
+:root[data-style="mobai"] .bn-container .bn-toolbar,
+:root[data-style="mobai"] .bn-container .bn-menu-dropdown,
+:root[data-style="mobai"] .bn-container .mantine-Menu-dropdown {
+  border: 0 !important; border-radius: var(--mb-r3) !important; background: var(--mb-raised) !important; box-shadow: var(--mb-pop) !important;
+}
+:root[data-style="mobai"] .bn-container .bn-toolbar { padding: 4px; gap: 2px; }
+:root[data-style="mobai"] .bn-container .bn-toolbar .mantine-UnstyledButton-root, :root[data-style="mobai"] .bn-container .bn-toolbar button { border-radius: 4px; color: var(--mb-ink); }
+:root[data-style="mobai"] .bn-container .bn-toolbar button:hover { background: var(--mb-hover); }
+/* 斜杠菜单：一行一项，左边 20 px 图标，右边是 Markdown 快捷写法（WP-14 放进 badge），说明文字只给读屏软件 */
+:root[data-style="mobai"] .bn-container .bn-suggestion-menu { padding: 4px; width: 324px; }
+:root[data-style="mobai"] .bn-container .bn-suggestion-menu-label { padding: 8px 10px 4px; font: 500 12px/1 var(--mb-sans); color: var(--mb-muted); }
+:root[data-style="mobai"] .bn-container .bn-suggestion-menu-item { min-height: 30px; padding: 3px 8px; gap: 8px; border-radius: var(--mb-r2); }
+:root[data-style="mobai"] .bn-container .bn-suggestion-menu-item[aria-selected="true"],
+:root[data-style="mobai"] .bn-container .bn-suggestion-menu-item:hover { background: var(--mb-hover) !important; }
+:root[data-style="mobai"] .bn-container .bn-mt-suggestion-menu-item-title { font: 400 14px/1.3 var(--mb-sans); color: var(--mb-ink); }
+:root[data-style="mobai"] .bn-container .bn-mt-suggestion-menu-item-subtitle { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+:root[data-style="mobai"] .bn-container .bn-mt-suggestion-menu-item-section[data-position="left"] {
+  width: 22px; height: 22px; min-width: 22px; padding: 0 !important; background: transparent !important; border-radius: 4px; box-shadow: none; color: var(--mb-ink);
+}
+:root[data-style="mobai"] .bn-container .bn-mt-suggestion-menu-item-section[data-position="left"] svg { width: 18px; height: 18px; }
+:root[data-style="mobai"] .bn-container .bn-mt-suggestion-menu-item-section[data-position="right"] .mantine-Badge-root {
+  height: auto; padding: 0; border: 0; background: transparent !important; color: var(--mb-faint); font: 400 12px/1 var(--mb-sans); text-transform: none;
+}

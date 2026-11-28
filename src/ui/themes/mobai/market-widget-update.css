@@ -1,0 +1,41 @@
+:root[data-style="mobai"] .market-widget-block {
+  width: 100%;
+  min-width: 0;
+}
+
+:root[data-style="mobai"] .market-widget-update {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-top: 0;
+}
+
+:root[data-style="mobai"] .market-widget-update .mb-button {
+  min-height: 22px;
+  padding: 1px 5px;
+  border: 0;
+  background: transparent;
+  color: var(--mb-muted);
+  font-size: 12px;
+}
+
+:root[data-style="mobai"] .market-widget-update .mb-button:is(:hover, :focus-visible) {
+  color: var(--mb-ink);
+  background: var(--mb-hover);
+}
+
+:root[data-style="mobai"] .market-widget-update .market-update-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border-radius: var(--mb-r2);
+}
+
+:root[data-style="mobai"] .market-widget-update .market-update-icon:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: -2px;
+}

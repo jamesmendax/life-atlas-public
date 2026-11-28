@@ -1,0 +1,49 @@
+/* 墨白：弹出层、菜单、对话框、搜索，贴近 Notion：白底（夜间深灰底），10 px 圆角，一圈极淡的线加两层柔和阴影。 */
+:root[data-style="mobai"] .ui-popover,
+:root[data-style="mobai"] .ui-menu,
+:root[data-style="mobai"] .page-actions-menu,
+:root[data-style="mobai"] .sidebar-context-menu {
+  border: 0 !important; border-radius: var(--mb-r3); background: var(--mb-raised); box-shadow: var(--mb-pop); color: var(--mb-ink); font-family: var(--mb-sans);
+}
+:root[data-style="mobai"] .ui-menu button, :root[data-style="mobai"] .page-action-row, :root[data-style="mobai"] .sidebar-context-menu button {
+  min-height: 28px; border-radius: var(--mb-r2); color: var(--mb-ink); font: 400 14px/1.2 var(--mb-sans);
+}
+:root[data-style="mobai"] .ui-menu button:hover, :root[data-style="mobai"] .page-action-row:hover, :root[data-style="mobai"] .sidebar-context-menu button:hover { background: var(--mb-hover); color: var(--mb-ink); }
+:root[data-style="mobai"] .ui-menu button svg, :root[data-style="mobai"] .page-action-row svg, :root[data-style="mobai"] .sidebar-context-menu button svg { color: var(--mb-muted); }
+:root[data-style="mobai"] .page-actions-search { border-radius: var(--mb-r2); background: var(--mb-field); box-shadow: inset 0 0 0 1px var(--mb-field-line); }
+:root[data-style="mobai"] .page-actions-footnote { color: var(--mb-faint); border-top: 1px solid var(--mb-line); font-size: 12px; }
+:root[data-style="mobai"] .ui-dialog, :root[data-style="mobai"] .new-folder-modal, :root[data-style="mobai"] .export-dialog, :root[data-style="mobai"] .page-customize-modal-v2 {
+  border: 0 !important; border-radius: var(--mb-r4); background: var(--mb-raised); box-shadow: var(--mb-dlg); color: var(--mb-ink);
+}
+:root[data-style="mobai"] .modal-backdrop, :root[data-style="mobai"] .search-backdrop, :root[data-style="mobai"] .export-dialog-backdrop,
+:root[data-style="mobai"] .page-customize-backdrop, :root[data-style="mobai"] .db-dialog-shade { background: var(--mb-scrim) !important; backdrop-filter: none !important; }
+:root[data-style="mobai"] .modal-header h2, :root[data-style="mobai"] .ui-dialog h2, :root[data-style="mobai"] .export-dialog h2 { font: 600 16px/1.3 var(--mb-sans); letter-spacing: 0; color: var(--mb-ink); }
+
+/* 搜索对话框：大输入框，结果一行一条，选中行灰底 */
+:root[data-style="mobai"] .global-search-dialog {
+  border: 0 !important; border-radius: var(--mb-r4); background: var(--mb-raised); box-shadow: var(--mb-dlg); color: var(--mb-ink);
+}
+:root[data-style="mobai"] .global-search-dialog input {
+  font: 400 17px/1.3 var(--mb-sans) !important; color: var(--mb-ink); background: transparent; border: 0 !important; box-shadow: none !important; outline: 0;
+}
+:root[data-style="mobai"] .global-search-dialog input::placeholder { color: var(--mb-faint); }
+:root[data-style="mobai"] .global-search-dialog .search-result-row { border-radius: var(--mb-r2); color: var(--mb-ink); }
+:root[data-style="mobai"] .global-search-dialog .search-result-row:hover,
+:root[data-style="mobai"] .global-search-dialog .search-result-row.is-active,
+:root[data-style="mobai"] .global-search-dialog .search-result-row[aria-selected="true"] { background: var(--mb-hover); box-shadow: none; }
+:root[data-style="mobai"] .global-search-dialog mark { background: none; color: inherit; font-weight: 600; text-decoration: none; }
+:root[data-style="mobai"] .global-search-dialog .search-preview { background: var(--mb-paper-2); border-left: 1px solid var(--mb-line); }
+
+/* WP-03 的产品对话框（DialogHost）：确认按钮蓝色实心，取消按钮细线框，危险操作红色 */
+:root[data-style="mobai"] [data-la-dialog] { padding: 20px 20px 16px; font-family: var(--mb-sans); }
+:root[data-style="mobai"] [data-la-dialog] h2, :root[data-style="mobai"] [data-la-dialog] .ui-dialog-title { font: 600 16px/1.3 var(--mb-sans); letter-spacing: 0; color: var(--mb-ink); }
+:root[data-style="mobai"] [data-la-dialog] p { color: var(--mb-muted); font: 400 14px/1.5 var(--mb-sans); }
+:root[data-style="mobai"] [data-la-dialog] input:not([type="checkbox"]):not([type="radio"]) { width: 100%; height: 32px; }
+:root[data-style="mobai"] [data-la-dialog] [role="alert"] { color: var(--mb-danger); font-size: 12px; }
+:root[data-style="mobai"] [data-la-dialog-confirm], :root[data-style="mobai"] [data-la-dialog-cancel] { height: 32px; padding: 0 12px; border: 0; border-radius: var(--mb-r2); font: 500 14px/1 var(--mb-sans); cursor: pointer; }
+:root[data-style="mobai"] [data-la-dialog-confirm] { background: var(--mb-accent); color: #fff; }
+:root[data-style="mobai"] [data-la-dialog-confirm]:hover { background: var(--mb-accent-hover); }
+:root[data-style="mobai"] [data-la-dialog-confirm]:disabled { opacity: 0.4; cursor: not-allowed; }
+:root[data-style="mobai"] [data-la-dialog-confirm].is-danger { background: var(--mb-danger); color: #fff; }
+:root[data-style="mobai"] [data-la-dialog-cancel] { background: transparent; color: var(--mb-ink); box-shadow: inset 0 0 0 1px var(--mb-line-2); }
+:root[data-style="mobai"] [data-la-dialog-cancel]:hover { background: var(--mb-hover); }

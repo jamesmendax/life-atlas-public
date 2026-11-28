@@ -1,0 +1,23 @@
+/* Node selection is also used for copy, delete and drag. Its feedback belongs
+   in the gutter, where it doesn't cover an image, table or widget. */
+:root[data-style="mobai"] .life-editor .bn-editor .ProseMirror-selectednode { outline: none; }
+:root[data-style="mobai"] .life-editor .bn-editor :is(
+  .bn-block-content.ProseMirror-selectednode > *,
+  .ProseMirror-selectednode > .bn-block-content > *,
+  .bn-block-content .ProseMirror-selectednode,
+  .bn-inline-content .ProseMirror-selectednode,
+  li.ProseMirror-selectednode
+)::after { content: none; background: transparent; box-shadow: none; border: 0; }
+:root[data-style="mobai"] .life-editor .bn-editor [data-file-block] :is(img, video, canvas)::selection { background: transparent; }
+:root[data-style="mobai"] .life-editor .bn-editor :is(.life-selected-atom, .life-selected-range) { position: relative; }
+:root[data-style="mobai"] .life-editor .bn-editor.ProseMirror-focused[data-selection-input="keyboard"] .life-selected-atom::after,
+:root[data-style="mobai"] .life-editor .bn-editor.ProseMirror-focused .life-selected-range::after {
+  content: ""; position: absolute; inset-block: 3px; inset-inline-start: -6px; width: 2px;
+  border-radius: 2px; background: var(--mb-muted); pointer-events: none;
+}
+:root[data-style="mobai"] .life-editor .bn-editor.ProseMirror-focused[data-selection-input="keyboard"] .bn-inline-content .ProseMirror-selectednode {
+  text-decoration: underline; text-decoration-color: var(--mb-muted); text-underline-offset: 3px;
+}
+:root[data-style="mobai"] .life-editor .bn-editor :is(td, th).selectedCell::after {
+  background: var(--mb-select); box-shadow: none;
+}

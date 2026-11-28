@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-__SCRIPT_HASH__'; style-src 'sha256-__STYLE_HASH__'; img-src data:; base-uri 'none'; form-action 'none'">
+    <!--selection-style-->
+    <title>框选屏幕</title>
+  </head>
+  <body>
+    <main id="capture" aria-label="框选要识别的屏幕区域">
+      <img id="frame" alt="" draggable="false">
+      <div id="shade"></div>
+      <div id="selection" hidden></div>
+      <div id="instructions">
+        <span>拖动框选需要识别的区域</span>
+        <button id="cancel" type="button">取消 <kbd>Esc</kbd></button>
+      </div>
+    </main>
+    <!--selection-script-->
+  </body>
+</html>

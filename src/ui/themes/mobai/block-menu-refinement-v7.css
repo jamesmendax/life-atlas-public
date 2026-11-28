@@ -1,0 +1,34 @@
+:root[data-style="mobai"] .life-block-menu .life-block-menu-search {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+:root[data-style="mobai"] .life-block-menu .life-block-menu-search input {
+  min-height: 30px;
+  height: 30px;
+  padding: 4px 8px;
+  border: 1px solid var(--mb-field-line);
+  border-radius: 4px;
+  color: var(--mb-ink);
+  background: var(--mb-field);
+  font: inherit;
+}
+
+:root[data-style="mobai"] .life-block-menu .life-block-menu-search input:focus {
+  box-shadow: var(--mb-focus);
+}
+
+:root[data-style="mobai"] .life-block-menu :is(kbd, .life-block-menu-empty) {
+  color: var(--mb-muted);
+  font: 400 11px/1.4 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .life-block-menu kbd {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+:root[data-style="mobai"] .life-block-menu [data-menu-active] {
+  background: var(--mb-hover);
+}

@@ -1,0 +1,48 @@
+:root[data-style="mobai"] .page-document-secondary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  min-height: 28px;
+  margin-top: 2px;
+}
+
+:root[data-style="mobai"] .page-document-secondary .page-document-meta,
+:root[data-style="mobai"] .page-document-secondary .page-path,
+:root[data-style="mobai"] .page-document-secondary .page-workspace-tools {
+  margin: 0;
+}
+
+:root[data-style="mobai"] .page-document-secondary .page-document-meta {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+:root[data-style="mobai"] .page-document-secondary .page-path {
+  max-width: 140px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+:root[data-style="mobai"] .page-document-secondary .page-workspace-tools {
+  position: static;
+  margin-left: auto;
+}
+
+:root[data-style="mobai"] .page-document-secondary .page-workspace-panel {
+  position: absolute;
+  z-index: 130;
+  top: 100%;
+  right: 0;
+  left: 0;
+}
+
+:root[data-style="mobai"] .page-document-secondary:has(.page-workspace-panel) .page-workspace-tools {
+  opacity: 1;
+}
+
+:root[data-style="mobai"] .page-document.is-focus-reading .page-document-secondary {
+  display: none;
+}

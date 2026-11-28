@@ -1,0 +1,35 @@
+.db-occurrence-sources ul {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0;
+}
+
+.db-occurrence-sources li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.db-occurrence-sources li > :first-child {
+  min-width: 0;
+  flex: 1;
+}
+
+.db-occurrence-sources [aria-current="true"] {
+  font-weight: 650;
+}
+
+.db-occurrence-link {
+  display: grid;
+  gap: 10px;
+  padding: 8px;
+}
+
+.db-occurrence-link label {
+  display: grid;
+  gap: 5px;
+}
+
+.db-occurrence-link select {
+  width: 100%;
+}

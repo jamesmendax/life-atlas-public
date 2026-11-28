@@ -1,0 +1,79 @@
+name: Marketplace Submission
+description: Submit an original or redistributable page template, widget, or package update.
+title: "[Market Submission] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Prepare one preview PNG using public demo data and one source `.zip` archive (or a public pinned commit URL). After submitting, follow review notes and publishing updates in this issue thread.
+
+        For updates to an existing item, include its package ID, changelog, and backward compatibility notes. Maintainers test and sign approved packages before listing. [Submission & Review Guide](https://github.com/jamesmendax/life-atlas-public/blob/main/market/CONTRIBUTING.md)
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Package Type
+      options:
+        - Page template
+        - Interactive widget
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Name, Purpose & Try-Out Steps
+      description: Describe who this is for, how to interact with it, and the expected result.
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Author Attribution
+      description: Public author name or handle displayed on the marketplace listing.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Package Version & Tested Life Atlas Version
+      placeholder: Package 1.0.0, tested on Life Atlas 1.7.0 (or request maintainer testing)
+    validations:
+      required: true
+  - type: upload
+    id: files
+    attributes:
+      label: Source Archive (.zip)
+      description: Attach a source `.zip` archive (max 25 MB) with build instructions, dist files, and asset licenses. Alternatively, provide a pinned commit URL below.
+    validations:
+      accept: ".zip"
+  - type: input
+    id: source_commit
+    attributes:
+      label: Pinned Source Commit URL
+      description: Optional if a `.zip` archive is uploaded above. Must be a public link pointing to a specific commit SHA.
+      placeholder: https://github.com/owner/repository/tree/commit-sha
+  - type: upload
+    id: preview
+    attributes:
+      label: Preview Screenshot (.png)
+      description: Attach a clear screenshot (max 2 MiB) showing the item in action.
+    validations:
+      required: true
+      accept: ".png"
+  - type: textarea
+    id: rights
+    attributes:
+      label: Licensing & Third-Party Assets
+      description: List authors, licenses, and source URLs for bundled code, copy, illustrations, or fonts. Specify if entirely original and note your chosen license.
+    validations:
+      required: true
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have attached a source ZIP or provided a public pinned commit URL.
+          required: true
+        - label: I have the rights to submit this work under the stated license and allow Life Atlas to distribute signed `.atlaspack` packages and previews through the public marketplace.
+          required: true
+        - label: I verified all attachments and screenshots contain only safe public demo data.
+          required: true

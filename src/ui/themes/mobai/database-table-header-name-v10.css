@@ -1,0 +1,4 @@
+:root[data-style="mobai"] .db-table-header-name { min-width: 0; flex: 1; }
+:root[data-style="mobai"] .db-table-header-name input { width: 100%; min-width: 0; padding: 5px 7px; border: 1px solid var(--mb-field-line); border-radius: 6px; background: var(--mb-field); color: var(--mb-ink); font: inherit; }
+:root[data-style="mobai"] .db-table-header-name input:focus { outline: none; box-shadow: var(--mb-focus); }
+:root[data-style="mobai"] .db-table-header-name .db-field-error { display: block; margin-top: 4px; }

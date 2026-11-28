@@ -1,0 +1,32 @@
+/* Atomic database documents have a valid initial NodeSelection. Its NodeView
+   can mount before the editor receives focus, especially in production React.
+   Before the user engages the editor or block handle, it is a passive cursor.
+   After engagement retain feedback when focus moves into a block menu. */
+:root[data-style="mobai"] .life-editor:not(.has-editor-selection) .bn-editor:not(.ProseMirror-focused) .node-databaseView.ProseMirror-selectednode > .bn-block-content > .database-view::after {
+  content: none;
+}
+/* Indicate the focused title, property, or date within the record. */
+:root[data-style="mobai"] :is(.db-gallery-open, .db-board-card-open, .db-list-row, .db-calendar-cell):focus-visible,
+:root[data-style="mobai"] .db-table td[data-property-id] :is(.db-title-cell, .db-table-number-read, summary):focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+:root[data-style="mobai"] .db-gallery-open:focus-visible > .db-gallery-title,
+:root[data-style="mobai"] :is(.db-board-card-open, .db-list-row):focus-visible,
+:root[data-style="mobai"] .db-table td[data-property-id]:is(:focus-visible, :has(:is(.db-title-cell, .db-table-number-read, summary):focus-visible)) { position: relative; }
+:root[data-style="mobai"] .db-gallery-open:focus-visible > .db-gallery-title::before,
+:root[data-style="mobai"] :is(.db-board-card-open, .db-list-row):focus-visible::before,
+:root[data-style="mobai"] .db-table td[data-property-id]:is(:focus-visible, :has(:is(.db-title-cell, .db-table-number-read, summary):focus-visible))::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 2px;
+  block-size: min(16px, 70%);
+  transform: translateY(-50%);
+  border-inline-start: 3px solid var(--mb-muted);
+  pointer-events: none;
+}
+:root[data-style="mobai"] .db-calendar-cell:focus-visible > header time {
+  outline: 2px solid var(--mb-muted);
+  outline-offset: 2px;
+}

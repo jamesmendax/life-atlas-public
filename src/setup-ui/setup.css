@@ -1,0 +1,119 @@
+:root {
+  color-scheme: light dark;
+  --mb-sans: "Segoe UI Variable Text", "Segoe UI", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Noto Sans SC Variable", "Noto Sans SC", "Microsoft YaHei UI", "PingFang SC", sans-serif, "Segoe UI Emoji", "Apple Color Emoji";
+  --mb-serif: Georgia, "Noto Serif SC Variable", "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --mb-mono: "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, "Noto Sans SC Variable", monospace;
+  --mb-numeral: var(--mb-sans); --mb-r1: 3px; --mb-r2: 6px; --mb-r3: 10px; --mb-r4: 12px;
+  --mb-paper: #ffffff; --mb-paper-2: #f7f6f3; --mb-side: #f7f7f5; --mb-raised: #ffffff;
+  --mb-hover: rgba(55, 53, 47, 0.06); --mb-select: rgba(55, 53, 47, 0.08); --mb-hover-soft: rgba(55, 53, 47, 0.03);
+  --mb-ink: #37352f; --mb-ink-2: #37352f; --mb-muted: #787774; --mb-faint: #a19f9a; --mb-side-text: #5f5e5b;
+  --mb-line: #e9e9e7; --mb-line-2: #dfdedb; --mb-rule: #37352f;
+  --mb-accent: #2383e2; --mb-accent-hover: #0077d4; --mb-accent-rgb: 35, 131, 226; --mb-accent-soft: rgba(35, 131, 226, 0.12); --mb-accent-text: #2383e2;
+  --mb-danger: #eb5757; --mb-today: #eb5757; --mb-ink-rgb: 55, 53, 47;
+  --mb-field: rgba(242, 241, 238, 0.6); --mb-field-line: rgba(15, 15, 15, 0.1);
+  --mb-focus: inset 0 0 0 1px rgba(35, 131, 226, 0.57), 0 0 0 2px rgba(35, 131, 226, 0.35);
+  --mb-scrim: rgba(15, 15, 15, 0.4);
+  --mb-pop: 0 0 0 1px rgba(15, 15, 15, 0.05), 0 3px 6px rgba(15, 15, 15, 0.1), 0 9px 24px rgba(15, 15, 15, 0.2);
+  --mb-dlg: 0 0 0 1px rgba(15, 15, 15, 0.05), 0 5px 10px rgba(15, 15, 15, 0.1), 0 15px 40px rgba(15, 15, 15, 0.2);
+  --mb-card: 0 0 0 1px rgba(15, 15, 15, 0.1), 0 2px 4px rgba(15, 15, 15, 0.1);
+  --mb-select-text: rgba(35, 131, 226, 0.28); --mb-tooltip-bg: #0f0f0f; --mb-tooltip-text: rgba(255, 255, 255, 0.9);
+  --mb-code-text: #eb5757; --mb-code-bg: rgba(135, 131, 120, 0.15);
+  --mb-u-gray: #787774; --mb-u-gray-bg: #f1f1ef; --mb-tag-gray: #e3e2e0; --mb-tag-gray-text: #32302c;
+  --mb-u-brown: #9f6b53; --mb-u-brown-bg: #f4eeee; --mb-tag-brown: #eee0da; --mb-tag-brown-text: #442a1e;
+  --mb-u-orange: #d9730d; --mb-u-orange-bg: #fbecdd; --mb-tag-orange: #fadec9; --mb-tag-orange-text: #49290e;
+  --mb-u-yellow: #cb912f; --mb-u-yellow-bg: #fbf3db; --mb-tag-yellow: #fdecc8; --mb-tag-yellow-text: #402c1b;
+  --mb-u-green: #448361; --mb-u-green-bg: #edf3ec; --mb-tag-green: #dbeddb; --mb-tag-green-text: #1c3829;
+  --mb-u-blue: #337ea9; --mb-u-blue-bg: #e7f3f8; --mb-tag-blue: #d3e5ef; --mb-tag-blue-text: #183347;
+  --mb-u-purple: #9065b0; --mb-u-purple-bg: #f4f0f7; --mb-tag-purple: #e8deee; --mb-tag-purple-text: #412454;
+  --mb-u-pink: #c14c8a; --mb-u-pink-bg: #f9eef3; --mb-tag-pink: #f5e0e9; --mb-tag-pink-text: #4c2337;
+  --mb-u-red: #d44c47; --mb-u-red-bg: #fdebec; --mb-tag-red: #ffe2dd; --mb-tag-red-text: #5d1715;
+  --mb-tag-default: rgba(227, 226, 224, 0.5); --mb-tag-default-text: #32302c;
+}
+:root[lang^="ja"] {
+  --mb-sans: "Yu Gothic UI", "Meiryo UI", "Segoe UI Variable Text", "Segoe UI", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Noto Sans SC Variable", sans-serif, "Segoe UI Emoji", "Apple Color Emoji";
+  --mb-serif: "Yu Mincho", Georgia, "Noto Serif SC Variable", serif;
+}
+:root[lang^="en"] {
+  --mb-sans: "Segoe UI Variable Text", "Segoe UI", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Noto Sans SC Variable", sans-serif, "Segoe UI Emoji", "Apple Color Emoji";
+}
+@media (prefers-color-scheme: dark) { :root {
+  --mb-paper: #191919; --mb-paper-2: #202020; --mb-side: #202020; --mb-raised: #252525;
+  --mb-hover: rgba(255, 255, 255, 0.055); --mb-select: rgba(255, 255, 255, 0.08); --mb-hover-soft: rgba(255, 255, 255, 0.03);
+  --mb-ink: #d4d4d4; --mb-ink-2: #d4d4d4; --mb-muted: #9b9b9b; --mb-faint: #6f6f6f; --mb-side-text: #9b9b9b;
+  --mb-line: #2f2f2f; --mb-line-2: #3a3a3a; --mb-rule: #d4d4d4;
+  --mb-accent: #2383e2; --mb-accent-hover: #3b91e6; --mb-accent-rgb: 35, 131, 226; --mb-accent-soft: rgba(35, 131, 226, 0.18); --mb-accent-text: #529cca;
+  --mb-danger: #eb5757; --mb-today: #eb5757; --mb-ink-rgb: 255, 255, 255;
+  --mb-field: rgba(255, 255, 255, 0.055); --mb-field-line: rgba(255, 255, 255, 0.094);
+  --mb-focus: inset 0 0 0 1px rgba(35, 131, 226, 0.57), 0 0 0 2px rgba(35, 131, 226, 0.35); --mb-scrim: rgba(0, 0, 0, 0.6);
+  --mb-pop: 0 0 0 1px rgba(255, 255, 255, 0.094), 0 3px 6px rgba(0, 0, 0, 0.2), 0 9px 24px rgba(0, 0, 0, 0.4);
+  --mb-dlg: 0 0 0 1px rgba(255, 255, 255, 0.094), 0 5px 10px rgba(0, 0, 0, 0.2), 0 15px 40px rgba(0, 0, 0, 0.4);
+  --mb-card: 0 0 0 1px rgba(255, 255, 255, 0.094), 0 2px 4px rgba(0, 0, 0, 0.2);
+  --mb-select-text: rgba(35, 131, 226, 0.35); --mb-tooltip-bg: #0f0f0f; --mb-tooltip-text: rgba(255, 255, 255, 0.9); --mb-code-text: #ff7369; --mb-code-bg: rgba(135, 131, 120, 0.15);
+  --mb-u-gray: #9b9b9b; --mb-u-gray-bg: #2f2f2f; --mb-tag-gray: #5a5a5a; --mb-tag-gray-text: #e3e3e3;
+  --mb-u-brown: #ba856f; --mb-u-brown-bg: #4a3228; --mb-tag-brown: #603b2c; --mb-tag-brown-text: #e3e3e3;
+  --mb-u-orange: #c77d48; --mb-u-orange-bg: #5c3b23; --mb-tag-orange: #854c1d; --mb-tag-orange-text: #e3e3e3;
+  --mb-u-yellow: #ca9849; --mb-u-yellow-bg: #564328; --mb-tag-yellow: #89632a; --mb-tag-yellow-text: #e3e3e3;
+  --mb-u-green: #529e72; --mb-u-green-bg: #243d30; --mb-tag-green: #2b593f; --mb-tag-green-text: #e3e3e3;
+  --mb-u-blue: #379ad3; --mb-u-blue-bg: #143a4e; --mb-tag-blue: #28456c; --mb-tag-blue-text: #e3e3e3;
+  --mb-u-purple: #9d68d3; --mb-u-purple-bg: #3c2d49; --mb-tag-purple: #492f64; --mb-tag-purple-text: #e3e3e3;
+  --mb-u-pink: #d15796; --mb-u-pink-bg: #4e2c3c; --mb-tag-pink: #69314c; --mb-tag-pink-text: #e3e3e3;
+  --mb-u-red: #df5452; --mb-u-red-bg: #522e2a; --mb-tag-red: #6e3630; --mb-tag-red-text: #e3e3e3;
+  --mb-tag-default: rgba(90, 90, 90, 0.5); --mb-tag-default-text: #e3e3e3;
+} }
+* { box-sizing: border-box; }
+html, body, #root { width: 100%; height: 100%; margin: 0; }
+body { background: var(--mb-paper); color: var(--mb-ink); font: 14px/1.5 var(--mb-sans); }
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .45; }
+button:focus-visible, input:focus-visible { outline: 0; box-shadow: var(--mb-focus); }
+.wizard { height: 100vh; display: grid; grid-template-columns: 280px minmax(0, 1fr); }
+.wiz-side { padding: 36px 28px 24px; background: var(--mb-side); display: flex; flex-direction: column; }
+.wiz-brand-mark { width: 40px; height: 40px; background: var(--mb-ink); color: var(--mb-paper); border-radius: 7px; display: grid; place-items: center; font-size: 21px; font-weight: 650; }
+.wiz-side h1 { margin: 18px 0 5px; font-size: 23px; letter-spacing: -.4px; }
+.wiz-side > p { color: var(--mb-muted); margin: 0; font-size: 13px; line-height: 1.8; }
+.wiz-steps { list-style: none; margin: 28px 0; padding: 0; }
+.wiz-steps li { display: flex; align-items: center; gap: 10px; margin: 3px 0; padding: 7px 8px; color: var(--mb-muted); font-size: 13px; border-radius: 5px; }
+.wiz-steps li > span { display: grid; place-items: center; height: 20px; width: 20px; border: 1px solid var(--mb-line-2); border-radius: 50%; font-size: 11px; }
+.wiz-steps .is-current { color: var(--mb-ink); background: var(--mb-select); }
+.wiz-steps .is-current > span, .wiz-steps .is-done > span { background: var(--mb-accent); color: #fff; border-color: var(--mb-accent); }
+.wiz-local { margin-top: auto; color: var(--mb-muted); display: flex; gap: 7px; align-items: center; font-size: 11px; }
+.wiz-lang { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--mb-muted); }
+.wiz-lang select { width: 100%; padding: 6px 8px; border-radius: 5px; border: 1px solid var(--mb-field-line); background: var(--mb-paper); color: var(--mb-ink); font: inherit; font-size: 12px; }
+.wiz-main { padding: 42px 48px 26px; display: flex; flex-direction: column; min-width: 0; overflow: auto; }
+.wiz-content { flex: 1; }
+.wiz-main h2 { font-size: 26px; line-height: 1.25; letter-spacing: -.7px; margin: 0 0 9px; font-weight: 650; }
+.wiz-description { margin: 0 0 24px; color: var(--mb-muted); font-size: 13px; line-height: 1.75; }
+.wiz-choice { display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px; border: 1px solid var(--mb-line-2); border-radius: 8px; background: transparent; color: var(--mb-ink); margin: 10px 0; text-align: left; }
+.wiz-choice.is-selected { border-color: var(--mb-accent); background: var(--mb-accent-soft); box-shadow: inset 0 0 0 1px var(--mb-accent); }
+.wiz-choice > span:nth-child(2) { flex: 1; min-width: 0; }
+.wiz-choice strong, .wiz-choice small { display: block; }
+.wiz-choice strong { font-size: 13px; font-weight: 550; }
+.wiz-choice small { margin-top: 4px; font-size: 12px; color: var(--mb-muted); }
+.wiz-radio { border: 1px solid var(--mb-line-2); border-radius: 50%; width: 15px; height: 15px; flex: 0 0 15px; }
+.is-selected .wiz-radio { border: 5px solid var(--mb-accent); background: #fff; }
+.wiz-path { font-family: var(--mb-mono); overflow-wrap: anywhere; }
+.wiz-warn { display: flex; align-items: flex-start; gap: 9px; padding: 12px 14px; margin-top: 16px; border-radius: 6px; background: var(--mb-u-yellow-bg); color: var(--mb-tag-yellow-text); font-size: 12px; line-height: 1.7; }
+.wiz-warn svg { flex: 0 0 16px; color: var(--mb-u-yellow); margin-top: 2px; }
+.wiz-error { color: var(--mb-danger); background: var(--mb-u-red-bg); padding: 10px 12px; border-radius: 5px; margin-bottom: 18px; font-size: 13px; overflow-wrap: anywhere; }
+.wiz-validation { color: var(--mb-muted); font-size: 12px; margin: 6px 0; }
+.wiz-check { display: flex; align-items: center; gap: 7px; margin: 12px 0; font-size: 12px; }
+.wiz-check input { accent-color: var(--mb-accent); }
+.wiz-footer { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-top: 30px; }
+.wiz-footer > div, .wiz-password-dialog footer { display: flex; gap: 8px; justify-content: flex-end; }
+.btn-line, .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--mb-field-line); border-radius: 5px; padding: 6px 12px; min-height: 32px; font-size: 13px; background: var(--mb-paper); color: var(--mb-ink); }
+.btn-line:hover { background: var(--mb-hover); }
+.btn-primary { background: var(--mb-accent); border-color: var(--mb-accent); color: #fff; font-weight: 600; }
+.btn-primary:hover { background: var(--mb-accent-hover); }
+.wiz-summary { margin: 24px 0; font-size: 13px; }
+.wiz-summary > div { display: grid; grid-template-columns: 80px 1fr; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--mb-line); }
+.wiz-summary dt { color: var(--mb-muted); }
+.wiz-summary dd { margin: 0; line-height: 1.7; }
+.wiz-complete-mark { display: grid; place-items: center; width: 54px; height: 54px; background: var(--mb-u-green-bg); color: var(--mb-u-green); border-radius: 50%; margin-bottom: 22px; }
+.wiz-password-backdrop { position: fixed; inset: 0; display: grid; place-items: center; background: var(--mb-scrim); }
+.wiz-password-dialog { width: 390px; padding: 26px; background: var(--mb-raised); border-radius: 10px; box-shadow: var(--mb-dlg); }
+.wiz-password-dialog h2 { margin: 0; font-size: 20px; }
+.wiz-password-dialog p { font-size: 13px; color: var(--mb-muted); }
+.wiz-password-dialog label { display: flex; flex-direction: column; gap: 7px; margin: 18px 0; }
+.wiz-password-dialog input { color: var(--mb-ink); background: var(--mb-field); border: 1px solid var(--mb-field-line); border-radius: 4px; padding: 7px 9px; }
+@media (max-width: 760px) { .wizard { grid-template-columns: 210px minmax(0, 1fr); } .wiz-side { padding: 28px 18px; } .wiz-main { padding: 32px 26px 22px; } }

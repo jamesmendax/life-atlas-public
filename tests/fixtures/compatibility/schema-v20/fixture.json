@@ -1,0 +1,192 @@
+{
+  "fixtureVersion": 1,
+  "synthetic": true,
+  "source": {
+    "release": "1.6.0 format candidate",
+    "appVersion": "1.6.0",
+    "appAsarSha256": "50023b55eba8653aa3fffe915375703266038e6a11294bade6b14062f13581c8",
+    "packagedImplementation": true,
+    "fixtureClock": "2026-11-27T10:30:00.000Z"
+  },
+  "formats": {
+    "workspaceSchemaVersion": 20,
+    "backupManifestVersion": 1,
+    "encryptedContainer": {
+      "formatVersion": 1,
+      "magicHex": "4c41454e43310000",
+      "cipher": "A256GCM-STREAM",
+      "kdf": {
+        "alg": "argon2id",
+        "version": 19,
+        "memoryKiB": 131072,
+        "iterations": 3,
+        "parallelism": 1
+      }
+    },
+    "vault": {
+      "formatVersion": 1,
+      "padding": 512,
+      "kdf": {
+        "alg": "argon2id",
+        "version": 19,
+        "memoryKiB": 131072,
+        "iterations": 3,
+        "parallelism": 1
+      }
+    }
+  },
+  "credentials": {
+    "masterPassword": "V160-SYNTHETIC-MASTER-portable!2026",
+    "recoveryKey": "LA1-HKTCK-RZ6BA-7JT2J-HQM7G-G84D0-251WZ-4BQP5-JMW6A-2A8C1-2ZPYN-C7AA8",
+    "backupPassword": "V160-SYNTHETIC-ARCHIVE-portable!2026"
+  },
+  "expected": {
+    "workspaceId": "schema20-synthetic-workspace",
+    "schemaVersion": 20,
+    "page": {
+      "id": "v160-page",
+      "title": "Schema 20 synthetic page",
+      "paragraphId": "v160-paragraph",
+      "paragraphText": "Schema 20 synthetic paragraph 001"
+    },
+    "database": {
+      "sourceId": "v160-source",
+      "viewId": "v160-view",
+      "itemId": "v160-record",
+      "recordPageId": "v160-record-page",
+      "title": "Schema 20 synthetic database",
+      "recordTitle": "Schema 20 synthetic record"
+    },
+    "workspacePreferences": {
+      "theme": "dark"
+    },
+    "attachments": [
+      {
+        "id": "v160-live-file",
+        "assetId": "14e9b48dc0d91fe1b98daa2a574cd5fda4070f00f54ea251f7c60fb7a75f3dc5",
+        "sha256": "14e9b48dc0d91fe1b98daa2a574cd5fda4070f00f54ea251f7c60fb7a75f3dc5",
+        "size": 29,
+        "name": "v160-live.bin",
+        "mime": "application/octet-stream",
+        "base64": "AIn/ClN5bnRoZXRpYyBsaXZlIGF0dGFjaG1lbnQ="
+      },
+      {
+        "id": "v160-history-file",
+        "assetId": "644ccd4412d6bf17fffeed2b9065aed732a70468622faf24b4f8b1406b1f66e7",
+        "sha256": "644ccd4412d6bf17fffeed2b9065aed732a70468622faf24b4f8b1406b1f66e7",
+        "size": 54,
+        "name": "v160-history-only.bin",
+        "mime": "application/octet-stream",
+        "base64": "AIn/ClN5bnRoZXRpYyBhdHRhY2htZW50IGhlbGQgb25seSBieSBkYXRhYmFzZSBoaXN0b3J5"
+      }
+    ],
+    "vault": {
+      "itemId": "vi_b17bcb5110fbe4beaf2da8fc4fb37231",
+      "title": "Schema 20 synthetic vault item",
+      "secretFieldId": "f_619884c4",
+      "secretValue": "synthetic-schema20-vault-secret-01",
+      "requiredSettings": {
+        "autoLockMinutes": 15,
+        "clipboardClearSeconds": 60,
+        "lockOnMinimize": true,
+        "verifyBeforeReveal": false
+      }
+    },
+    "productV20": {
+      "archive": {
+        "pageId": "v160-archived-page",
+        "archivedAt": "2026-11-27T10:29:00.000Z",
+        "body": "Synthetic archived page remains readable"
+      },
+      "occurrence": {
+        "pageId": "v160-owner-page",
+        "blockId": "v160-owner-db-block",
+        "sourceIds": [
+          "v160-source",
+          "v160-secondary"
+        ],
+        "viewIds": [
+          "v160-view",
+          "v160-secondary-view"
+        ]
+      },
+      "record": {
+        "itemId": "v160-record",
+        "pageId": "v160-record-page",
+        "parentItemId": "v160-predecessor",
+        "dependencyIds": [
+          "v160-predecessor"
+        ],
+        "body": "Synthetic record page body at export"
+      },
+      "layout": {
+        "mode": "tabs",
+        "pinnedPropertyIds": [
+          "starts"
+        ],
+        "sections": [
+          {
+            "id": "v160-layout-section",
+            "name": "Timing",
+            "propertyIds": [
+              "ends"
+            ]
+          }
+        ],
+        "views": [
+          {
+            "id": "v160-layout-view",
+            "name": "Related records",
+            "sourceId": "v160-secondary",
+            "viewId": "v160-secondary-view"
+          }
+        ]
+      },
+      "dependencyConfig": {
+        "datePropertyId": "starts",
+        "mode": "preserve-gap",
+        "skipWeekends": true
+      },
+      "history": {
+        "id": "db-version-v160-fixture-1",
+        "sourceId": "v160-source",
+        "createdAt": "2026-11-27T10:20:00.000Z",
+        "reason": "manual",
+        "signature": "1788:64bf5f35",
+        "propertyId": "v160-history-files",
+        "itemId": "v160-record",
+        "attachment": {
+          "id": "v160-history-file",
+          "assetId": "644ccd4412d6bf17fffeed2b9065aed732a70468622faf24b4f8b1406b1f66e7",
+          "sha256": "644ccd4412d6bf17fffeed2b9065aed732a70468622faf24b4f8b1406b1f66e7",
+          "size": 54,
+          "name": "v160-history-only.bin",
+          "mime": "application/octet-stream",
+          "base64": "AIn/ClN5bnRoZXRpYyBhdHRhY2htZW50IGhlbGQgb25seSBieSBkYXRhYmFzZSBoaXN0b3J5"
+        }
+      }
+    }
+  },
+  "verification": {
+    "generatedByPackagedBackupService": true,
+    "outerEncryptedBackupOpenedByPackagedReader": true,
+    "originalMasterPasswordOpenedVault": true
+  },
+  "files": {
+    "backupPlain": {
+      "file": "complete.lifeatlas",
+      "sha256": "0d53c06d0c87e929c47ef309b940e7e094354efac2e7cee6519cedc4c8acedf1",
+      "bytes": 9552
+    },
+    "backupEncrypted": {
+      "file": "complete-encrypted.lifeatlas",
+      "sha256": "0d0ddcaf78fe97b77a15cad8a6bed62fff8b6d7d8d759db956a10a59ca43a7a3",
+      "bytes": 9839
+    },
+    "liveProfile": {
+      "file": "live-profile.zip",
+      "sha256": "601be0dae28ad4c442af3ce9b3aa818a65028d405a0a6825569c0ea8aa5d0238",
+      "bytes": 6002
+    }
+  }
+}

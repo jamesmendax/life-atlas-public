@@ -1,0 +1,20 @@
+.db-action-trigger {
+  border: 1px solid var(--mb-border, #aaa6);
+  background: var(--mb-surface, transparent);
+  color: inherit;
+  border-radius: 5px;
+  padding: 3px 9px;
+  font: inherit;
+  cursor: pointer;
+}
+.db-action-trigger:disabled { opacity: .55; cursor: default; }
+.db-action-trigger:not(:disabled):hover { background: var(--mb-hover, #8882); }
+.db-action-cell, .life-action-settings, .life-action-settings label { display: grid; gap: 4px; }
+.db-action-cell { justify-items: start; }
+.life-action-controls, .db-action-default { display: flex; align-items: center; gap: 8px; }
+.life-action-controls small, .life-action-config, .db-action-cell small { color: var(--mb-muted, #777); }
+.life-action-block { width: 100%; padding: 3px 0; }
+.life-action-config { border: 0; background: transparent; font: inherit; cursor: pointer; }
+.life-action-settings { max-width: 28rem; margin-top: 8px; gap: 8px; }
+.life-action-settings textarea, .life-action-settings input { font: inherit; color: inherit; }
+.db-action-fields { min-width: 0; }

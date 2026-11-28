@@ -1,0 +1,11 @@
+:root[data-style="mobai"] .db-title-control { display: flex; align-items: center; gap: 3px; min-width: 0; min-height: 33px; }
+:root[data-style="mobai"] .db-title-control .db-title-cell { flex: 1 1 auto; min-width: 0; width: auto; height: auto; min-height: 33px; padding: 6px 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+:root[data-style="mobai"] .db-wrap-cell .db-title-control .db-title-cell { white-space: normal; overflow-wrap: anywhere; }
+:root[data-style="mobai"] .db-title-control .db-title-cell:hover { background: transparent; }
+:root[data-style="mobai"] .db-title-editor { flex: 1 1 auto; min-width: 0; height: 28px; padding: 3px 5px; border: 0; border-radius: 3px; outline: none; color: var(--mb-ink); background: var(--mb-raised); box-shadow: var(--mb-focus); font: 500 14px/1.5 var(--mb-sans); }
+:root[data-style="mobai"] .db-title-open { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 25px; height: 25px; margin-right: 4px; padding: 0; border: 0; border-radius: 4px; color: var(--mb-muted); background: transparent; visibility: hidden; }
+:root[data-style="mobai"] .db-title-control:hover .db-title-open, :root[data-style="mobai"] .db-title-control:focus-within .db-title-open, :root[data-style="mobai"] td:focus .db-title-open { visibility: visible; }
+:root[data-style="mobai"] .db-title-open:hover, :root[data-style="mobai"] .db-title-open:focus-visible { color: var(--mb-ink); background: var(--mb-hover); }
+:root[data-style="mobai"] .db-table .db-table-create-row > td { height: 34px; padding: 0; }
+:root[data-style="mobai"] .db-table-create { display: block; width: 100%; min-height: 33px; padding: 5px 9px 5px 57px; border: 0; color: var(--mb-muted); background: transparent; font: 400 14px/1.5 var(--mb-sans); text-align: left; }
+:root[data-style="mobai"] .db-table-create:hover, :root[data-style="mobai"] .db-table-create:focus-visible { color: var(--mb-ink); background: var(--mb-hover); }

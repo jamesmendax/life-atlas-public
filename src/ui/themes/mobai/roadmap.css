@@ -1,0 +1,334 @@
+:root[data-style="mobai"] .db-roadmap {
+  position: relative;
+  min-width: 0;
+  color: var(--mb-ink);
+  font-family: var(--mb-sans);
+}
+
+:root[data-style="mobai"] .db-roadmap-tools {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 0 14px;
+}
+
+:root[data-style="mobai"] .db-roadmap-tools button,
+:root[data-style="mobai"] .db-roadmap-export-actions button,
+:root[data-style="mobai"] .db-roadmap-empty button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 7px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--mb-muted);
+  font: 500 12px/1 var(--mb-sans);
+  cursor: pointer;
+}
+
+:root[data-style="mobai"] .db-roadmap-tools button:hover,
+:root[data-style="mobai"] .db-roadmap-export-actions button:hover,
+:root[data-style="mobai"] .db-roadmap-empty button:hover {
+  color: var(--mb-ink);
+  background: var(--mb-hover);
+}
+
+:root[data-style="mobai"] .db-roadmap-tools button:disabled,
+:root[data-style="mobai"] .db-roadmap-export-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+:root[data-style="mobai"] .db-roadmap-zoom {
+  padding: 0 4px;
+  color: var(--mb-faint);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+:root[data-style="mobai"] .db-roadmap-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+:root[data-style="mobai"] .db-roadmap-svg {
+  display: block;
+  max-width: none;
+  overflow: hidden;
+  font-family: var(--mb-sans);
+  font-variant-numeric: tabular-nums;
+}
+
+:root[data-style="mobai"] .db-roadmap-tick-line {
+  stroke: var(--mb-line);
+  stroke-width: 1px;
+}
+
+:root[data-style="mobai"] .db-roadmap-tick-label {
+  fill: var(--mb-ink);
+  font: 600 26px/1 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .db-roadmap-tick-label.is-year {
+  font-size: 22px;
+}
+
+:root[data-style="mobai"] .db-roadmap-tick-unit {
+  fill: var(--mb-muted);
+  font: 500 15px/1 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .db-roadmap-tick-note {
+  fill: var(--mb-faint);
+  font: 400 12px/1 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .db-roadmap-axis,
+:root[data-style="mobai"] .db-roadmap-connector {
+  stroke: var(--mb-line-2);
+  stroke-width: 1px;
+}
+
+:root[data-style="mobai"] .db-roadmap-axis-past {
+  stroke: var(--mb-ink);
+  stroke-width: 3px;
+  stroke-linecap: round;
+}
+
+:root[data-style="mobai"] .db-roadmap-entry {
+  cursor: pointer;
+  transition: opacity 120ms ease;
+}
+
+:root[data-style="mobai"] .db-roadmap-entry.is-highlighted .db-roadmap-connector {
+  stroke: var(--mb-ink);
+}
+
+:root[data-style="mobai"] .db-roadmap-entry:focus-visible {
+  outline: none;
+}
+
+:root[data-style="mobai"] .db-roadmap-entry:focus-visible :is(.db-roadmap-card-title, .db-roadmap-phase-title) {
+  text-decoration: underline;
+  text-decoration-color: var(--mb-muted);
+}
+
+:root[data-style="mobai"] .db-roadmap-entry:focus-visible .db-roadmap-phase-track {
+  stroke: var(--mb-muted);
+  stroke-width: 1.5px;
+}
+
+:root[data-style="mobai"] .db-roadmap-drag-handle {
+  cursor: grab;
+  touch-action: none;
+}
+
+:root[data-style="mobai"] .db-roadmap-entry.is-dragging .db-roadmap-drag-handle {
+  cursor: grabbing;
+}
+
+:root[data-style="mobai"] .db-roadmap[data-locked="true"] .db-roadmap-drag-handle {
+  cursor: not-allowed;
+}
+
+:root[data-style="mobai"] .db-roadmap-node-hit {
+  fill: transparent;
+}
+
+:root[data-style="mobai"] .db-roadmap-card-date {
+  fill: var(--mb-muted);
+  font: 400 12px/1.3 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .db-roadmap-card-title {
+  fill: var(--mb-ink);
+  font: 600 15px/1.4 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .db-roadmap-card-title.is-major {
+  fill: var(--mb-accent);
+  font-size: 16px;
+}
+
+:root[data-style="mobai"] .db-roadmap-card-subtitle {
+  fill: var(--mb-faint);
+  font: 400 12px/1 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .db-roadmap-phase-title {
+  fill: var(--mb-ink);
+  font: 600 14px/1.2 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .db-roadmap-phase-subtitle {
+  fill: var(--mb-muted);
+  font: 400 12px/1 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .db-roadmap-today {
+  pointer-events: none;
+}
+
+:root[data-style="mobai"] .db-roadmap-today line {
+  stroke: var(--mb-today);
+  stroke-width: 2px;
+}
+
+:root[data-style="mobai"] .db-roadmap-today circle,
+:root[data-style="mobai"] .db-roadmap-today rect {
+  fill: var(--mb-today);
+}
+
+:root[data-style="mobai"] .db-roadmap-today text {
+  fill: var(--mb-tooltip-text);
+  font: 400 12px/1 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .db-roadmap-details,
+:root[data-style="mobai"] .db-roadmap-export {
+  position: absolute;
+  z-index: 20;
+  padding: 14px;
+  border-radius: 10px;
+  background: var(--mb-raised);
+  color: var(--mb-ink);
+  box-shadow: var(--mb-pop);
+  font-size: 12px;
+}
+
+:root[data-style="mobai"] .db-roadmap-details {
+  width: 280px;
+  pointer-events: none;
+  overflow-wrap: anywhere;
+}
+
+:root[data-style="mobai"] .db-roadmap-details strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+:root[data-style="mobai"] .db-roadmap-details dl {
+  display: grid;
+  gap: 7px;
+  margin: 12px 0 0;
+}
+
+:root[data-style="mobai"] .db-roadmap-details dl div {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 8px;
+}
+
+:root[data-style="mobai"] .db-roadmap-details dt {
+  color: var(--mb-muted);
+}
+
+:root[data-style="mobai"] .db-roadmap-details dd {
+  margin: 0;
+}
+
+:root[data-style="mobai"] .db-roadmap-export {
+  top: 38px;
+  right: 0;
+  display: grid;
+  gap: 12px;
+  width: 304px;
+}
+
+:root[data-style="mobai"] .db-roadmap-export label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+:root[data-style="mobai"] .db-roadmap select {
+  height: 30px;
+  padding: 0 24px 0 8px;
+  border: 1px solid var(--mb-line-2);
+  border-radius: 6px;
+  background: var(--mb-raised);
+  color: var(--mb-ink);
+  font: 400 12px/1 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .db-roadmap-export small {
+  color: var(--mb-muted);
+}
+
+:root[data-style="mobai"] .db-roadmap-export-actions {
+  display: flex;
+  gap: 6px;
+}
+
+:root[data-style="mobai"] .db-roadmap-export-actions button {
+  border: 1px solid var(--mb-line-2);
+  color: var(--mb-ink);
+}
+
+:root[data-style="mobai"] .db-roadmap-export p[role="alert"] {
+  margin: 0;
+  color: var(--mb-danger);
+}
+
+:root[data-style="mobai"] .db-roadmap-empty {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+  padding: 24px 0 32px;
+  color: var(--mb-muted);
+  font-size: 14px;
+}
+
+:root[data-style="mobai"] .db-roadmap-empty p {
+  margin: 0;
+}
+
+:root[data-style="mobai"] .db-roadmap-unscheduled {
+  padding: 12px 0;
+  color: var(--mb-muted);
+  font-size: 12px;
+}
+
+:root[data-style="mobai"] .db-roadmap-unscheduled summary {
+  cursor: pointer;
+}
+
+:root[data-style="mobai"] .db-roadmap-unscheduled > div {
+  display: grid;
+  gap: 2px;
+  padding-top: 8px;
+}
+
+:root[data-style="mobai"] .db-roadmap-unscheduled button {
+  width: 100%;
+  padding: 7px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--mb-ink);
+  text-align: left;
+  font: 400 14px/1.3 var(--mb-sans);
+  cursor: pointer;
+}
+
+:root[data-style="mobai"] .db-roadmap-unscheduled button:hover {
+  background: var(--mb-hover);
+}
+
+:root[data-style="mobai"] .db-roadmap-marker-setting {
+  padding-left: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-style="mobai"] .db-roadmap-entry {
+    transition-duration: 0.01ms;
+  }
+}

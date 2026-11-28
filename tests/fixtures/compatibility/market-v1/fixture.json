@@ -1,0 +1,133 @@
+{
+  "fixtureVersion": 1,
+  "synthetic": true,
+  "source": {
+    "release": "1.1.0 market test package",
+    "appVersion": "1.1.0",
+    "appAsarSha256": "012373eb3ab38173b170156ad7cb3229b65a530448c48f8dbe9a8c4ff66ff41e",
+    "packagedImplementation": true,
+    "fixtureClock": "2026-11-23T12:00:00.000Z"
+  },
+  "formats": {
+    "workspaceSchemaVersion": 17,
+    "backupManifestVersion": 1,
+    "encryptedContainer": {
+      "formatVersion": 1,
+      "magicHex": "4c41454e43310000",
+      "cipher": "A256GCM-STREAM",
+      "kdf": {
+        "alg": "argon2id",
+        "version": 19,
+        "memoryKiB": 131072,
+        "iterations": 3,
+        "parallelism": 1
+      }
+    },
+    "vault": {
+      "formatVersion": 1,
+      "padding": 512,
+      "kdf": {
+        "alg": "argon2id",
+        "version": 19,
+        "memoryKiB": 131072,
+        "iterations": 3,
+        "parallelism": 1
+      }
+    }
+  },
+  "credentials": {
+    "masterPassword": "MARKET-FIXTURE-MASTER-p0rtable!2026",
+    "recoveryKey": "LA1-WDTKQ-HVN8A-WMMA7-WWAPV-AXCPG-XCHXC-ME31Y-YW68E-S8T5D-KTBYH-J7T7R",
+    "backupPassword": "MARKET-FIXTURE-ARCHIVE-p0rtable!2026"
+  },
+  "expected": {
+    "workspaceId": "ws-market-golden-v1",
+    "schemaVersion": 17,
+    "page": {
+      "id": "market-page",
+      "title": "MARKET golden page",
+      "paragraphId": "market-paragraph",
+      "paragraphText": "MARKET legacy fixture paragraph 001"
+    },
+    "database": {
+      "sourceId": "market-source",
+      "viewId": "market-view",
+      "itemId": "market-row",
+      "recordPageId": "market-record-page",
+      "title": "MARKET golden database",
+      "recordTitle": "MARKET golden record"
+    },
+    "workspacePreferences": {
+      "theme": "dark"
+    },
+    "attachments": [
+      {
+        "id": "market-attachment",
+        "assetId": "fdacd47c190e08770be595f7e3e586b7d34967586097b1a2c00e1a25b90d228c",
+        "sha256": "fdacd47c190e08770be595f7e3e586b7d34967586097b1a2c00e1a25b90d228c",
+        "size": 43,
+        "name": "market-fixture.bin",
+        "mime": "application/octet-stream",
+        "base64": "AP+JyQpzeW50aGV0aWMgbWFya2V0IHdvcmtzcGFjZSBhdHRhY2htZW50Cg=="
+      }
+    ],
+    "component": {
+      "id": "market-pomodoro",
+      "sha256": "5bada36f5029971205109540692c131c21cde36a2f7d4f179660058a8a4a7b6d",
+      "size": 1687,
+      "mime": "application/vnd.life-atlas.component+zip",
+      "props": {
+        "url": "life-asset://5bada36f5029971205109540692c131c21cde36a2f7d4f179660058a8a4a7b6d",
+        "title": "番茄钟",
+        "packageId": "life-atlas.pomodoro",
+        "packageVersion": "1.0.0",
+        "state": "{\"phase\":\"focus\",\"remaining\":1280000,\"endsAt\":null}"
+      }
+    },
+    "vault": {
+      "itemId": "vi_4bdf1f9c08da6c8439ec97a9d381c3bc",
+      "title": "MARKET synthetic vault item",
+      "secretFieldId": "f_a0a9e1e1",
+      "secretValue": "synthetic-market-vault-secret-0001",
+      "requiredSettings": {
+        "autoLockMinutes": 15,
+        "clipboardClearSeconds": 60,
+        "lockOnMinimize": true,
+        "verifyBeforeReveal": false
+      },
+      "attachments": [
+        {
+          "id": "va_c9427fb960447aed9180ce61e9ceb3c6",
+          "name": "market-vault-fixture.bin",
+          "size": 43,
+          "base64": "ABT/B3N5bnRoZXRpYyBtYXJrZXQgdmF1bHQgbm90ZSBhdHRhY2htZW50Cg==",
+          "sha256": "907747999debbf16260e131c43bac141003a75f878af2e7355efd78397b9f675"
+        }
+      ]
+    }
+  },
+  "files": {
+    "backupPlain": {
+      "file": "complete.lifeatlas",
+      "sha256": "6e6c6fac6e1cec2323105bbfe85ccb39862e15f9e077b7c64407bdcc9056ce6a",
+      "bytes": 9801
+    },
+    "backupEncrypted": {
+      "file": "complete-encrypted.lifeatlas",
+      "sha256": "86a807de3085db51c80cc0f45aabc175aea2fda191eb260e73848e6577ea2fed",
+      "bytes": 10088
+    },
+    "liveProfile": {
+      "file": "live-profile.zip",
+      "sha256": "41283ab3e8d892bc43956ef0649a834c2ad5b016e8130d611858d8ecca25aaa9",
+      "bytes": 7070
+    }
+  },
+  "verification": {
+    "generatedByPackagedBackupService": true,
+    "outerEncryptedBackupOpenedByPackagedReader": true,
+    "originalMasterPasswordOpenedVault": true,
+    "excludedVaultInWorkspaceOnlyBackup": false,
+    "vaultAttachmentIncluded": true
+  }
+}

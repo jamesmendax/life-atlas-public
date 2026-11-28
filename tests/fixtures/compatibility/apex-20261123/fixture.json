@@ -1,0 +1,120 @@
+{
+  "fixtureVersion": 1,
+  "synthetic": true,
+  "source": {
+    "release": "v9-apex-assistant-20261123",
+    "appVersion": "1.0.0",
+    "appAsarSha256": "c5995a1f3a61ed3a5f202d6ec02b0d9ef6ad4adaff8a5d8892aa192063ec93d9",
+    "packagedImplementation": true,
+    "fixtureClock": "2026-11-23T12:00:00.000Z"
+  },
+  "formats": {
+    "workspaceSchemaVersion": 16,
+    "backupManifestVersion": 1,
+    "encryptedContainer": {
+      "formatVersion": 1,
+      "magicHex": "4c41454e43310000",
+      "cipher": "A256GCM-STREAM",
+      "kdf": {
+        "alg": "argon2id",
+        "version": 19,
+        "memoryKiB": 131072,
+        "iterations": 3,
+        "parallelism": 1
+      }
+    },
+    "vault": {
+      "formatVersion": 1,
+      "padding": 512,
+      "kdf": {
+        "alg": "argon2id",
+        "version": 19,
+        "memoryKiB": 131072,
+        "iterations": 3,
+        "parallelism": 1
+      }
+    }
+  },
+  "credentials": {
+    "masterPassword": "APEX-FIXTURE-MASTER-p0rtable!2026",
+    "recoveryKey": "LA1-TCY02-EJZTC-WCXP9-EGMJH-CQ4VA-J43GG-68BC5-NM573-9VXJG-3VF7B-MC5X8",
+    "backupPassword": "APEX-FIXTURE-ARCHIVE-p0rtable!2026"
+  },
+  "expected": {
+    "workspaceId": "ws-apex-golden-v1",
+    "schemaVersion": 16,
+    "page": {
+      "id": "apex-page",
+      "title": "APEX golden page",
+      "paragraphId": "apex-paragraph",
+      "paragraphText": "APEX legacy fixture paragraph 001"
+    },
+    "database": {
+      "sourceId": "apex-source",
+      "viewId": "apex-view",
+      "itemId": "apex-row",
+      "recordPageId": "apex-record-page",
+      "title": "APEX golden database",
+      "recordTitle": "APEX golden record"
+    },
+    "workspacePreferences": {
+      "theme": "dark"
+    },
+    "attachments": [
+      {
+        "id": "apex-attachment",
+        "assetId": "9f9ab7124b38e4891d953b9b41208dca2adf8a8bc0143ca54dff812aed83b93b",
+        "sha256": "9f9ab7124b38e4891d953b9b41208dca2adf8a8bc0143ca54dff812aed83b93b",
+        "size": 41,
+        "name": "apex-fixture.bin",
+        "mime": "application/octet-stream",
+        "base64": "AP+JyQpzeW50aGV0aWMgYXBleCB3b3Jrc3BhY2UgYXR0YWNobWVudAo="
+      }
+    ],
+    "vault": {
+      "itemId": "vi_d122816abe85a1b6a626e053bf987f72",
+      "title": "APEX synthetic vault item",
+      "secretFieldId": "f_31e4edf0",
+      "secretValue": "synthetic-apex-vault-secret-0001",
+      "requiredSettings": {
+        "autoLockMinutes": 15,
+        "clipboardClearSeconds": 60,
+        "lockOnMinimize": true,
+        "verifyBeforeReveal": false
+      },
+      "attachments": [
+        {
+          "id": "va_5bfe8e78251277451db05a99a6b7768b",
+          "name": "apex-vault-fixture.bin",
+          "size": 41,
+          "base64": "ABT/B3N5bnRoZXRpYyBhcGV4IHZhdWx0IG5vdGUgYXR0YWNobWVudAo=",
+          "sha256": "1acad79bb2a840369fd1a71b26836553377413729c333634ebd8ff2e7d7267f9"
+        }
+      ]
+    }
+  },
+  "files": {
+    "backupPlain": {
+      "file": "complete.lifeatlas",
+      "sha256": "91e6b4e8db51ba32fe25351e8a33e1afa45e068d8c19547fd2ea9f1087eba95e",
+      "bytes": 7705
+    },
+    "backupEncrypted": {
+      "file": "complete-encrypted.lifeatlas",
+      "sha256": "63517481e5677c6639ff4be4f9f0701bdd941320420d49a9a0af769921906623",
+      "bytes": 7992
+    },
+    "liveProfile": {
+      "file": "live-profile.zip",
+      "sha256": "9d149be6042bccda36a559ff487e51a4f5bb1418fb55c2fa289108bc1b501722",
+      "bytes": 4611
+    }
+  },
+  "verification": {
+    "generatedByPublishedBackupService": true,
+    "outerEncryptedBackupOpenedByPublishedReader": true,
+    "originalMasterPasswordOpenedVault": true,
+    "excludedVaultInWorkspaceOnlyBackup": false,
+    "vaultAttachmentIncluded": true
+  }
+}

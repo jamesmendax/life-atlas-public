@@ -1,0 +1,45 @@
+{
+  "kind": "life-atlas-vault-export",
+  "formatVersion": 1,
+  "header": {
+    "kind": "life-atlas-vault",
+    "formatVersion": 1,
+    "vaultId": "4f8bb794-bc12-4c94-828d-49bcef84abfc",
+    "createdAt": "2026-11-23T12:00:00.000Z",
+    "kdf": {
+      "alg": "argon2id",
+      "version": 19,
+      "memoryKiB": 131072,
+      "iterations": 3,
+      "parallelism": 1,
+      "saltB64": "bQCcEOPcwWDcLZyXa7KyLA=="
+    },
+    "wraps": {
+      "password": {
+        "alg": "A256GCM",
+        "blobB64": "LNYVb/Krdy+KZkoBX7yt8TSWasq2igosTgP5M6nno7KqGCauz8U28a6MmsZ92plttZuejtqFl3LbOUHz"
+      },
+      "recovery": {
+        "alg": "A256GCM",
+        "kdf": "hkdf-sha256",
+        "saltB64": "L8j5+24kv59xTka1+cGPAw==",
+        "blobB64": "S0d1A7xfc/ZRpaM3TvyZbnNuGJYAkQqLfKZfFSAGi1BdegZDMkBdRHzxr2c9Coz1TivEANRsaQpLXMNx"
+      }
+    },
+    "padding": 512
+  },
+  "items": [
+    {
+      "id": "vi_07a4dd52deb225b7a77257d88d6027eb",
+      "blobB64": "SRvkq75w1hPrbPRaIt6Q6vx0tDyd0wXfr2Kk5TmRCBWy5+YyfRU+eND5vhU+IABzK63fF6Co5aBNHZOBUuTm5GoF6MdSJMPqXW2sXS7YZ663sAbPFZfdmI1YtT3DyprthjrjeTydiM9nFc+YNN1x95wV+LSpC0TIj+Ct0W1J0zH1AXdbzG00Y4JMyb3SvMhf5X6R4FShFf4NfgebtYEH7ttTWq0Ay7yTEEMdmxgRCGnq4glkP3L7hKRrqw6ui/LAn8dlKuzrg1QRqwlVcX/BqHfF62cKLSRewGpsowIzRN96oFsf7yCVnQho86aN1TAMkq2jyTy5RZTzuAeSwAacowH80lpOUMmK2oIxwq7T9by3SmgJuFEnZlMLKuKfoIsULzeH0iJeGlsPb0XpwbRNzI6OPiqVQp6IZsOYv7XLqyUOeMwGOhAbTo+yx1ORb5jKfsBIQrVtLzirR4bLppE8KWSwPCVxkJA4RNOPgAmckxljWjNRS6Uf5e18zrSy2u+ud+bPkPHY598VVmZ9+vFDzASE9L1d6mmbU7/oAfWeHzKqR5GqbxO8D5bDw1vdGoPN6iXfphm+w3tqmWXC2nTHYRXmEastQn7E28f1LQtKGZednpyc6B0GahqSVkNfSdlvs+BQ+hsH0If/qC8ZGfONDcAaCi88NKaN/EpMF/Q0nwutFyG7Y8lazaEFykRTeP5/qmdiGsNDXDrR+Vi4DewN/A2C+HoZHwvHefORbobYuc+TFE8Kn0jbMVFse5xgdSPZgLFQ0wrpQeYeNpuL9sp0x8Mi3kaPxOTDHZySHE4vRTh6V5GFrzEdCSV7+0w1iuDbSP/X6JQmkQfjlkskl91GOgSWJ9auskqQ0nCBLea79NbDY14vXtXj1OynsFD77Niz6ppXumrWmiKHiBLegsfJbkK/jOfNW9h6rmScHPNHr3+3HkcmUyYN2JjswrBJyMafkOdOQyTpJLX+D3aKtNAIxybZ4FobDZy4cPD/q7volREdEI0uAYoS8vyvs/2QCohv/+BHRLrOuq4KpTOVQ5EbmAgWfQwZ//KrwhIe4Wi3SVjux0EIV/QKZOqCd459sy0O/Y1oeBkh00AKycxDMXE/6Yi9lsoLaMBoBMbZJz4l3hiA5bfAiBbwLTHc03RTkvc3IhAWn2v+qpjcpdLhH6gJFcTEZ5Zzf/TpoO5s5ur3Vz/u8okyaRvQuC3y90nJfXrTYHW4f1/NJIUkBjuAOqHJA0fpHJQJargXhJvcNAgOmz5MaU0pnKI+vrwpQTZyv455BRwU6mk5Q+Nn+mQZNUt3jZAWz+GvwHL7pGSXre7Sh1t8QW1CPJdvVxyb3Bs+NvW1RJKzC2NwaBsvHGA11XxC+3/KAGxWMERdngPGDgaVMiI3v1nXy711b7iKXCc="
+    }
+  ],
+  "state": {
+    "settings": {
+      "autoLockMinutes": 15,
+      "clipboardClearSeconds": 60,
+      "lockOnMinimize": true,
+      "verifyBeforeReveal": false
+    }
+  }
+}

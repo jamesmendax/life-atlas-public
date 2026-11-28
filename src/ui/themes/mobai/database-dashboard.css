@@ -1,0 +1,73 @@
+:root[data-style="mobai"] .db-dashboard-workspace {container: dashboard / inline-size; min-width:0; color:var(--mb-ink);}
+:root[data-style="mobai"] .db-dashboard-toolbar, :root[data-style="mobai"] .db-dashboard-add, :root[data-style="mobai"] .db-dashboard-edit-actions, :root[data-style="mobai"] .db-dashboard-inspector > header {display:flex; align-items:center; gap:6px; flex-wrap:wrap;}
+:root[data-style="mobai"] .db-dashboard-toolbar {justify-content:flex-end; margin:8px 0;}
+:root[data-style="mobai"] .db-dashboard-toolbar > span {margin-inline-end:auto; color:var(--mb-muted); font:12px/1.5 var(--mb-sans);}
+:root[data-style="mobai"] .db-dashboard-toolbar button, :root[data-style="mobai"] .db-dashboard-add button, :root[data-style="mobai"] .db-dashboard-edit-actions button, :root[data-style="mobai"] .db-dashboard-filters > button, :root[data-style="mobai"] .db-dashboard-inspector > header button {border:1px solid var(--mb-line); border-radius:var(--mb-r2); padding:4px 9px; color:var(--mb-muted); background:var(--mb-raised); cursor:pointer; font:inherit; font-size:12px;}
+:root[data-style="mobai"] .db-dashboard-toolbar button:hover, :root[data-style="mobai"] .db-dashboard-add button:hover, :root[data-style="mobai"] .db-dashboard-edit-actions button:hover, :root[data-style="mobai"] .db-dashboard-toolbar [aria-pressed=true] {color:var(--mb-ink); background:var(--mb-hover);}
+:root[data-style="mobai"] .db-dashboard-inspector, :root[data-style="mobai"] .db-dashboard-filters {margin:8px 0; padding:10px; border:1px solid var(--mb-line); border-radius:var(--mb-r2);}
+:root[data-style="mobai"] .db-dashboard-inspector > header {justify-content:space-between; margin-bottom:8px;}
+:root[data-style="mobai"] .db-dashboard-filters fieldset {min-width:0; margin:0 0 8px; padding:8px; border:1px solid var(--mb-line); border-radius:var(--mb-r2);}
+:root[data-style="mobai"] .db-dashboard-filters legend, :root[data-style="mobai"] .db-dashboard-widget-title small, :root[data-style="mobai"] .db-dashboard-unmapped {color:var(--mb-muted); font-size:11px;}
+:root[data-style="mobai"] .db-dashboard-workspace .db-configured-dashboard {display:flex; flex-direction:column; padding:6px 0 12px; gap:12px;}
+:root[data-style="mobai"] .db-dashboard-row {position:relative; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; align-items:stretch;}
+:root[data-style="mobai"] .db-dashboard-row > .db-configured-widget {position:relative; min-width:0; display:flex; flex-direction:column; grid-column:span var(--dashboard-span); height:var(--dashboard-height); box-sizing:border-box; padding:12px 14px;}
+:root[data-style="mobai"] .db-dashboard-row > [data-drop-edge=before] {border-inline-start:3px solid var(--mb-accent);}
+:root[data-style="mobai"] .db-dashboard-row > [data-drop-edge=after] {border-inline-end:3px solid var(--mb-accent);}
+:root[data-style="mobai"] .db-dashboard-widget-title {display:flex; align-items:center; justify-content:space-between; gap:6px; flex-shrink:0; margin:0 0 8px;}
+:root[data-style="mobai"] .db-dashboard-widget-title > div:first-child {min-width:0;}
+:root[data-style="mobai"] .db-dashboard-widget-title h3 {color:var(--mb-ink); font:600 15px/1.4 var(--mb-sans); overflow-wrap:anywhere; margin:0;}
+:root[data-style="mobai"] .db-dashboard-unmapped {margin:0 0 4px;}
+:root[data-style="mobai"] .db-dashboard-widget-body {min-height:0; min-width:0; flex:1; overflow:auto; overscroll-behavior:contain; scrollbar-width:thin;}
+:root[data-style="mobai"] [data-widget-type="metric"] .db-dashboard-widget-body {display:flex; align-items:center;}
+:root[data-style="mobai"] .db-dashboard-widget-body .db-dashboard-metric {display:flex; flex-wrap:wrap; align-items:baseline; justify-content:flex-start; gap:4px 9px; min-height:0; margin:4px 0;}
+:root[data-style="mobai"] .db-dashboard-widget-body .db-dashboard-metric strong {font-size:clamp(30px, 4cqi, 38px); letter-spacing:-.035em; overflow-wrap:anywhere;}
+:root[data-style="mobai"] .db-dashboard-widget-body .db-dashboard-metric small {font-size:12px;}
+:root[data-style="mobai"] .db-dashboard-widget-body > :is(.db-chart-bar, .db-chart-donut) {padding:1px 0 0;}
+:root[data-style="mobai"] .db-dashboard-widget-body > :is(.db-chart-bar, .db-chart-donut) figcaption {margin:0 0 6px;}
+:root[data-style="mobai"] .db-dashboard-widget-body .db-real-donut-graphic {flex-basis:clamp(112px, 29cqi, 138px);}
+:root[data-style="mobai"] .db-dashboard-widget-body .db-real-donut-wrap {margin:0 0 4px;}
+:root[data-style="mobai"] .db-dashboard-embedded > .database-view {margin:0; min-width:0; border:0; box-shadow:none;}
+:root[data-style="mobai"] .db-dashboard-embedded > .database-view > .db-view-header, :root[data-style="mobai"] .db-dashboard-embedded > .database-view > .db-navigation-row > .db-v9-tab-area, :root[data-style="mobai"] .db-dashboard-embedded > .database-view > .db-navigation-row > .db-view-actions > [aria-label="视图设置"] {display:none;}
+:root[data-style="mobai"] .db-dashboard-embedded > .database-view > .db-navigation-row {display:flex; justify-content:flex-end; min-height:0; padding:0; margin:0 0 4px;}
+:root[data-style="mobai"] .db-dashboard-embedded > .database-view > .db-view-body {min-width:0; padding:0;}
+:root[data-style="mobai"] .db-dashboard-widget-settings .db-specific-settings, :root[data-style="mobai"] .db-dashboard-filters .db-specific-settings {display:flex; flex-wrap:wrap; align-items:end; gap:8px;}
+:root[data-style="mobai"] .db-dashboard-widget-settings label, :root[data-style="mobai"] .db-dashboard-filters label {min-width:0; display:grid; gap:3px; font-size:12px;}
+:root[data-style="mobai"] .db-dashboard-widget-settings :is(select,input), :root[data-style="mobai"] .db-dashboard-filters :is(select,input) {max-width:100%; min-width:0;}
+:root[data-style="mobai"] .db-dashboard-drag {cursor:grab;}
+:root[data-style="mobai"] .db-dashboard-drag {display:inline-flex; align-items:center; justify-content:center;}
+:root[data-style="mobai"] .db-dashboard-row-control {display:flex; align-items:center; justify-content:space-between; gap:8px; margin:4px 0 -7px; color:var(--mb-muted); font:500 12px/1.5 var(--mb-sans);}
+:root[data-style="mobai"] :is(.db-dashboard-row-control,.db-dashboard-new-row,.db-dashboard-empty-view) > button {display:inline-flex; align-items:center; gap:4px; border:0; border-radius:var(--mb-r2); background:transparent; color:var(--mb-ink-2); padding:3px 6px; font:500 12px/1.5 var(--mb-sans); cursor:pointer;}
+:root[data-style="mobai"] .db-dashboard-row-control > button:hover, :root[data-style="mobai"] .db-dashboard-new-row > button:hover, :root[data-style="mobai"] .db-dashboard-empty-view > button:hover {background:var(--mb-hover-soft);}
+:root[data-style="mobai"] .db-dashboard-add-zone {padding:12px 14px; border:1px dashed var(--mb-line-2); border-radius:var(--mb-r3); background:var(--mb-paper);}
+:root[data-style="mobai"] .db-dashboard-add-zone h3 {margin:0 0 8px; color:var(--mb-ink-2); font:600 13px/1.4 var(--mb-sans);}
+:root[data-style="mobai"] .db-dashboard-add-zone[data-empty] {padding:clamp(18px,3cqi,34px);}
+:root[data-style="mobai"] .db-dashboard-add-zone[data-empty] h3 {margin-bottom:4px; color:var(--mb-ink); font-size:19px;}
+:root[data-style="mobai"] .db-dashboard-add-zone[data-empty] p {margin:0 0 18px; color:var(--mb-muted); font:13px/1.5 var(--mb-sans);}
+:root[data-style="mobai"] .db-dashboard-add {gap:8px;}
+:root[data-style="mobai"] .db-dashboard-add button {display:flex; align-items:center; gap:8px; color:var(--mb-ink-2); text-align:start;}
+:root[data-style="mobai"] .db-dashboard-add button svg {flex:none;}
+:root[data-style="mobai"] .db-dashboard-add button strong {font:500 13px/1.5 var(--mb-sans);}
+:root[data-style="mobai"] .db-dashboard-add[data-expanded=true] {display:grid; align-items:stretch; grid-template-columns:repeat(auto-fit,minmax(min(165px,100%),1fr));}
+:root[data-style="mobai"] .db-dashboard-add[data-expanded=true] button {align-items:flex-start; gap:9px; padding:14px 12px;}
+:root[data-style="mobai"] .db-dashboard-add[data-expanded=true] button small {display:block; margin-top:3px; color:var(--mb-muted); font:12px/1.55 var(--mb-sans);}
+:root[data-style="mobai"] .db-dashboard-new-row[data-drop=true] {outline:2px solid var(--mb-accent); border-radius:var(--mb-r3);}
+:root[data-style="mobai"] .db-dashboard-empty-view {padding:20px 14px; color:var(--mb-muted); font:13px/1.5 var(--mb-sans);}
+:root[data-style="mobai"] .db-dashboard-empty-view p {margin:0 0 6px;}
+:root[data-style="mobai"] .db-dashboard-resize {position:absolute; touch-action:none; z-index:3; border-radius:var(--mb-r2); color:var(--mb-ink); background:var(--mb-line);}
+:root[data-style="mobai"] .db-dashboard-resize.is-width {cursor:ew-resize; width:5px; top:28%; bottom:28%; right:1px;}
+:root[data-style="mobai"] .db-dashboard-resize.is-height {cursor:ns-resize; height:5px; bottom:-4px; left:35%; right:35%;}
+:root[data-style="mobai"] .db-dashboard-resize:hover, :root[data-style="mobai"] .db-dashboard-resize:focus-visible, :root[data-style="mobai"] .db-dashboard-resize[data-resizing] {background:var(--mb-accent); outline:1px solid var(--mb-accent);}
+:root[data-style="mobai"] .db-dashboard-resize output {position:absolute; z-index:4; right:0; bottom:5px; padding:2px 6px; border:1px solid var(--mb-line); border-radius:var(--mb-r2); background:var(--mb-raised); white-space:nowrap; font:12px var(--mb-sans);}
+:root[data-style="mobai"] .db-dashboard-embedded .db-list-properties:has(.db-date-picker):has(> :only-child) {max-width:54%;}
+:root[data-style="mobai"] .db-dashboard-embedded .db-list-property:has(.db-date-picker) {max-width:100%;}
+:root[data-style="mobai"] .db-dashboard-embedded .db-list-property .db-date-picker > summary {white-space:normal; overflow-wrap:anywhere; text-align:start; line-height:1.4;}
+@container dashboard (max-width: 540px) {
+:root[data-style="mobai"] .db-dashboard-row {grid-template-columns:minmax(0,1fr);}
+:root[data-style="mobai"] .db-dashboard-row > .db-configured-widget {grid-column:1;}
+:root[data-style="mobai"] .db-dashboard-row > [data-widget-type="metric"] {height:min(140px, var(--dashboard-height));}
+:root[data-style="mobai"] .db-dashboard-resize.is-width {display:none;}
+:root[data-style="mobai"] .db-dashboard-row .db-dashboard-edit-actions {flex-shrink:0;}
+:root[data-style="mobai"] .db-dashboard-row > [data-drop-edge] {border-inline:0;}
+:root[data-style="mobai"] .db-dashboard-row > [data-drop-edge=before] {border-top:3px solid var(--mb-accent);}
+:root[data-style="mobai"] .db-dashboard-row > [data-drop-edge=after] {border-bottom:3px solid var(--mb-accent);}
+}

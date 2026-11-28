@@ -1,0 +1,46 @@
+name: Bug Report & Feature Request
+description: Report an issue in Life Atlas or suggest an improvement.
+title: "[Feedback] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please [search existing feedback](https://github.com/jamesmendax/life-atlas-public/issues?q=is%3Aissue) before opening a new issue. Save your issue URL after submitting to follow replies in the same thread. Everything posted here is public, so use sample/demo data rather than private personal data.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Feedback Type
+      options:
+        - Bug report
+        - Feature request
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: For desktop, specify your Life Atlas version and Windows version. For the web marketplace, specify your browser.
+      placeholder: Windows 11, Life Atlas 1.7.0 Installer
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Steps & Actual Result
+      description: Which view or page did you start from? What steps did you take, and what happened? For feature requests, describe the workflow you want to accomplish.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Result
+      description: What behavior did you expect instead?
+    validations:
+      required: true
+  - type: upload
+    id: screenshot
+    attributes:
+      label: Screenshots (optional)
+      description: Attach PNG or JPEG screenshots (up to 10 MB each). Mask any private details before uploading.
+    validations:
+      accept: ".png,.jpg,.jpeg"

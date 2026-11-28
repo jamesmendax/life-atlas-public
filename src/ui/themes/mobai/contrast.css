@@ -1,0 +1,92 @@
+:root[data-style="mobai"][data-resolved-contrast="high"][data-theme="light"] {
+  --mb-ink: #101010;
+  --mb-ink-2: #151515;
+  --mb-muted: #3d3d3d;
+  --mb-faint: #4b4b4b;
+  --mb-side-text: #303030;
+  --mb-line: #767676;
+  --mb-line-2: #5e5e5e;
+  --mb-field-line: #5e5e5e;
+  --mb-accent: #0054a8;
+  --mb-accent-hover: #004388;
+  --mb-accent-text: #0054a8;
+  --mb-accent-rgb: 0, 84, 168;
+  --mb-danger: #a51e29;
+  --mb-hover: #e8e8e8;
+  --mb-select: #dfdfdf;
+  --mb-focus-ring: #0054a8;
+}
+:root[data-style="mobai"][data-resolved-contrast="high"][data-theme="dark"] {
+  --mb-ink: #ffffff;
+  --mb-ink-2: #f5f5f5;
+  --mb-muted: #dedede;
+  --mb-faint: #c5c5c5;
+  --mb-side-text: #eeeeee;
+  --mb-line: #858585;
+  --mb-line-2: #a0a0a0;
+  --mb-field-line: #a0a0a0;
+  --mb-accent: #0054a8;
+  --mb-accent-hover: #004388;
+  --mb-accent-text: #9fd1ff;
+  --mb-accent-rgb: 159, 209, 255;
+  --mb-danger: #ffaaa9;
+  --mb-hover: #343434;
+  --mb-select: #3b3b3b;
+  --mb-focus-ring: #9fd1ff;
+}
+:root[data-style="mobai"][data-resolved-contrast="high"] {
+  --mb-focus: inset 0 0 0 1px var(--mb-field-line);
+}
+:root[data-style="mobai"][data-resolved-contrast="high"] :focus-visible {
+  outline: 2px solid var(--mb-focus-ring) !important;
+  outline-offset: 1px;
+}
+:root[data-style="mobai"][data-resolved-contrast="high"] :is(.workspace-sidebar, .workspace-header, .ui-dialog, .ui-popover) {
+  border-color: var(--mb-line);
+}
+:root[data-style="mobai"][data-resolved-contrast="high"] :is(.mb-button, .ui-control, .home-actions button) {
+  border: 1px solid var(--mb-line-2);
+}
+:root[data-style="mobai"][data-resolved-contrast="high"] :is(
+  .workspace-sidebar [aria-selected="true"], .workspace-sidebar .nav-section-link.is-active,
+  .settings-dialog [aria-checked="true"], .settings-dialog [aria-selected="true"],
+  .workspace-navigation-menu [aria-current], .db-view-tab[aria-selected="true"]
+) {
+  outline: 1px solid currentColor;
+  outline-offset: -2px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (forced-colors: active) {
+  :root[data-style="mobai"] {
+    --mb-ink: CanvasText;
+    --mb-ink-2: CanvasText;
+    --mb-side-text: CanvasText;
+    --mb-muted: CanvasText;
+    --mb-faint: CanvasText;
+    --mb-paper: Canvas;
+    --mb-side: Canvas;
+    --mb-raised: Canvas;
+    --mb-line: CanvasText;
+    --mb-line-2: CanvasText;
+    --mb-field-line: ButtonText;
+    --mb-accent-text: LinkText;
+    --mb-focus-ring: Highlight;
+  }
+  :root[data-style="mobai"] :focus-visible {
+    outline: 2px solid Highlight !important;
+    outline-offset: 1px;
+  }
+  :root[data-style="mobai"] :is(.mb-field, .ui-control, .ui-popover, .ui-dialog, .settings-dialog .settings-mode-options > button) {
+    outline: 1px solid ButtonText;
+    outline-offset: -1px;
+  }
+  :root[data-style="mobai"] :is(
+    .workspace-tab.is-active, .workspace-sidebar [aria-selected="true"],
+    .workspace-sidebar .nav-section-link.is-active, .settings-dialog [aria-checked="true"],
+    .settings-dialog [aria-selected="true"], .workspace-navigation-menu [aria-current], .db-view-tab[aria-selected="true"]
+  ) {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}

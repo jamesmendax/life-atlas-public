@@ -1,0 +1,332 @@
+/* 墨白：数据库，贴近 Notion：网格表格（浅灰横线和竖线）、14 px 文字、灰色标签、白色卡片带阴影。
+   WP-15 会重做单元格编辑器；这里先把现有界面的颜色、字体、线条、间距统一，并修好两处被旧样式表覆盖的布局（画廊、时间线）。 */
+:root[data-style="mobai"] .database-view { font-family: var(--mb-sans); color: var(--mb-ink); background: transparent; }
+/* 页面里的行内数据库：和 Notion 一样不画外框，标题、标签、表格直接排在正文里 */
+:root[data-style="mobai"] .database-view.is-inline { border: 0; border-radius: 0; box-shadow: none; padding: 0; }
+:root[data-style="mobai"] .db-view-header { border: 0; background: transparent; }
+:root[data-style="mobai"] .db-source-button { border: 0; background: transparent; border-radius: var(--mb-r2); color: var(--mb-ink); }
+:root[data-style="mobai"] .db-source-button span { font: 700 20px/1.3 var(--mb-sans); color: var(--mb-ink); letter-spacing: 0; }
+:root[data-style="mobai"] .db-source-button svg { color: var(--mb-muted); }
+:root[data-style="mobai"] .db-source-button:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .db-view-actions { color: var(--mb-muted); font: 400 14px/1 var(--mb-sans); gap: 2px; }
+:root[data-style="mobai"] .db-view-selector {
+  height: 28px; padding: 0 8px; border: 0; border-radius: var(--mb-r2); background-color: transparent; box-shadow: none; color: var(--mb-muted); font: 400 14px/1 var(--mb-sans);
+}
+:root[data-style="mobai"] .db-view-selector:hover { background-color: var(--mb-hover); color: var(--mb-ink); }
+:root[data-style="mobai"] .db-mini-action, :root[data-style="mobai"] .db-mini-button {
+  min-height: 28px; padding: 0 8px; border: 0; border-radius: var(--mb-r2); background: transparent; color: var(--mb-muted); font: 400 14px/1 var(--mb-sans); box-shadow: none;
+}
+:root[data-style="mobai"] .db-mini-action:hover, :root[data-style="mobai"] .db-mini-button:hover { background: var(--mb-hover); color: var(--mb-ink); }
+/* 视图标签：图标 + 名称，当前视图下面 2 px 黑线 */
+:root[data-style="mobai"] .db-view-tabs { gap: 2px; border-bottom: 1px solid var(--mb-line); background: transparent; }
+:root[data-style="mobai"] .db-view-tabs > button {
+  height: 36px; padding: 0 8px; gap: 6px; border: 0; border-radius: 0; background: transparent; color: var(--mb-muted); font: 500 14px/1 var(--mb-sans); box-shadow: inset 0 -2px 0 transparent;
+}
+:root[data-style="mobai"] .db-view-tabs > button span { font: inherit; }
+:root[data-style="mobai"] .db-view-tabs > button:hover { color: var(--mb-ink); background: var(--mb-hover-soft); }
+:root[data-style="mobai"] .db-view-tabs > button.is-active { color: var(--mb-ink); font-weight: 500; box-shadow: inset 0 -2px 0 var(--mb-ink); background: transparent; }
+
+/* ---------- 表格：每格一圈浅灰线，第一列左边不画线 ---------- */
+:root[data-style="mobai"] .database-view .db-table { border-collapse: collapse; background: transparent; font-size: 14px; }
+:root[data-style="mobai"] .db-table thead th {
+  height: 34px; padding: 0; border: 0 !important; border-top: 1px solid var(--mb-line) !important; border-bottom: 1px solid var(--mb-line) !important; border-right: 1px solid var(--mb-line) !important;
+  background: transparent; color: var(--mb-muted); font: 400 14px/1 var(--mb-sans); vertical-align: middle;
+}
+:root[data-style="mobai"] .db-table thead tr { box-shadow: none; }
+:root[data-style="mobai"] .db-table th:last-child, :root[data-style="mobai"] .db-table td:last-child { border-right: 0 !important; }
+:root[data-style="mobai"] .db-property-header {
+  flex-direction: row; align-items: center; gap: 6px; height: 33px; padding: 0 8px; border: 0; border-radius: 0;
+  background: transparent; color: var(--mb-muted); font: 400 14px/1 var(--mb-sans); white-space: nowrap;
+}
+:root[data-style="mobai"] .db-property-header:hover { background: var(--mb-hover); color: var(--mb-muted); }
+/* 表头只显示图标和名称；类型名（小字）交给按钮的 aria-label */
+:root[data-style="mobai"] .db-property-header small { display: none; }
+:root[data-style="mobai"] .db-table tbody td {
+  height: 34px; padding: 0; border: 0 !important; border-bottom: 1px solid var(--mb-line) !important; border-right: 1px solid var(--mb-line) !important;
+  background: transparent; color: var(--mb-ink); font: 400 14px/1.4 var(--mb-sans); vertical-align: top;
+}
+:root[data-style="mobai"] .db-table tbody tr:hover td { background: var(--mb-hover-soft); }
+:root[data-style="mobai"] .db-title-cell { width: 100%; min-height: 33px; padding: 6px 8px; color: var(--mb-ink); font: 500 14px/1.5 var(--mb-sans); background: transparent; border: 0; text-align: left; }
+:root[data-style="mobai"] .db-title-cell:hover { text-decoration: none; background: var(--mb-hover); }
+:root[data-style="mobai"] .db-table .db-cell-input, :root[data-style="mobai"] .db-date-editor > div:first-child > input {
+  min-height: 33px; padding: 6px 8px; border: 0 !important; border-radius: 0; background: transparent !important; box-shadow: none !important; color: var(--mb-ink); font: 400 14px/1.5 var(--mb-sans);
+}
+:root[data-style="mobai"] .db-table .db-cell-input:focus, :root[data-style="mobai"] .db-date-editor > div:first-child > input:focus { box-shadow: inset 0 0 0 2px rgba(var(--mb-accent-rgb), 0.5) !important; }
+/* 单选、状态：下拉框画成灰色标签（WP-15 换成带颜色的选项标签） */
+:root[data-style="mobai"] .db-table select.db-cell-input { appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 8px; background-image: none !important; }
+:root[data-style="mobai"] .db-table select.db-cell-input:has(option:checked:not([value=""])) {
+  width: auto; max-width: calc(100% - 12px); min-height: 0; height: 20px; margin: 7px 6px; padding: 0 6px; border-radius: var(--mb-r1);
+  background-color: var(--mb-tag-default) !important; color: var(--mb-tag-default-text); font-size: 14px; line-height: 20px;
+}
+:root[data-style="mobai"] .db-table select.db-cell-input:hover { background-color: var(--mb-hover) !important; }
+:root[data-style="mobai"] .db-table select.db-cell-input:has(option:checked:not([value=""])):hover { background-color: var(--mb-tag-gray) !important; }
+:root[data-style="mobai"] .db-table select.db-cell-input:has(option[value=""]:checked) { color: var(--mb-faint); }
+/* 日期：日历小图标和“···”只在悬停时出现；有结束日期时，结束日期和“包含时间”排成一行小字 */
+:root[data-style="mobai"] .db-date-editor { min-width: 150px; }
+:root[data-style="mobai"] .db-date-editor > div:first-child { gap: 0; }
+:root[data-style="mobai"] .db-date-editor input::-webkit-calendar-picker-indicator { opacity: 0; cursor: pointer; }
+:root[data-style="mobai"] td:hover .db-date-editor input::-webkit-calendar-picker-indicator { opacity: 0.5; }
+:root[data-style="mobai"] .db-date-editor .db-mini-button { min-height: 24px; padding: 0 6px; opacity: 0; letter-spacing: 1px; }
+:root[data-style="mobai"] td:hover .db-date-editor .db-mini-button, :root[data-style="mobai"] .db-date-editor .db-mini-button[aria-expanded="true"] { opacity: 1; }
+:root[data-style="mobai"] .db-date-options { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 10px; padding: 0 8px 6px; color: var(--mb-muted); font-size: 12px; }
+:root[data-style="mobai"] .db-date-options > label { gap: 4px; font-size: 12px; color: var(--mb-muted); }
+:root[data-style="mobai"] .db-date-options > label { flex-wrap: nowrap; white-space: nowrap; }
+:root[data-style="mobai"] .db-table .db-date-options input.db-cell-input { width: auto; flex: 0 0 auto; height: 20px; min-height: 0; padding: 0 2px; font-size: 12px; line-height: 20px; color: var(--mb-muted); }
+:root[data-style="mobai"] .db-date-options input[type="checkbox"] { width: 13px; height: 13px; min-height: 0; margin: 0; padding: 0; }
+:root[data-style="mobai"] .db-table td > input[type="checkbox"] { width: 16px; height: 16px; margin: 9px 8px; accent-color: var(--mb-accent); }
+/* 人员、地点、关联：显示文字，点开是弹出层 */
+:root[data-style="mobai"] .db-multi-picker > summary, :root[data-style="mobai"] .db-place-editor > summary { padding: 6px 8px; color: var(--mb-ink); font-size: 14px; border-radius: 0; }
+:root[data-style="mobai"] .db-multi-picker > summary::after, :root[data-style="mobai"] .db-place-editor > summary::after { content: ""; }
+:root[data-style="mobai"] .db-multi-picker > summary:hover, :root[data-style="mobai"] .db-place-editor > summary:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .db-readonly-cell { padding: 6px 8px; color: var(--mb-ink); font-size: 14px; }
+:root[data-style="mobai"] .db-subitem-heading, :root[data-style="mobai"] .db-subitem-cell { color: var(--mb-faint); }
+:root[data-style="mobai"] .db-subitem-cell > button { opacity: 0; color: var(--mb-faint); font-size: 12px; }
+:root[data-style="mobai"] tr:hover .db-subitem-cell > button, :root[data-style="mobai"] .db-subitem-cell > button:focus-visible { opacity: 1; }
+:root[data-style="mobai"] .db-view-footer { padding: 0; border: 0; background: transparent; }
+:root[data-style="mobai"] .db-view-footer button { height: 34px; width: 100%; justify-content: flex-start; padding: 0 8px; border: 0; border-radius: 0; background: transparent; color: var(--mb-faint); font: 400 14px/1 var(--mb-sans); }
+:root[data-style="mobai"] .db-view-footer button:hover { background: var(--mb-hover); color: var(--mb-muted); }
+:root[data-style="mobai"] .db-multi-options, :root[data-style="mobai"] .db-view-settings-panel, :root[data-style="mobai"] .db-source-popover, :root[data-style="mobai"] .db-property-menu, :root[data-style="mobai"] .db-place-editor > div {
+  border: 0 !important; border-radius: var(--mb-r3); background: var(--mb-raised) !important; box-shadow: var(--mb-pop) !important; color: var(--mb-ink); font-size: 14px;
+}
+:root[data-style="mobai"] .db-property-menu button { border-radius: var(--mb-r2); color: var(--mb-ink); font-size: 14px; }
+:root[data-style="mobai"] .db-property-menu button:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .db-property-dialog { border: 0 !important; border-radius: var(--mb-r4); background: var(--mb-raised); box-shadow: var(--mb-dlg); color: var(--mb-ink); }
+:root[data-style="mobai"] .db-property-dialog footer > button, :root[data-style="mobai"] .db-option-row > button { border: 0; border-radius: var(--mb-r2); background: var(--mb-accent); color: #fff; font: 500 14px/1 var(--mb-sans); }
+:root[data-style="mobai"] .db-surface-message { color: var(--mb-muted); font-size: 14px; }
+
+/* ---------- 看板：每列一层极淡的灰底，卡片白底带阴影 ---------- */
+:root[data-style="mobai"] .db-board-view { gap: 12px; padding: 12px 0; }
+:root[data-style="mobai"] .db-board-column { flex: 0 0 260px; min-height: 120px; padding: 6px; border: 0; border-radius: var(--mb-r3); background: var(--mb-hover-soft); }
+:root[data-style="mobai"] .db-board-column > header { justify-content: flex-start; align-items: center; gap: 8px; margin: 0; padding: 4px 4px 10px; border: 0; color: var(--mb-ink); font: 400 14px/1 var(--mb-sans); }
+:root[data-style="mobai"] .db-board-column > header > span { padding: 0 6px; height: 20px; line-height: 20px; border-radius: var(--mb-r1); background: var(--mb-tag-default); color: var(--mb-tag-default-text); }
+:root[data-style="mobai"] .db-board-column > header > small { color: var(--mb-muted); font-size: 14px; }
+:root[data-style="mobai"] .db-board-column > div { gap: 8px; }
+:root[data-style="mobai"] .db-board-card { position: relative; gap: 4px; padding: 8px 10px; border: 0; border-radius: var(--mb-r2); background: var(--mb-raised); box-shadow: var(--mb-card); }
+:root[data-style="mobai"] .db-board-card:hover { background: var(--mb-raised); box-shadow: var(--mb-card), 0 0 0 1px rgba(var(--mb-ink-rgb), 0.06); }
+:root[data-style="mobai"] .db-board-card > button:not(.db-drag-handle) { padding: 0 20px 0 0; color: var(--mb-ink); font: 500 14px/1.4 var(--mb-sans); }
+:root[data-style="mobai"] .db-board-card > button:not(.db-drag-handle) strong { font: inherit; font-weight: 500; }
+:root[data-style="mobai"] .db-board-card > select {
+  justify-self: start; width: auto; max-width: 100%; height: 20px; padding: 0 6px; border: 0; border-radius: var(--mb-r1); appearance: none; -webkit-appearance: none;
+  background: var(--mb-tag-default); color: var(--mb-tag-default-text); font: 400 12px/20px var(--mb-sans); opacity: 1; box-shadow: none; cursor: pointer;
+}
+:root[data-style="mobai"] .db-drag-handle { color: var(--mb-faint); border: 0; background: transparent; border-radius: 4px; cursor: grab; }
+:root[data-style="mobai"] .db-board-card > .db-drag-handle { position: absolute; z-index: 2; top: 6px; right: 6px; width: 20px; height: 20px; padding: 0; opacity: 0; font-size: 11px; line-height: 20px; }
+:root[data-style="mobai"] .db-board-card:hover > .db-drag-handle, :root[data-style="mobai"] .db-board-card > .db-drag-handle:focus-visible { opacity: 1; }
+:root[data-style="mobai"] .db-drag-handle:hover { background: var(--mb-hover); color: var(--mb-muted); }
+
+/* ---------- 列表：一行一条，前面是页面图标，右边是灰色标签 ---------- */
+:root[data-style="mobai"] .db-list-view { display: grid; gap: 1px; padding: 6px 0; }
+:root[data-style="mobai"] .db-list-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 32px; padding: 0 8px; border: 0; border-radius: var(--mb-r2);
+  background: transparent; color: var(--mb-ink); font: 500 14px/1.4 var(--mb-sans); text-align: left;
+}
+:root[data-style="mobai"] .db-list-row > span { display: inline-flex; align-items: center; gap: 8px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+:root[data-style="mobai"] .db-list-row > span::before {
+  content: ""; flex: none; width: 18px; height: 18px; background: var(--mb-muted);
+  -webkit-mask: var(--mb-icon-page) center / 18px no-repeat; mask: var(--mb-icon-page) center / 18px no-repeat;
+}
+:root[data-style="mobai"] .db-list-row > small { flex: none; height: 20px; padding: 0 6px; border-radius: var(--mb-r1); background: var(--mb-tag-default); color: var(--mb-tag-default-text); font: 400 12px/20px var(--mb-sans); }
+:root[data-style="mobai"] .db-list-row:hover { background: var(--mb-hover); }
+
+/* ---------- 画廊：修正旧样式表留下的三行网格（标题压在属性上）；卡片白底带阴影，上面是封面 ---------- */
+:root[data-style="mobai"] .db-gallery-view { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; padding: 14px 0; }
+:root[data-style="mobai"] .db-gallery-view.size-small { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+:root[data-style="mobai"] .db-gallery-view.size-large { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+:root[data-style="mobai"] .db-gallery-card {
+  display: flex; flex-direction: column; grid-template-rows: none; min-height: 0; gap: 0; padding: 0; border: 0; border-radius: var(--mb-r2);
+  background: var(--mb-raised); box-shadow: var(--mb-card); overflow: hidden; color: var(--mb-ink); cursor: default;
+}
+:root[data-style="mobai"] .db-gallery-card:hover { background: var(--mb-raised); box-shadow: var(--mb-card), 0 0 0 1px rgba(var(--mb-ink-rgb), 0.06); }
+:root[data-style="mobai"] .db-gallery-open { display: block; color: var(--mb-ink); cursor: pointer; }
+:root[data-style="mobai"] .db-gallery-preview { min-height: 150px; height: 150px; border: 0; border-bottom: 1px solid var(--mb-line); background-color: var(--mb-paper-2); color: var(--mb-muted); }
+:root[data-style="mobai"] .size-small .db-gallery-preview { min-height: 110px; height: 110px; }
+:root[data-style="mobai"] .size-large .db-gallery-preview { min-height: 200px; height: 200px; }
+:root[data-style="mobai"] .db-gallery-content { padding: 12px 14px; font-size: 12px; line-height: 1.5; color: var(--mb-muted); overflow: hidden; }
+:root[data-style="mobai"] .db-gallery-open > strong { padding: 10px 10px 4px; font: 500 14px/1.4 var(--mb-sans); color: var(--mb-ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+:root[data-style="mobai"] .db-gallery-properties { gap: 3px; padding: 2px 10px 10px; font-size: 12px; color: var(--mb-muted); }
+:root[data-style="mobai"] .db-gallery-properties > span { display: block; grid-template-columns: none; font-size: 12px; line-height: 1.5; color: var(--mb-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+:root[data-style="mobai"] .db-gallery-properties small { display: none; }
+
+/* ---------- 日历：浅灰网格，今天的日期是红色圆点，事件是白色小卡片 ---------- */
+:root[data-style="mobai"] .db-calendar-toolbar, :root[data-style="mobai"] .db-timeline-toolbar { gap: 4px; padding-bottom: 10px; color: var(--mb-muted); font: 400 14px/1 var(--mb-sans); }
+:root[data-style="mobai"] .db-calendar-toolbar > strong { min-width: 0; margin-right: 8px; order: -1; color: var(--mb-ink); font: 600 14px/1 var(--mb-sans); text-align: left; }
+:root[data-style="mobai"] .db-calendar-toolbar > button, :root[data-style="mobai"] .db-timeline-toolbar button, :root[data-style="mobai"] .db-unscheduled button {
+  min-height: 28px; padding: 0 8px; border: 0; border-radius: var(--mb-r2); background: transparent; color: var(--mb-muted); font: 400 14px/1 var(--mb-sans); box-shadow: none;
+}
+:root[data-style="mobai"] .db-calendar-toolbar > button:hover, :root[data-style="mobai"] .db-timeline-toolbar button:hover, :root[data-style="mobai"] .db-unscheduled button:hover { background: var(--mb-hover); color: var(--mb-ink); }
+:root[data-style="mobai"] .db-calendar-weekdays { display: grid; grid-template-columns: repeat(7, minmax(95px, 1fr)); min-width: 700px; color: var(--mb-muted); font: 400 12px/1 var(--mb-sans); }
+:root[data-style="mobai"] .db-calendar-weekdays > span { padding: 0 8px 8px; text-align: right; }
+:root[data-style="mobai"] .db-calendar-grid { border-top: 1px solid var(--mb-line); border-left: 1px solid var(--mb-line); }
+:root[data-style="mobai"] .db-calendar-cell { min-height: 118px; padding: 4px 6px 6px; background: transparent; border-right: 1px solid var(--mb-line); border-bottom: 1px solid var(--mb-line); }
+:root[data-style="mobai"] .db-calendar-cell.is-outside { background: transparent; opacity: 1; }
+:root[data-style="mobai"] .db-calendar-cell > header { padding: 2px 0 4px; color: var(--mb-ink); font: 400 14px/1 var(--mb-sans); }
+:root[data-style="mobai"] .db-calendar-cell.is-outside > header { color: var(--mb-faint); }
+:root[data-style="mobai"] .db-calendar-cell > header time { display: inline-grid; place-items: center; min-width: 24px; height: 24px; padding: 0 4px; border-radius: 12px; }
+:root[data-style="mobai"] .db-calendar-cell.is-today > header time { background: var(--mb-today); color: #fff; font-weight: 500; }
+:root[data-style="mobai"] .db-calendar-chip {
+  position: relative; display: block; margin: 4px 0; padding: 3px 26px 3px 8px; border: 0; border-radius: 4px;
+  background: var(--mb-raised); box-shadow: var(--mb-card); color: var(--mb-ink);
+}
+:root[data-style="mobai"] .db-calendar-chip > button:not(.db-drag-handle) { display: block; width: 100%; color: var(--mb-ink); font: 500 13px/1.4 var(--mb-sans); }
+:root[data-style="mobai"] .db-calendar-chip > .db-drag-handle { position: absolute; z-index: 2; left: -2px; top: 50%; width: 14px; height: 20px; margin-top: -10px; padding: 0; opacity: 0; font-size: 10px; line-height: 20px; }
+:root[data-style="mobai"] .db-calendar-chip > input {
+  position: absolute; z-index: 2; right: 2px; top: 50%; width: 22px; height: 20px; margin-top: -10px; padding: 0 !important; border: 0; background: transparent;
+  color: transparent; font-size: 12px; opacity: 0; cursor: pointer;
+}
+:root[data-style="mobai"] .db-calendar-chip > input::-webkit-datetime-edit { color: transparent; }
+:root[data-style="mobai"] .db-calendar-chip:hover > .db-drag-handle, :root[data-style="mobai"] .db-calendar-chip:hover > input,
+:root[data-style="mobai"] .db-calendar-chip > input:focus, :root[data-style="mobai"] .db-calendar-chip > .db-drag-handle:focus-visible { opacity: 1; }
+:root[data-style="mobai"] .db-unscheduled { margin-top: 12px; padding: 10px 0; border-top: 1px solid var(--mb-line); color: var(--mb-muted); font: 400 14px/1 var(--mb-sans); }
+:root[data-style="mobai"] .db-unscheduled > strong { color: var(--mb-muted); font-weight: 500; }
+
+/* ---------- 时间线（甘特）：修正被旧样式表改成横排的布局；左边名称，右边白色横条 ---------- */
+:root[data-style="mobai"] .db-timeline-toolbar > label { display: inline-flex; align-items: center; gap: 6px; color: var(--mb-muted); }
+:root[data-style="mobai"] .db-timeline-toolbar select { height: 28px; padding: 0 6px; border: 0; border-radius: var(--mb-r2); background: transparent; color: var(--mb-ink); box-shadow: none; font: 400 14px/1 var(--mb-sans); }
+:root[data-style="mobai"] .db-timeline-toolbar select:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .db-timeline-toolbar > span { color: var(--mb-muted); font-size: 12px; }
+:root[data-style="mobai"] .db-timeline-view {
+  position: relative; display: grid; align-items: initial; gap: 2px; min-height: 0; min-width: 720px; padding: 8px 0 12px; overflow: visible; border-top: 1px solid var(--mb-line);
+}
+:root[data-style="mobai"] .db-timeline-axis {
+  position: absolute; left: 150px; right: 0; top: 0; bottom: 0; height: auto; border-left: 1px solid var(--mb-line); opacity: 1; pointer-events: none;
+  background: repeating-linear-gradient(to right, transparent 0, transparent calc(10% - 1px), var(--mb-line) calc(10% - 1px), var(--mb-line) 10%);
+}
+:root[data-style="mobai"] .db-timeline-row { position: relative; z-index: 1; display: grid; grid-template-columns: 145px minmax(500px, 1fr); align-items: center; min-height: 36px; }
+:root[data-style="mobai"] .db-timeline-label { padding: 0 8px; color: var(--mb-ink); font: 400 14px/1.4 var(--mb-sans); border-radius: var(--mb-r2); }
+:root[data-style="mobai"] .db-timeline-label:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .db-timeline-track { height: 30px; }
+:root[data-style="mobai"] .db-timeline-bar {
+  top: 2px; height: 26px; min-width: 64px; gap: 2px; padding: 0 4px; border: 0; border-radius: var(--mb-r2);
+  background: var(--mb-raised); box-shadow: var(--mb-card); color: var(--mb-ink);
+}
+:root[data-style="mobai"] .db-timeline-bar > span { font: 400 12px/1 var(--mb-sans); color: var(--mb-muted); }
+:root[data-style="mobai"] .db-timeline-bar > button { min-width: 18px; height: 20px; color: var(--mb-faint); opacity: 0; border-radius: 4px; }
+:root[data-style="mobai"] .db-timeline-bar:hover > button, :root[data-style="mobai"] .db-timeline-bar > button:focus-visible { opacity: 1; }
+:root[data-style="mobai"] .db-timeline-bar > button:hover { background: var(--mb-hover); color: var(--mb-muted); }
+:root[data-style="mobai"] .db-timeline-resize { border-left: 0 !important; }
+
+/* ---------- 图表：单个系列用一种蓝色，多系列用用户内容颜色；没有底色条 ---------- */
+:root[data-style="mobai"] .db-chart-surface { padding: 14px 0; }
+:root[data-style="mobai"] .db-chart-surface figcaption { margin-bottom: 14px; color: var(--mb-muted); font: 400 12px/1.4 var(--mb-sans); }
+:root[data-style="mobai"] .db-real-bars { gap: 10px; }
+:root[data-style="mobai"] .db-real-bar-row { gap: 12px; font: 400 14px/1.4 var(--mb-sans); }
+:root[data-style="mobai"] .db-real-bar-row > span { color: var(--mb-ink); }
+:root[data-style="mobai"] .db-real-bar-row > strong { color: var(--mb-muted); font-weight: 400; font-size: 13px; }
+:root[data-style="mobai"] .db-real-bar-track { height: 20px; background: transparent; }
+:root[data-style="mobai"] .db-real-bar-track i { border-radius: 4px; }
+:root[data-style="mobai"] .db-real-bar-track i:only-of-type { background: var(--mb-accent); }
+:root[data-style="mobai"] .db-real-bar-track b { border-left: 1px solid var(--mb-line-2); }
+:root[data-style="mobai"] .series-0 { --series: var(--mb-accent); } :root[data-style="mobai"] .series-1 { --series: var(--mb-u-purple); }
+:root[data-style="mobai"] .series-2 { --series: var(--mb-u-green); } :root[data-style="mobai"] .series-3 { --series: var(--mb-u-orange); }
+:root[data-style="mobai"] .series-4 { --series: var(--mb-u-red); } :root[data-style="mobai"] .series-5 { --series: var(--mb-u-yellow); }
+:root[data-style="mobai"] .series-6 { --series: var(--mb-u-pink); } :root[data-style="mobai"] .series-7 { --series: var(--mb-u-brown); }
+:root[data-style="mobai"] .db-chart-axis { stroke: var(--mb-line-2); }
+:root[data-style="mobai"] .db-real-line-chart text, :root[data-style="mobai"] .db-real-donut text { fill: var(--mb-muted); }
+:root[data-style="mobai"] .db-chart-x-labels, :root[data-style="mobai"] .db-chart-legend span { color: var(--mb-muted); font-size: 12px; }
+:root[data-style="mobai"] .db-chart-legend strong { color: var(--mb-ink); }
+:root[data-style="mobai"] .db-chart-data summary, :root[data-style="mobai"] .db-visible-properties summary, :root[data-style="mobai"] .db-widget-setting summary { color: var(--mb-muted); font-size: 12px; }
+:root[data-style="mobai"] .db-chart-data th, :root[data-style="mobai"] .db-chart-data td { border-bottom: 1px solid var(--mb-line); color: var(--mb-ink); font-size: 12px; }
+
+/* ---------- 表单：居中一栏，大标题，输入框是浅灰底，蓝色提交按钮 ---------- */
+:root[data-style="mobai"] .db-form-surface { max-width: 600px; gap: 20px; padding: 32px 0 40px; }
+:root[data-style="mobai"] .db-form-surface h3 { font: 700 30px/1.3 var(--mb-sans); color: var(--mb-ink); }
+:root[data-style="mobai"] .db-form-surface > p { margin-top: -10px; color: var(--mb-muted); font: 400 14px/1.5 var(--mb-sans); }
+:root[data-style="mobai"] .db-form-field { gap: 6px; }
+:root[data-style="mobai"] .db-form-field > span { color: var(--mb-ink); font: 600 14px/1.4 var(--mb-sans); }
+:root[data-style="mobai"] .db-form-field .db-cell-input, :root[data-style="mobai"] .db-form-field .db-date-editor input,
+:root[data-style="mobai"] .db-form-field .db-multi-picker > summary, :root[data-style="mobai"] .db-form-field .db-place-editor > summary {
+  min-height: 34px; padding: 6px 10px; border: 0 !important; border-radius: var(--mb-r2); background: var(--mb-field) !important;
+  box-shadow: inset 0 0 0 1px var(--mb-field-line) !important; color: var(--mb-ink); font: 400 14px/1.5 var(--mb-sans);
+}
+:root[data-style="mobai"] .db-form-field .db-cell-input:focus, :root[data-style="mobai"] .db-form-field .db-date-editor input:focus { box-shadow: var(--mb-focus) !important; }
+:root[data-style="mobai"] .db-form-field .db-date-editor > div:first-child { gap: 6px; }
+:root[data-style="mobai"] .db-form-field input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--mb-accent); }
+:root[data-style="mobai"] .db-form-surface > button[type="submit"] { height: 32px; padding: 0 14px; border: 0; border-radius: var(--mb-r2); background: var(--mb-accent); color: #fff; font: 500 14px/1 var(--mb-sans); cursor: pointer; }
+:root[data-style="mobai"] .db-form-surface > button[type="submit"]:hover { background: var(--mb-accent-hover); }
+:root[data-style="mobai"] .db-form-surface > small { color: var(--mb-faint); font-size: 12px; }
+:root[data-style="mobai"] .db-form-success { color: var(--mb-u-green) !important; }
+
+/* ---------- 仪表盘：一格一张细线卡片，大数字 ---------- */
+:root[data-style="mobai"] .db-configured-dashboard { gap: 14px; padding: 14px 0; }
+:root[data-style="mobai"] .db-configured-widget { padding: 14px 16px; border: 0; border-radius: var(--mb-r3); background: var(--mb-raised); box-shadow: inset 0 0 0 1px var(--mb-line); }
+:root[data-style="mobai"] .db-configured-widget > h3 { margin: 0 0 10px; color: var(--mb-muted); font: 500 14px/1.3 var(--mb-sans); }
+:root[data-style="mobai"] .db-dashboard-metric { justify-content: flex-start; align-items: baseline; gap: 8px; padding: 0; border: 0; background: transparent; box-shadow: none; }
+:root[data-style="mobai"] .db-dashboard-metric strong { color: var(--mb-ink); font: 600 32px/1.1 var(--mb-sans); font-variant-numeric: tabular-nums; }
+:root[data-style="mobai"] .db-dashboard-metric small { color: var(--mb-muted); font-size: 14px; }
+
+/* ---------- 地图：灰色陆地、浅色海面，蓝色标记，选中的是红色 ---------- */
+:root[data-style="mobai"] .db-map-toolbar { gap: 4px; color: var(--mb-muted); font: 400 14px/1 var(--mb-sans); }
+:root[data-style="mobai"] .db-map-toolbar button, :root[data-style="mobai"] .db-map-selection button, :root[data-style="mobai"] .db-map-location-list button {
+  min-height: 28px; padding: 0 8px; border: 0; border-radius: var(--mb-r2); background: transparent; color: var(--mb-muted); font: 400 14px/1 var(--mb-sans); box-shadow: inset 0 0 0 1px var(--mb-line-2);
+}
+:root[data-style="mobai"] .db-map-toolbar button:hover, :root[data-style="mobai"] .db-map-selection button:hover, :root[data-style="mobai"] .db-map-location-list button:hover { background: var(--mb-hover); color: var(--mb-ink); }
+:root[data-style="mobai"] .db-offline-map { border: 0; border-radius: var(--mb-r3); box-shadow: inset 0 0 0 1px var(--mb-line); }
+:root[data-style="mobai"] .db-offline-map:focus { outline: 2px solid rgba(var(--mb-accent-rgb), 0.55); outline-offset: 1px; }
+:root[data-style="mobai"] .db-map-water { fill: var(--mb-paper-2); }
+:root[data-style="mobai"] .db-offline-map path, :root[data-style="mobai"] .db-map-land { fill: var(--mb-tag-gray); stroke: var(--mb-paper); stroke-width: 0.25; }
+:root[data-style="mobai"][data-theme="dark"] .db-offline-map path, :root[data-style="mobai"][data-theme="dark"] .db-map-land { fill: #3a3a3a; }
+:root[data-style="mobai"] .db-map-graticule, :root[data-style="mobai"] .db-map-graticule path { fill: none; stroke: var(--mb-line); stroke-width: 0.15; }
+:root[data-style="mobai"] .db-map-marker { fill: var(--mb-accent); stroke: #fff; stroke-width: 0.5; }
+:root[data-style="mobai"] .db-map-marker.is-selected, :root[data-style="mobai"] .db-map-marker:focus { fill: var(--mb-today); stroke: #fff; }
+:root[data-style="mobai"] .db-map-attribution { color: var(--mb-faint); font-size: 11px; }
+:root[data-style="mobai"] .db-map-selection { padding: 10px 12px; border-radius: var(--mb-r2); background: var(--mb-paper-2); color: var(--mb-ink); font-size: 14px; }
+:root[data-style="mobai"] .db-map-selection span { color: var(--mb-muted); font-size: 12px; }
+:root[data-style="mobai"] .db-map-location-list > div { gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--mb-line); }
+:root[data-style="mobai"] .db-map-location-list > div > button:first-child { padding: 0; box-shadow: none; color: var(--mb-ink); font-weight: 500; }
+:root[data-style="mobai"] .db-map-location-list > div > button:first-child:hover { background: transparent; text-decoration: underline; text-decoration-color: rgba(var(--mb-ink-rgb), 0.3); }
+:root[data-style="mobai"] .db-map-location-list span { color: var(--mb-muted); font-size: 12px; }
+
+/* 页面菜单里的开关：开 = 蓝色 */
+:root[data-style="mobai"] .page-action-toggle { background: rgba(var(--mb-ink-rgb), 0.16); }
+:root[data-style="mobai"] .page-action-toggle.is-on { background: var(--mb-accent); }
+:root[data-style="mobai"] .page-action-toggle > span { background: #fff; }
+
+/* ICON-START：图标来自 Tabler Icons（MIT），由总设计师的脚本生成，不要手改 */
+:root[data-style="mobai"] .db-property-header::before {
+  content: ""; flex: none; width: 16px; height: 16px; background: currentColor; opacity: 0.8;
+  -webkit-mask: var(--mb-icon-text) center / 16px no-repeat; mask: var(--mb-icon-text) center / 16px no-repeat;
+}
+:root[data-style="mobai"] .db-property-header[data-type="title"]::before,
+:root[data-style="mobai"] .db-property-header[title="名称"]::before { -webkit-mask-image: var(--mb-icon-title); mask-image: var(--mb-icon-title); }
+:root[data-style="mobai"] .db-property-header[data-type="text"]::before,
+:root[data-style="mobai"] .db-property-header[title="文本"]::before { -webkit-mask-image: var(--mb-icon-text); mask-image: var(--mb-icon-text); }
+:root[data-style="mobai"] .db-property-header[data-type="number"]::before,
+:root[data-style="mobai"] .db-property-header[title="数字"]::before { -webkit-mask-image: var(--mb-icon-number); mask-image: var(--mb-icon-number); }
+:root[data-style="mobai"] .db-property-header[data-type="select"]::before,
+:root[data-style="mobai"] .db-property-header[title="选择"]::before { -webkit-mask-image: var(--mb-icon-select); mask-image: var(--mb-icon-select); }
+:root[data-style="mobai"] .db-property-header[data-type="multi_select"]::before,
+:root[data-style="mobai"] .db-property-header[title="多选"]::before { -webkit-mask-image: var(--mb-icon-multi); mask-image: var(--mb-icon-multi); }
+:root[data-style="mobai"] .db-property-header[data-type="status"]::before,
+:root[data-style="mobai"] .db-property-header[title="状态"]::before { -webkit-mask-image: var(--mb-icon-status); mask-image: var(--mb-icon-status); }
+:root[data-style="mobai"] .db-property-header[data-type="date"]::before,
+:root[data-style="mobai"] .db-property-header[title="日期"]::before { -webkit-mask-image: var(--mb-icon-date); mask-image: var(--mb-icon-date); }
+:root[data-style="mobai"] .db-property-header[data-type="checkbox"]::before,
+:root[data-style="mobai"] .db-property-header[title="复选框"]::before { -webkit-mask-image: var(--mb-icon-checkbox); mask-image: var(--mb-icon-checkbox); }
+:root[data-style="mobai"] .db-property-header[data-type="people"]::before,
+:root[data-style="mobai"] .db-property-header[title="人员"]::before { -webkit-mask-image: var(--mb-icon-people); mask-image: var(--mb-icon-people); }
+:root[data-style="mobai"] .db-property-header[data-type="url"]::before,
+:root[data-style="mobai"] .db-property-header[title="URL"]::before { -webkit-mask-image: var(--mb-icon-url); mask-image: var(--mb-icon-url); }
+:root[data-style="mobai"] .db-property-header[data-type="email"]::before,
+:root[data-style="mobai"] .db-property-header[title="邮箱"]::before { -webkit-mask-image: var(--mb-icon-email); mask-image: var(--mb-icon-email); }
+:root[data-style="mobai"] .db-property-header[data-type="phone"]::before,
+:root[data-style="mobai"] .db-property-header[title="电话"]::before { -webkit-mask-image: var(--mb-icon-phone); mask-image: var(--mb-icon-phone); }
+:root[data-style="mobai"] .db-property-header[data-type="files"]::before,
+:root[data-style="mobai"] .db-property-header[title="文件"]::before { -webkit-mask-image: var(--mb-icon-files); mask-image: var(--mb-icon-files); }
+:root[data-style="mobai"] .db-property-header[data-type="place"]::before,
+:root[data-style="mobai"] .db-property-header[title="地点"]::before { -webkit-mask-image: var(--mb-icon-place); mask-image: var(--mb-icon-place); }
+:root[data-style="mobai"] .db-property-header[data-type="relation"]::before,
+:root[data-style="mobai"] .db-property-header[title="关联"]::before { -webkit-mask-image: var(--mb-icon-relation); mask-image: var(--mb-icon-relation); }
+:root[data-style="mobai"] .db-property-header[data-type="rollup"]::before,
+:root[data-style="mobai"] .db-property-header[title="汇总"]::before { -webkit-mask-image: var(--mb-icon-rollup); mask-image: var(--mb-icon-rollup); }
+:root[data-style="mobai"] .db-property-header[data-type="formula"]::before,
+:root[data-style="mobai"] .db-property-header[title="公式"]::before { -webkit-mask-image: var(--mb-icon-formula); mask-image: var(--mb-icon-formula); }
+:root[data-style="mobai"] .db-property-header[data-type="id"]::before,
+:root[data-style="mobai"] .db-property-header[data-type="unique_id"]::before,
+:root[data-style="mobai"] .db-property-header[title="ID"]::before { -webkit-mask-image: var(--mb-icon-id); mask-image: var(--mb-icon-id); }
+:root[data-style="mobai"] .db-property-header[data-type="created_time"]::before,
+:root[data-style="mobai"] .db-property-header[title="创建时间"]::before { -webkit-mask-image: var(--mb-icon-created); mask-image: var(--mb-icon-created); }
+:root[data-style="mobai"] .db-property-header[data-type="modified_time"]::before,
+:root[data-style="mobai"] .db-property-header[title="修改时间"]::before { -webkit-mask-image: var(--mb-icon-modified); mask-image: var(--mb-icon-modified); }
+:root[data-style="mobai"] .db-property-header[data-type="created_by"]::before,
+:root[data-style="mobai"] .db-property-header[data-type="last_edited_by"]::before { -webkit-mask-image: var(--mb-icon-person); mask-image: var(--mb-icon-person); }
+/* ICON-END */

@@ -1,0 +1,137 @@
+{
+  "fixtureVersion": 1,
+  "synthetic": true,
+  "source": {
+    "release": "1.5.2 candidate",
+    "appVersion": "1.5.2",
+    "appAsarSha256": "43171cdadd823d1586c502d7a7917ba5bc58ed72bf0f5984bce1a272c08d6cdb",
+    "packagedImplementation": true,
+    "fixtureClock": "2026-11-26T12:00:00.000Z"
+  },
+  "formats": {
+    "workspaceSchemaVersion": 18,
+    "backupManifestVersion": 1,
+    "encryptedContainer": {
+      "formatVersion": 1,
+      "magicHex": "4c41454e43310000",
+      "cipher": "A256GCM-STREAM",
+      "kdf": {
+        "alg": "argon2id",
+        "version": 19,
+        "memoryKiB": 131072,
+        "iterations": 3,
+        "parallelism": 1
+      }
+    },
+    "vault": {
+      "formatVersion": 1,
+      "padding": 512,
+      "kdf": {
+        "alg": "argon2id",
+        "version": 19,
+        "memoryKiB": 131072,
+        "iterations": 3,
+        "parallelism": 1
+      }
+    }
+  },
+  "credentials": {
+    "masterPassword": "FORMULA-FIXTURE-MASTER-p0rtable!2026",
+    "recoveryKey": "LA1-W5NXM-V42AW-8AWFC-5SK8Q-Q5PD6-NZ58G-Q7XDW-CZ6RA-3SMGZ-5VWS0-5EGJ0",
+    "backupPassword": "FORMULA-FIXTURE-ARCHIVE-p0rtable!2026"
+  },
+  "expected": {
+    "workspaceId": "ws-formula-golden-v1",
+    "schemaVersion": 18,
+    "page": {
+      "id": "formula-page",
+      "title": "FORMULA golden page",
+      "paragraphId": "formula-paragraph",
+      "paragraphText": "FORMULA legacy fixture paragraph 001"
+    },
+    "database": {
+      "sourceId": "formula-source",
+      "viewId": "formula-view",
+      "itemId": "formula-row",
+      "recordPageId": "formula-record-page",
+      "title": "FORMULA golden database",
+      "recordTitle": "FORMULA golden record"
+    },
+    "formulas": [
+      {
+        "id": "legacy-collection",
+        "config": {
+          "expression": "concat([1,2],[3,4]).length()",
+          "formulaSemantics": "legacy"
+        },
+        "result": 6
+      },
+      {
+        "id": "current-collection",
+        "config": {
+          "expression": "concat([1,2],[3,4]).length()"
+        },
+        "result": 4
+      }
+    ],
+    "workspacePreferences": {
+      "theme": "dark"
+    },
+    "attachments": [
+      {
+        "id": "formula-attachment",
+        "assetId": "c03dc9331720ee1dce86fa11daa15b19b4aa79af6ae25d9e7bbc4568cc7c933e",
+        "sha256": "c03dc9331720ee1dce86fa11daa15b19b4aa79af6ae25d9e7bbc4568cc7c933e",
+        "size": 44,
+        "name": "formula-fixture.bin",
+        "mime": "application/octet-stream",
+        "base64": "AP+JyQpzeW50aGV0aWMgZm9ybXVsYSB3b3Jrc3BhY2UgYXR0YWNobWVudAo="
+      }
+    ],
+    "vault": {
+      "itemId": "vi_f8c70f8a6f3709837dd5978f995d0b86",
+      "title": "FORMULA synthetic vault item",
+      "secretFieldId": "f_e52dd84f",
+      "secretValue": "synthetic-formula-vault-secret-0001",
+      "requiredSettings": {
+        "autoLockMinutes": 15,
+        "clipboardClearSeconds": 60,
+        "lockOnMinimize": true,
+        "verifyBeforeReveal": false
+      },
+      "attachments": [
+        {
+          "id": "va_185485b38055b599e496b02e5ae3ea38",
+          "name": "formula-vault-fixture.bin",
+          "size": 44,
+          "base64": "ABT/B3N5bnRoZXRpYyBmb3JtdWxhIHZhdWx0IG5vdGUgYXR0YWNobWVudAo=",
+          "sha256": "1379f3f490fd47aabd7708673ece486580b0786dce0c41b10e54662e51e35f53"
+        }
+      ]
+    }
+  },
+  "files": {
+    "backupPlain": {
+      "file": "complete.lifeatlas",
+      "sha256": "89193a681788f4c59adda6898aee3076c8e9e0e26fce2a926313ab036132b312",
+      "bytes": 7812
+    },
+    "backupEncrypted": {
+      "file": "complete-encrypted.lifeatlas",
+      "sha256": "3f675f35116537d1897380404fe1f4eea70ea033bb37847bb2d896c11de0bd07",
+      "bytes": 8099
+    },
+    "liveProfile": {
+      "file": "live-profile.zip",
+      "sha256": "2463683af9f0e6e726ea02997331bbd2dfc32feb28fad7897fef88c4afd7d485",
+      "bytes": 5368
+    }
+  },
+  "verification": {
+    "generatedByPackagedBackupService": true,
+    "outerEncryptedBackupOpenedByPackagedReader": true,
+    "originalMasterPasswordOpenedVault": true,
+    "excludedVaultInWorkspaceOnlyBackup": false,
+    "vaultAttachmentIncluded": true
+  }
+}

@@ -1,0 +1,59 @@
+/* Reading cues follow the paired native table observations; values and widths stay unchanged. */
+:root[data-style="mobai"][data-theme="light"] .db-table thead th,
+:root[data-style="mobai"][data-theme="light"] .db-table tbody td {
+  border-right-color: color-mix(in srgb, var(--mb-line) 60%, transparent) !important;
+}
+
+:root[data-style="mobai"] .db-title-control .db-title-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+:root[data-style="mobai"] .db-title-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+:root[data-style="mobai"] .db-wrap-cell .db-title-label {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+:root[data-style="mobai"] .db-record-glyph {
+  display: inline-flex;
+  flex: 0 0 16px;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 18px;
+  color: var(--mb-muted);
+  font-size: 14px;
+  line-height: 18px;
+}
+:root[data-style="mobai"] .db-record-glyph > .page-glyph-vector,
+:root[data-style="mobai"] .db-record-glyph > .page-glyph-image {
+  width: 16px;
+  height: 16px;
+}
+:root[data-style="mobai"] .db-record-glyph > .page-glyph-image {
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* The raised neutral edge and caret mark input focus; cell and button keyboard rings remain. */
+:root[data-style="mobai"] .db-title-editor {
+  background: var(--mb-raised);
+  box-shadow: var(--mb-card);
+  outline: 1px solid var(--mb-line-2);
+  outline-offset: -1px;
+}
+:root[data-style="mobai"] .db-title-editor:focus-visible {
+  outline-color: var(--mb-muted);
+}
+
+:root[data-style="mobai"] .db-table .db-cell-input[inputmode="decimal"],
+:root[data-style="mobai"] .db-table .db-readonly-cell[data-value-kind="number"] {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}

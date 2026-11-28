@@ -1,0 +1,73 @@
+/* 墨白：侧栏与顶栏，贴近 Notion：暖灰侧栏、14 px 中等字重、悬停和选中都是一层很淡的灰底。 */
+:root[data-style="mobai"] .workspace-sidebar {
+  background: var(--mb-side); border-right: 0; box-shadow: none; color: var(--mb-side-text); font-family: var(--mb-sans);
+}
+:root[data-style="mobai"] .workspace-switcher { height: 40px; padding: 0 8px; gap: 8px; border-radius: var(--mb-r2); }
+:root[data-style="mobai"] .workspace-switcher:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .workspace-avatar {
+  width: 22px; height: 22px; border-radius: 4px; background: var(--mb-ink); color: var(--mb-paper);
+  font: 600 12px/22px var(--mb-sans); text-align: center; box-shadow: none;
+}
+:root[data-style="mobai"] .workspace-name { font: 600 14px/1.2 var(--mb-sans); letter-spacing: 0; color: var(--mb-ink); }
+:root[data-style="mobai"] .workspace-chevron { color: var(--mb-faint); }
+
+:root[data-style="mobai"] .sidebar-quick-search {
+  height: 30px; margin: 2px 0; padding: 0 8px; gap: 8px; border: 0; border-radius: var(--mb-r2);
+  background: transparent; box-shadow: none; color: var(--mb-side-text); font: 500 14px/1 var(--mb-sans);
+}
+:root[data-style="mobai"] .sidebar-quick-search:hover { background: var(--mb-hover); color: var(--mb-ink); }
+:root[data-style="mobai"] .sidebar-quick-search svg { color: var(--mb-muted); }
+:root[data-style="mobai"] .sidebar-shortcut { font: 400 12px/1 var(--mb-sans); color: var(--mb-faint); background: none; box-shadow: none; }
+
+:root[data-style="mobai"] .nav-section-link,
+:root[data-style="mobai"] .private-nav-trigger,
+:root[data-style="mobai"] .team-root-link {
+  height: 30px; padding: 0 8px; gap: 8px; border-radius: var(--mb-r2);
+  color: var(--mb-side-text); font: 500 14px/1 var(--mb-sans); background: transparent;
+}
+:root[data-style="mobai"] .nav-section-link svg, :root[data-style="mobai"] .team-root-link svg { color: var(--mb-muted); }
+:root[data-style="mobai"] .nav-section-link:hover, :root[data-style="mobai"] .team-root-link:hover { background: var(--mb-hover); color: var(--mb-ink); }
+:root[data-style="mobai"] .nav-section-link.is-active { background: var(--mb-select); color: var(--mb-ink); font-weight: 500; }
+:root[data-style="mobai"] .nav-section-link.is-active svg { color: var(--mb-ink); }
+/* “Private” 分组标题：12 px 灰字 */
+:root[data-style="mobai"] .private-nav-header { margin-top: 12px; }
+:root[data-style="mobai"] .private-nav-trigger { height: 26px; font-size: 12px; font-weight: 500; color: var(--mb-faint); }
+:root[data-style="mobai"] .private-nav-trigger:hover { background: var(--mb-hover); color: var(--mb-side-text); }
+:root[data-style="mobai"] .private-nav-group.is-active .private-nav-trigger { background: transparent; color: var(--mb-faint); font-weight: 500; }
+:root[data-style="mobai"] .private-nav-actions .ui-icon-button { color: var(--mb-faint); }
+
+:root[data-style="mobai"] .workspace-tree-row {
+  min-height: 30px; border-radius: var(--mb-r2); color: var(--mb-side-text); font: 500 14px/1.2 var(--mb-sans); background: transparent;
+}
+:root[data-style="mobai"] .workspace-tree-row:hover { background: var(--mb-hover); color: var(--mb-ink); }
+:root[data-style="mobai"] .workspace-tree-row.is-selected { background: var(--mb-select); color: var(--mb-ink); font-weight: 500; box-shadow: none; }
+:root[data-style="mobai"] .tree-disclosure { color: var(--mb-faint); border-radius: 4px; }
+:root[data-style="mobai"] .tree-disclosure:hover { background: var(--mb-hover); color: var(--mb-ink); }
+:root[data-style="mobai"] .page-tree-glyph, :root[data-style="mobai"] .workspace-tree-row .page-glyph { color: var(--mb-muted); }
+/* 文件夹颜色点：保留用户选的颜色 */
+:root[data-style="mobai"] .folder-marker { width: 8px; height: 8px; border-radius: 2px; }
+:root[data-style="mobai"] .sidebar-tree-count { color: var(--mb-faint); font: 400 12px/1.4 var(--mb-sans); }
+:root[data-style="mobai"] .trash-nav-link { margin-top: 4px; }
+:root[data-style="mobai"] .trash-nav-count { color: var(--mb-faint); background: none; }
+
+/* 顶栏：44 px，面包屑 14 px，右边是图标按钮 */
+:root[data-style="mobai"] .workspace-topbar {
+  height: 44px; padding: 0 12px 0 16px; background: var(--mb-paper); border-bottom: 0; box-shadow: none;
+}
+:root[data-style="mobai"] .breadcrumb { gap: 2px; font: 400 14px/1 var(--mb-sans); color: var(--mb-ink); }
+:root[data-style="mobai"] .breadcrumb-muted { color: var(--mb-muted); }
+:root[data-style="mobai"] .breadcrumb-piece { padding: 4px 6px; border-radius: 4px; color: var(--mb-ink); }
+:root[data-style="mobai"] .breadcrumb-piece:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .breadcrumb-piece:last-child, :root[data-style="mobai"] .breadcrumb-page { color: var(--mb-ink); }
+:root[data-style="mobai"] .breadcrumb svg { color: var(--mb-faint); }
+:root[data-style="mobai"] .header-search {
+  height: 28px; padding: 0 8px; border: 0; border-radius: var(--mb-r2); background: transparent; box-shadow: none;
+  color: var(--mb-ink); font: 400 14px/1 var(--mb-sans);
+}
+:root[data-style="mobai"] .header-search:hover { background: var(--mb-hover); color: var(--mb-ink); }
+:root[data-style="mobai"] .header-search svg { color: var(--mb-muted); }
+:root[data-style="mobai"] .workspace-pane, :root[data-style="mobai"] .workspace-scroll { background: var(--mb-paper); }
+:root[data-style="mobai"] .private-nav-header, :root[data-style="mobai"] .private-nav-group.is-active .private-nav-header { background: transparent; box-shadow: none; }
+/* 顶栏的“切换白天/夜间”按钮（WP-20） */
+:root[data-style="mobai"] .header-theme-toggle { width: 28px; height: 28px; display: inline-grid; place-items: center; border: 0; border-radius: var(--mb-r2); background: transparent; color: var(--mb-muted); }
+:root[data-style="mobai"] .header-theme-toggle:hover { background: var(--mb-hover); color: var(--mb-ink); }

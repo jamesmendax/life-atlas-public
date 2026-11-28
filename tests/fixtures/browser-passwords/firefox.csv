@@ -1,0 +1,7 @@
+"url","username","password","httpRealm","formActionOrigin","guid","timeCreated","timeLastUsed","timePasswordChanged","note"
+"https://mail.example.invalid","alice","csv-firefox-test-1","","https://mail.example.invalid","{00000000-0000-0000-0000-000000000001}","1","2","3","note, with comma"
+"https://quoted.example.invalid","bob","csv-firefox-test-2","Quoted ""Name""","","{00000000-0000-0000-0000-000000000002}","1","2","3","ordinary note"
+"https://lines.example.invalid","charlie","csv-firefox-test-3","","","{00000000-0000-0000-0000-000000000003}","1","2","3","first line
+second line"
+"https://zh.example.invalid","测试用户","csv-firefox-test-4","","","{00000000-0000-0000-0000-000000000004}","1","2","3","中文备注"
+"https://fallback.example.invalid","delta","csv-firefox-test-5","","","{00000000-0000-0000-0000-000000000005}","1","2","3","empty name"

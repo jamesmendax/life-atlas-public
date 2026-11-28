@@ -1,0 +1,117 @@
+.page-presentation {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  color: var(--mb-ink, CanvasText);
+  background: var(--mb-paper, Canvas);
+  outline: none;
+}
+
+.page-presentation-header,
+.page-presentation-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px clamp(14px, 3vw, 38px);
+}
+
+.page-presentation-header {
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.page-presentation-controls {
+  justify-content: center;
+}
+
+.page-presentation-controls output {
+  min-width: 4rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.page-presentation-header button,
+.page-presentation-controls button {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--mb-line, #9997);
+  border-radius: 8px;
+}
+
+.page-presentation-header button:hover,
+.page-presentation-controls button:hover:enabled {
+  background: var(--mb-hover, #8882);
+}
+
+.page-presentation-controls button:disabled {
+  opacity: .38;
+}
+
+.page-presentation-viewport {
+  min-width: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.page-presentation-title {
+  box-sizing: border-box;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  min-height: 100%;
+  padding: 24px;
+  text-align: center;
+}
+
+.page-presentation-title h1 {
+  margin: .25em 0;
+  font-size: clamp(28px, 7vw, 94px);
+  font-weight: 700;
+  line-height: 1.14;
+  overflow-wrap: anywhere;
+}
+
+.page-presentation-title > :first-child:not(h1) {
+  font-size: clamp(24px, 4vw, 60px);
+}
+
+.page-presentation-title > :first-child:not(h1) svg {
+  width: 1em;
+  height: 1em;
+}
+
+.page-presentation-slide {
+  box-sizing: border-box;
+  width: min(100%, 1100px);
+  margin: auto;
+  padding: clamp(12px, 4vw, 50px);
+}
+
+.page-presentation-slide .life-editor .bn-editor {
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.page-presentation-slide .life-editor .bn-block-content {
+  font-size: clamp(15px, 2.4vmin, 24px);
+  line-height: 1.55;
+}
+
+.page-presentation-slide img.bn-visual-media,
+.page-presentation-slide video.bn-visual-media {
+  max-width: 100%;
+  max-height: min(62dvh, 700px);
+  object-fit: contain;
+}
+
+.page-presentation-slide .bn-file-block-content-wrapper {
+  max-width: 100%;
+}

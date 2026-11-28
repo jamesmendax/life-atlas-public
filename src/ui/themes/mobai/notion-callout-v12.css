@@ -1,0 +1,41 @@
+/* One rounded surface encloses the heading and its native child blocks. */
+:root[data-style="mobai"] .life-editor .bn-block-outer:has(> .bn-block > .react-renderer > .bn-block-content[data-content-type="callout"]) {
+  margin-block-end: 16px;
+}
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content[data-content-type="callout"]) {
+  border-radius: 10px;
+}
+:root[data-style="mobai"] .life-editor .bn-block > .react-renderer > .bn-block-content[data-content-type="callout"] {
+  background: transparent;
+}
+
+/* Explicit backgroundColor also covers the callout's native child blocks. */
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content[data-content-type="callout"][data-background-color="gray"]) { background: var(--mb-u-gray-bg); }
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content[data-content-type="callout"][data-background-color="brown"]) { background: var(--mb-u-brown-bg); }
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content[data-content-type="callout"][data-background-color="orange"]) { background: var(--mb-u-orange-bg); }
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content[data-content-type="callout"][data-background-color="yellow"]) { background: var(--mb-u-yellow-bg); }
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content[data-content-type="callout"][data-background-color="green"]) { background: var(--mb-u-green-bg); }
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content[data-content-type="callout"][data-background-color="blue"]) { background: var(--mb-u-blue-bg); }
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content[data-content-type="callout"][data-background-color="purple"]) { background: var(--mb-u-purple-bg); }
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content[data-content-type="callout"][data-background-color="pink"]) { background: var(--mb-u-pink-bg); }
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content[data-content-type="callout"][data-background-color="red"]) { background: var(--mb-u-red-bg); }
+
+/* An imported empty icon is not the new-callout default lightbulb. */
+:root[data-style="mobai"] .life-editor .life-callout[data-callout-icon="none"] {
+  position: relative;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+:root[data-style="mobai"] .life-editor .life-callout[data-callout-icon="none"] > .life-callout-icon {
+  position: absolute;
+  inset-block-start: 2px;
+  inset-inline-end: 2px;
+  opacity: 0;
+}
+:root[data-style="mobai"] .life-editor .life-callout[data-callout-icon="none"] > .life-callout-icon::before { content: "+"; }
+:root[data-style="mobai"] .life-editor .life-callout[data-callout-icon="none"]:hover > .life-callout-icon:not(:disabled),
+:root[data-style="mobai"] .life-editor .life-callout[data-callout-icon="none"] > .life-callout-icon:focus-visible { opacity: 1; }
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content > .life-callout[data-callout-icon="none"]) > .bn-block-group {
+  margin-left: 0;
+  padding-left: 12px;
+}

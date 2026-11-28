@@ -1,0 +1,16 @@
+:root[data-resolved-contrast="high"] {
+  --mb-ink: #101010; --mb-ink-2: #151515; --mb-muted: #3d3d3d; --mb-faint: #4b4b4b;
+  --mb-side-text: #303030; --mb-line: #767676; --mb-line-2: #5e5e5e; --mb-field-line: #5e5e5e;
+  --mb-accent: #0054a8; --mb-accent-text: #0054a8; --mb-danger: #a51e29;
+}
+:root[data-resolved-contrast="high"][data-vault-theme="dark"] {
+  --mb-ink: #fff; --mb-ink-2: #f5f5f5; --mb-muted: #dedede; --mb-faint: #c5c5c5;
+  --mb-side-text: #eee; --mb-line: #858585; --mb-line-2: #a0a0a0; --mb-field-line: #a0a0a0;
+  --mb-accent-text: #9fd1ff; --mb-danger: #ffaaa9;
+}
+:root[data-resolved-contrast="high"] :focus-visible { outline: 2px solid var(--mb-accent-text); outline-offset: 2px; }
+@media (forced-colors: active) {
+  :root { --mb-paper: Canvas; --mb-side: Canvas; --mb-raised: Canvas; --mb-ink: CanvasText; --mb-muted: CanvasText; --mb-faint: CanvasText; --mb-line: ButtonText; --mb-field-line: ButtonText; }
+  :focus-visible { outline: 2px solid Highlight !important; }
+  [aria-selected="true"] { text-decoration: underline; }
+}

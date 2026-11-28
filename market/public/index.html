@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN" data-style="mobai" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="浏览和下载 Life Atlas 官方页面模板与组件。">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>官方市集 | Life Atlas</title>
+  <link rel="icon" href="app-icon.png">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="market.css">
+  <script defer src="catalog-data.js"></script>
+  <script defer src="market.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="./index.html" aria-label="Life Atlas 官方市集首页">
+        <img src="app-icon.png" width="30" height="30" alt="">
+        <span>Life Atlas</span>
+      </a>
+      <div class="topbar-tools">
+        <a class="quiet" href="https://github.com/jamesmendax/life-atlas-public/issues/new?template=market-submission.yml" target="_blank" rel="noopener noreferrer">投稿作品</a>
+        <a class="quiet" href="https://github.com/jamesmendax/life-atlas-public/issues/new?template=feedback.yml" target="_blank" rel="noopener noreferrer">问题反馈</a>
+        <button type="button" class="quiet" id="open-guide">导入指南</button>
+        <button type="button" class="quiet theme-button" id="theme-toggle" aria-label="切换显示模式" title="切换显示模式">◐</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="market">
+    <div class="intro">
+      <h1>官方市集</h1>
+      <p>免费下载页面模板和组件，导入 Life Atlas 后即可在本机使用。</p>
+    </div>
+
+    <div class="catalog-tools">
+      <nav class="category" aria-label="市集分类">
+        <button type="button" data-category="all" aria-pressed="true">全部</button>
+        <button type="button" data-category="template" aria-pressed="false">页面模板</button>
+        <button type="button" data-category="component" aria-pressed="false">组件</button>
+      </nav>
+      <label class="search">
+        <span class="search-icon" aria-hidden="true"></span>
+        <input type="search" id="search" aria-label="搜索市集" placeholder="搜索市集" autocomplete="off" spellcheck="false">
+      </label>
+    </div>
+
+    <div id="catalog-items" class="catalog-items" aria-label="市集项目"></div>
+    <p id="catalog-status" class="catalog-status" role="status" hidden></p>
+    <noscript><p>请启用 JavaScript 以预览并下载官方内容。</p></noscript>
+  </main>
+
+  <dialog id="preview" class="dialog" aria-labelledby="preview-title">
+    <header class="dialog-head">
+      <div>
+        <p id="preview-kind" class="eyebrow"></p>
+        <h2 id="preview-title"></h2>
+      </div>
+      <button type="button" class="quiet close-button" data-close-dialog="preview" aria-label="关闭预览">×</button>
+    </header>
+    <div id="preview-scroll" class="preview-scroll">
+      <p id="preview-summary"></p>
+      <div id="preview-content"></div>
+    </div>
+    <footer class="dialog-foot">
+      <p id="preview-version"></p>
+      <a id="preview-download" class="button primary" download>下载 .atlaspack</a>
+    </footer>
+  </dialog>
+
+  <dialog id="guide" class="dialog guide" aria-labelledby="guide-title">
+    <header class="dialog-head">
+      <h2 id="guide-title">导入指南</h2>
+      <button type="button" class="quiet close-button" data-close-dialog="guide" aria-label="关闭导入指南">×</button>
+    </header>
+    <ol>
+      <li>从市集下载 <code>.atlaspack</code> 文件。</li>
+      <li>在 Life Atlas 桌面端打开市集，选择「导入本地包」。</li>
+      <li>确认包信息后导入。页面模板可新建页面，组件可插入页面。</li>
+    </ol>
+  </dialog>
+</body>
+</html>

@@ -1,0 +1,130 @@
+/* 墨白（2026-11-06 起尽量贴近 Notion）：颜色、字体、圆角、阴影。白天 = data-theme="light"，夜间 = data-theme="dark"。
+   所有规则都挂在 :root[data-style="mobai"] 下面，以后加第二套风格时换一个 data-style 即可。 */
+:root[data-style="mobai"] {
+  --mb-sans: "Segoe UI Variable Text", "Segoe UI", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Noto Sans SC Variable", "Noto Sans SC", "Microsoft YaHei UI", "PingFang SC", sans-serif, "Segoe UI Emoji", "Apple Color Emoji";
+  --mb-serif: Georgia, "Noto Serif SC Variable", "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --mb-mono: "Cascadia Mono", "SFMono-Regular", Menlo, Consolas, "Noto Sans SC Variable", monospace;
+  --mb-numeral: var(--mb-sans);
+  /* 圆角：3 px 标签、行内代码；6 px 按钮、输入框、菜单行、侧栏行；10 px 菜单、弹出层、卡片；12 px 对话框、窗口 */
+  --mb-r1: 3px; --mb-r2: 6px; --mb-r3: 10px; --mb-r4: 12px;
+}
+:root[data-style="mobai"][data-theme="light"] {
+  color-scheme: light;
+  --mb-paper: #ffffff; --mb-paper-2: #f7f6f3; --mb-side: #f7f7f5; --mb-raised: #ffffff;
+  --mb-hover: rgba(55, 53, 47, 0.06); --mb-select: rgba(55, 53, 47, 0.08); --mb-hover-soft: rgba(55, 53, 47, 0.03);
+  --mb-ink: #37352f; --mb-ink-2: #37352f; --mb-muted: #787774; --mb-faint: #a19f9a; --mb-side-text: #5f5e5b;
+  --mb-line: #e9e9e7; --mb-line-2: #dfdedb; --mb-rule: #37352f;
+  --mb-accent: #2383e2; --mb-accent-hover: #0077d4; --mb-accent-rgb: 35, 131, 226; --mb-accent-soft: rgba(35, 131, 226, 0.12); --mb-accent-text: #2383e2;
+  --mb-danger: #eb5757; --mb-today: #eb5757; --mb-ink-rgb: 55, 53, 47;
+  --mb-field: rgba(242, 241, 238, 0.6); --mb-field-line: rgba(15, 15, 15, 0.1);
+  --mb-focus: inset 0 0 0 1px rgba(35, 131, 226, 0.57), 0 0 0 2px rgba(35, 131, 226, 0.35);
+  --mb-scrim: rgba(15, 15, 15, 0.4);
+  --mb-pop: 0 0 0 1px rgba(15, 15, 15, 0.05), 0 3px 6px rgba(15, 15, 15, 0.1), 0 9px 24px rgba(15, 15, 15, 0.2);
+  --mb-dlg: 0 0 0 1px rgba(15, 15, 15, 0.05), 0 5px 10px rgba(15, 15, 15, 0.1), 0 15px 40px rgba(15, 15, 15, 0.2);
+  --mb-card: 0 0 0 1px rgba(15, 15, 15, 0.1), 0 2px 4px rgba(15, 15, 15, 0.1);
+  --mb-select-text: rgba(35, 131, 226, 0.28);
+  --mb-tooltip-bg: #0f0f0f; --mb-tooltip-text: rgba(255, 255, 255, 0.9);
+  --mb-code-text: #eb5757; --mb-code-bg: rgba(135, 131, 120, 0.15);
+  /* 用户内容的颜色：--mb-u-x 文字色，--mb-u-x-bg 区块背景，--mb-tag-x 标签底色，--mb-tag-x-text 标签文字 */
+  --mb-u-gray: #787774; --mb-u-gray-bg: #f1f1ef; --mb-tag-gray: #e3e2e0; --mb-tag-gray-text: #32302c;
+  --mb-u-brown: #9f6b53; --mb-u-brown-bg: #f4eeee; --mb-tag-brown: #eee0da; --mb-tag-brown-text: #442a1e;
+  --mb-u-orange: #d9730d; --mb-u-orange-bg: #fbecdd; --mb-tag-orange: #fadec9; --mb-tag-orange-text: #49290e;
+  --mb-u-yellow: #cb912f; --mb-u-yellow-bg: #fbf3db; --mb-tag-yellow: #fdecc8; --mb-tag-yellow-text: #402c1b;
+  --mb-u-green: #448361; --mb-u-green-bg: #edf3ec; --mb-tag-green: #dbeddb; --mb-tag-green-text: #1c3829;
+  --mb-u-blue: #337ea9; --mb-u-blue-bg: #e7f3f8; --mb-tag-blue: #d3e5ef; --mb-tag-blue-text: #183347;
+  --mb-u-purple: #9065b0; --mb-u-purple-bg: #f4f0f7; --mb-tag-purple: #e8deee; --mb-tag-purple-text: #412454;
+  --mb-u-pink: #c14c8a; --mb-u-pink-bg: #f9eef3; --mb-tag-pink: #f5e0e9; --mb-tag-pink-text: #4c2337;
+  --mb-u-red: #d44c47; --mb-u-red-bg: #fdebec; --mb-tag-red: #ffe2dd; --mb-tag-red-text: #5d1715;
+  --mb-tag-default: rgba(227, 226, 224, 0.5); --mb-tag-default-text: #32302c;
+}
+:root[data-style="mobai"][data-theme="dark"] {
+  color-scheme: dark;
+  --mb-paper: #191919; --mb-paper-2: #202020; --mb-side: #202020; --mb-raised: #252525;
+  --mb-hover: rgba(255, 255, 255, 0.055); --mb-select: rgba(255, 255, 255, 0.08); --mb-hover-soft: rgba(255, 255, 255, 0.03);
+  --mb-ink: #d4d4d4; --mb-ink-2: #d4d4d4; --mb-muted: #9b9b9b; --mb-faint: #6f6f6f; --mb-side-text: #9b9b9b;
+  --mb-line: #2f2f2f; --mb-line-2: #3a3a3a; --mb-rule: #d4d4d4;
+  --mb-accent: #2383e2; --mb-accent-hover: #3b91e6; --mb-accent-rgb: 35, 131, 226; --mb-accent-soft: rgba(35, 131, 226, 0.18); --mb-accent-text: #529cca;
+  --mb-danger: #eb5757; --mb-today: #eb5757; --mb-ink-rgb: 255, 255, 255;
+  --mb-field: rgba(255, 255, 255, 0.055); --mb-field-line: rgba(255, 255, 255, 0.094);
+  --mb-focus: inset 0 0 0 1px rgba(35, 131, 226, 0.57), 0 0 0 2px rgba(35, 131, 226, 0.35);
+  --mb-scrim: rgba(0, 0, 0, 0.6);
+  --mb-pop: 0 0 0 1px rgba(255, 255, 255, 0.094), 0 3px 6px rgba(0, 0, 0, 0.2), 0 9px 24px rgba(0, 0, 0, 0.4);
+  --mb-dlg: 0 0 0 1px rgba(255, 255, 255, 0.094), 0 5px 10px rgba(0, 0, 0, 0.2), 0 15px 40px rgba(0, 0, 0, 0.4);
+  --mb-card: 0 0 0 1px rgba(255, 255, 255, 0.094), 0 2px 4px rgba(0, 0, 0, 0.2);
+  --mb-select-text: rgba(35, 131, 226, 0.35);
+  --mb-tooltip-bg: #0f0f0f; --mb-tooltip-text: rgba(255, 255, 255, 0.9);
+  --mb-code-text: #ff7369; --mb-code-bg: rgba(135, 131, 120, 0.15);
+  --mb-u-gray: #9b9b9b; --mb-u-gray-bg: #2f2f2f; --mb-tag-gray: #5a5a5a; --mb-tag-gray-text: #e3e3e3;
+  --mb-u-brown: #ba856f; --mb-u-brown-bg: #4a3228; --mb-tag-brown: #603b2c; --mb-tag-brown-text: #e3e3e3;
+  --mb-u-orange: #c77d48; --mb-u-orange-bg: #5c3b23; --mb-tag-orange: #854c1d; --mb-tag-orange-text: #e3e3e3;
+  --mb-u-yellow: #ca9849; --mb-u-yellow-bg: #564328; --mb-tag-yellow: #89632a; --mb-tag-yellow-text: #e3e3e3;
+  --mb-u-green: #529e72; --mb-u-green-bg: #243d30; --mb-tag-green: #2b593f; --mb-tag-green-text: #e3e3e3;
+  --mb-u-blue: #379ad3; --mb-u-blue-bg: #143a4e; --mb-tag-blue: #28456c; --mb-tag-blue-text: #e3e3e3;
+  --mb-u-purple: #9d68d3; --mb-u-purple-bg: #3c2d49; --mb-tag-purple: #492f64; --mb-tag-purple-text: #e3e3e3;
+  --mb-u-pink: #d15796; --mb-u-pink-bg: #4e2c3c; --mb-tag-pink: #69314c; --mb-tag-pink-text: #e3e3e3;
+  --mb-u-red: #df5452; --mb-u-red-bg: #522e2a; --mb-tag-red: #6e3630; --mb-tag-red-text: #e3e3e3;
+  --mb-tag-default: rgba(90, 90, 90, 0.5); --mb-tag-default-text: #e3e3e3;
+  /* 旧的深色背景灰阶：主背景与侧栏换成新值 */
+  --la-gray-19: #191919; --la-gray-20: #202020;
+}
+:root[data-style="mobai"][data-theme="light"] { --la-gray-20: #f7f7f5; }
+
+/* product-system.css 和 styles.css 的语义变量 → 墨白 */
+:root[data-style="mobai"] {
+  --la-bg: var(--mb-paper); --la-sidebar: var(--mb-side); --la-surface: var(--mb-paper); --la-surface-raised: var(--mb-raised);
+  --la-hover: var(--mb-hover); --la-active: var(--mb-select); --la-border: var(--mb-line); --la-border-strong: var(--mb-line-2);
+  --la-text: var(--mb-ink); --la-text-secondary: var(--mb-muted); --la-text-tertiary: var(--mb-faint);
+  --la-accent: var(--mb-accent); --la-danger: var(--mb-danger);
+  --la-radius-sm: 3px; --la-radius-md: 6px; --la-radius-lg: 10px;
+  --la-shadow-popover: var(--mb-pop); --la-font: var(--mb-sans);
+  --la-ink-rgb: var(--mb-ink-rgb);
+  --sidebar: var(--mb-side); --main: var(--mb-paper); --line: var(--mb-line); --line-strong: var(--mb-line-2);
+  --text: var(--mb-ink); --text-soft: var(--mb-ink-2); --muted: var(--mb-muted); --muted-dark: var(--mb-faint);
+  --purple: var(--mb-accent); --purple-strong: var(--mb-accent);
+  /* 旧调色板里的紫色、蓝色强调色一律换成墨白的蓝 */
+  --la-c-aea6ff: var(--mb-accent); --la-c-9a8fff: var(--mb-accent); --la-c-8178d8: var(--mb-accent); --la-c-9b91e8: var(--mb-accent);
+  --la-c-968ee0: var(--mb-accent); --la-c-8f8ae0: var(--mb-accent); --la-c-776fc3: var(--mb-accent); --la-c-746cb7: var(--mb-accent);
+  --la-c-aaa4e8: var(--mb-accent); --la-c-8a82d8: var(--mb-accent); --la-c-318bf1: var(--mb-accent); --la-c-4997f4: var(--mb-accent); --la-c-4d9fff: var(--mb-accent);
+  --la-c-aea6ff-rgb: var(--mb-accent-rgb); --la-c-9a8fff-rgb: var(--mb-accent-rgb); --la-c-8178d8-rgb: var(--mb-accent-rgb); --la-c-9b91e8-rgb: var(--mb-accent-rgb);
+  --la-c-968ee0-rgb: var(--mb-accent-rgb); --la-c-8f8ae0-rgb: var(--mb-accent-rgb); --la-c-776fc3-rgb: var(--mb-accent-rgb); --la-c-746cb7-rgb: var(--mb-accent-rgb);
+  --la-c-aaa4e8-rgb: var(--mb-accent-rgb); --la-c-8a82d8-rgb: var(--mb-accent-rgb); --la-c-318bf1-rgb: var(--mb-accent-rgb); --la-c-4997f4-rgb: var(--mb-accent-rgb); --la-c-4d9fff-rgb: var(--mb-accent-rgb);
+  /* 页面版式：贴近 Notion（正文栏 708 px、标题 40 px、图标 78 px） */
+  --page-content-width: 708px;
+  --page-cover-height: clamp(200px, 30vh, 280px);
+  --page-icon-hit-size: 78px; --page-icon-svg-size: 64px; --page-icon-emoji-size: 70px; --page-icon-image-size: 72px;
+  --page-title-size: 40px; --page-title-line-height: 1.2;
+  --page-meta-size: 12px; --page-body-size: 16px; --page-body-line-height: 1.5; --page-h1-size: 30px;
+}
+@media (max-width: 1100px) {
+  :root[data-style="mobai"] { --page-content-width: 680px; --page-title-size: 36px; --page-icon-emoji-size: 60px; --page-icon-hit-size: 68px; }
+}
+@media (max-width: 680px) {
+  :root[data-style="mobai"] { --page-cover-height: 160px; --page-title-size: 32px; }
+}
+
+/* ICON-START：图标来自 Tabler Icons（MIT），由总设计师的脚本生成，不要手改 */
+:root[data-style="mobai"] {
+  --mb-icon-page: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M14%203v4a1%201%200%200%200%201%201h4%22%20%2F%3E%3Cpath%20d%3D%22M17%2021h-10a2%202%200%200%201%20-2%20-2v-14a2%202%200%200%201%202%20-2h7l5%205v11a2%202%200%200%201%20-2%202%22%20%2F%3E%3Cpath%20d%3D%22M9%209l1%200%22%20%2F%3E%3Cpath%20d%3D%22M9%2013l6%200%22%20%2F%3E%3Cpath%20d%3D%22M9%2017l6%200%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-title: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M14%2015.5a3.5%203.5%200%201%200%207%200a3.5%203.5%200%201%200%20-7%200%22%20%2F%3E%3Cpath%20d%3D%22M3%2019v-10.5a3.5%203.5%200%200%201%207%200v10.5%22%20%2F%3E%3Cpath%20d%3D%22M3%2013h7%22%20%2F%3E%3Cpath%20d%3D%22M21%2012v7%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-text: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M4%206l16%200%22%20%2F%3E%3Cpath%20d%3D%22M4%2012l10%200%22%20%2F%3E%3Cpath%20d%3D%22M4%2018l14%200%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-number: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M5%209l14%200%22%20%2F%3E%3Cpath%20d%3D%22M5%2015l14%200%22%20%2F%3E%3Cpath%20d%3D%22M11%204l-4%2016%22%20%2F%3E%3Cpath%20d%3D%22M17%204l-4%2016%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-select: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M15%2011l-3%203l-3%20-3%22%20%2F%3E%3Cpath%20d%3D%22M12%203a9%209%200%201%200%200%2018a9%209%200%200%200%200%20-18%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-multi: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M9%206l11%200%22%20%2F%3E%3Cpath%20d%3D%22M9%2012l11%200%22%20%2F%3E%3Cpath%20d%3D%22M9%2018l11%200%22%20%2F%3E%3Cpath%20d%3D%22M5%206l0%20.01%22%20%2F%3E%3Cpath%20d%3D%22M5%2012l0%20.01%22%20%2F%3E%3Cpath%20d%3D%22M5%2018l0%20.01%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-status: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M10%2020.777a8.942%208.942%200%200%201%20-2.48%20-.969%22%20%2F%3E%3Cpath%20d%3D%22M14%203.223a9.003%209.003%200%200%201%200%2017.554%22%20%2F%3E%3Cpath%20d%3D%22M4.579%2017.093a8.961%208.961%200%200%201%20-1.227%20-2.592%22%20%2F%3E%3Cpath%20d%3D%22M3.124%2010.5c.16%20-.95%20.468%20-1.85%20.9%20-2.675l.169%20-.305%22%20%2F%3E%3Cpath%20d%3D%22M6.907%204.579a8.954%208.954%200%200%201%203.093%20-1.356%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-date: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M4%207a2%202%200%200%201%202%20-2h12a2%202%200%200%201%202%202v12a2%202%200%200%201%20-2%202h-12a2%202%200%200%201%20-2%20-2v-12%22%20%2F%3E%3Cpath%20d%3D%22M16%203v4%22%20%2F%3E%3Cpath%20d%3D%22M8%203v4%22%20%2F%3E%3Cpath%20d%3D%22M4%2011h16%22%20%2F%3E%3Cpath%20d%3D%22M11%2015h1%22%20%2F%3E%3Cpath%20d%3D%22M12%2015v3%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-checkbox: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M3%205a2%202%200%200%201%202%20-2h14a2%202%200%200%201%202%202v14a2%202%200%200%201%20-2%202h-14a2%202%200%200%201%20-2%20-2v-14%22%20%2F%3E%3Cpath%20d%3D%22M9%2012l2%202l4%20-4%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-people: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M8%207a4%204%200%201%200%208%200a4%204%200%200%200%20-8%200%22%20%2F%3E%3Cpath%20d%3D%22M6%2021v-2a4%204%200%200%201%204%20-4h4a4%204%200%200%201%204%204v2%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-url: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M9%2015l6%20-6%22%20%2F%3E%3Cpath%20d%3D%22M11%206l.463%20-.536a5%205%200%200%201%207.071%207.072l-.534%20.464%22%20%2F%3E%3Cpath%20d%3D%22M13%2018l-.397%20.534a5.068%205.068%200%200%201%20-7.127%200a4.972%204.972%200%200%201%200%20-7.071l.524%20-.463%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-email: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M8%2012a4%204%200%201%200%208%200a4%204%200%201%200%20-8%200%22%20%2F%3E%3Cpath%20d%3D%22M16%2012v1.5a2.5%202.5%200%200%200%205%200v-1.5a9%209%200%201%200%20-5.5%208.28%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-phone: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M5%204h4l2%205l-2.5%201.5a11%2011%200%200%200%205%205l1.5%20-2.5l5%202v4a2%202%200%200%201%20-2%202a16%2016%200%200%201%20-15%20-15a2%202%200%200%201%202%20-2%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-files: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M15%207l-6.5%206.5a1.5%201.5%200%200%200%203%203l6.5%20-6.5a3%203%200%200%200%20-6%20-6l-6.5%206.5a4.5%204.5%200%200%200%209%209l6.5%20-6.5%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-place: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M9%2011a3%203%200%201%200%206%200a3%203%200%200%200%20-6%200%22%20%2F%3E%3Cpath%20d%3D%22M17.657%2016.657l-4.243%204.243a2%202%200%200%201%20-2.827%200l-4.244%20-4.243a8%208%200%201%201%2011.314%200%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-relation: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M17%207l-10%2010%22%20%2F%3E%3Cpath%20d%3D%22M8%207l9%200l0%209%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-rollup: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M3%2010a7%207%200%201%200%2014%200a7%207%200%201%200%20-14%200%22%20%2F%3E%3Cpath%20d%3D%22M21%2021l-6%20-6%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-formula: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M3%2019a2%202%200%200%200%202%202c2%200%202%20-4%203%20-9s1%20-9%203%20-9a2%202%200%200%201%202%202%22%20%2F%3E%3Cpath%20d%3D%22M5%2012h6%22%20%2F%3E%3Cpath%20d%3D%22M15%2012l6%206%22%20%2F%3E%3Cpath%20d%3D%22M15%2018l6%20-6%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-id: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M3%207a3%203%200%200%201%203%20-3h12a3%203%200%200%201%203%203v10a3%203%200%200%201%20-3%203h-12a3%203%200%200%201%20-3%20-3l0%20-10%22%20%2F%3E%3Cpath%20d%3D%22M7%2010a2%202%200%201%200%204%200a2%202%200%201%200%20-4%200%22%20%2F%3E%3Cpath%20d%3D%22M15%208l2%200%22%20%2F%3E%3Cpath%20d%3D%22M15%2012l2%200%22%20%2F%3E%3Cpath%20d%3D%22M7%2016l10%200%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-created: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M3%2012a9%209%200%201%200%2018%200a9%209%200%200%200%20-18%200%22%20%2F%3E%3Cpath%20d%3D%22M12%207v5l3%203%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-modified: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M21%2012a9%209%200%201%200%20-9.972%208.948c.32%20.034%20.644%20.052%20.972%20.052%22%20%2F%3E%3Cpath%20d%3D%22M12%207v5l2%202%22%20%2F%3E%3Cpath%20d%3D%22M18.42%2015.61a2.1%202.1%200%200%201%202.97%202.97l-3.39%203.42h-3v-3l3.42%20-3.39%22%20%2F%3E%3C%2Fsvg%3E");
+  --mb-icon-person: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%3Cpath%20stroke%3D%22none%22%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%20%2F%3E%3Cpath%20d%3D%22M3%2012a9%209%200%201%200%2018%200a9%209%200%201%200%20-18%200%22%20%2F%3E%3Cpath%20d%3D%22M9%2010a3%203%200%201%200%206%200a3%203%200%201%200%20-6%200%22%20%2F%3E%3Cpath%20d%3D%22M6.168%2018.849a4%204%200%200%201%203.832%20-2.849h4a4%204%200%200%201%203.834%202.855%22%20%2F%3E%3C%2Fsvg%3E");
+}
+/* ICON-END */

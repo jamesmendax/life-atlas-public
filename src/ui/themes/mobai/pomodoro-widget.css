@@ -1,0 +1,746 @@
+:root[data-style="mobai"] :is(.pomodoro-slot, .pomodoro-settings-dialog) {
+  --mb-pomodoro-primary: color-mix(in srgb, var(--mb-tooltip-bg), var(--mb-paper) 6%);
+  --mb-pomodoro-primary-text: var(--mb-paper);
+  --mb-pomodoro-focus: var(--mb-side-text);
+  --mb-pomodoro-control: color-mix(in srgb, var(--mb-paper), var(--mb-ink) 10%);
+  --mb-pomodoro-edge: var(--mb-line-2);
+  --mb-pomodoro-active: var(--mb-paper);
+  color: var(--mb-ink);
+  font-family: var(--mb-sans);
+}
+
+:root[data-style="mobai"][data-theme="dark"] :is(.pomodoro-slot, .pomodoro-settings-dialog) {
+  --mb-pomodoro-primary: color-mix(in srgb, var(--mb-ink), var(--mb-tooltip-text) 72%);
+  --mb-pomodoro-primary-text: var(--mb-paper);
+  --mb-pomodoro-focus: var(--mb-ink);
+  --mb-pomodoro-control: color-mix(in srgb, var(--mb-paper), var(--mb-ink) 5%);
+  --mb-pomodoro-edge: color-mix(in srgb, var(--mb-paper), var(--mb-ink) 25%);
+  --mb-pomodoro-active: color-mix(in srgb, var(--mb-paper), var(--mb-ink) 16%);
+}
+
+:root[data-style="mobai"] :is(.pomodoro-slot, .pomodoro-settings-dialog) *,
+:root[data-style="mobai"] :is(.pomodoro-slot, .pomodoro-settings-dialog) {
+  box-sizing: border-box;
+}
+
+:root[data-style="mobai"] :is(.pomodoro-slot, .pomodoro-settings-dialog) button {
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+:root[data-style="mobai"] :is(.pomodoro-slot, .pomodoro-settings-dialog) button:disabled {
+  cursor: default;
+  opacity: .5;
+}
+
+:root[data-style="mobai"] :is(.pomodoro-slot, .pomodoro-settings-dialog) :focus-visible {
+  outline: 2px solid var(--mb-pomodoro-focus);
+  outline-offset: 2px;
+}
+
+:root[data-style="mobai"] .pomodoro-slot {
+  --mb-pomodoro-case: var(--mb-raised);
+  --mb-pomodoro-plate-ink: color-mix(in srgb, var(--mb-tooltip-bg), var(--mb-paper) 4%);
+  --mb-pomodoro-plate-top: color-mix(in srgb, var(--mb-paper), var(--mb-ink) 8%);
+  --mb-pomodoro-plate-bottom: color-mix(in srgb, var(--mb-paper), var(--mb-ink) 1%);
+  --mb-pomodoro-plate-edge: color-mix(in srgb, var(--mb-paper), var(--mb-ink) 29%);
+  --mb-pomodoro-plate-rear: color-mix(in srgb, var(--mb-paper), var(--mb-ink) 36%);
+  --mb-pomodoro-plate-shadow: color-mix(in srgb, var(--mb-ink) 9%, transparent);
+  --mb-pomodoro-joint: var(--mb-side-text);
+  --mb-pomodoro-seam: color-mix(in srgb, var(--mb-paper) 76%, transparent);
+  width: 100%;
+  min-width: 0;
+  margin-block: 4px;
+  line-height: 1.65;
+}
+
+:root[data-style="mobai"][data-theme="dark"] .pomodoro-slot {
+  --mb-pomodoro-case: var(--mb-raised);
+  --mb-pomodoro-plate-ink: var(--mb-pomodoro-primary);
+  --mb-pomodoro-plate-top: color-mix(in srgb, var(--mb-paper), var(--mb-ink) 8%);
+  --mb-pomodoro-plate-bottom: color-mix(in srgb, var(--mb-paper), var(--mb-ink) 12%);
+  --mb-pomodoro-plate-edge: color-mix(in srgb, var(--mb-paper), var(--mb-ink) 23%);
+  --mb-pomodoro-plate-rear: var(--mb-tooltip-bg);
+  --mb-pomodoro-plate-shadow: color-mix(in srgb, var(--mb-tooltip-bg) 31%, transparent);
+  --mb-pomodoro-joint: var(--mb-tooltip-bg);
+  --mb-pomodoro-seam: color-mix(in srgb, var(--mb-ink) 15%, transparent);
+}
+
+:root[data-style="mobai"] .pomodoro-frame {
+  display: grid;
+  position: relative;
+  container: pomodoro-frame / inline-size;
+  width: min(100%, var(--pomodoro-width, 476px));
+  min-width: 0;
+}
+
+:root[data-style="mobai"] .pomodoro-frame[data-align="center"] {
+  margin-inline: auto;
+}
+
+:root[data-style="mobai"] .pomodoro-frame[data-resizing] {
+  user-select: none;
+}
+
+:root[data-style="mobai"] .pomodoro-widget {
+  --mb-pomodoro-phase: var(--mb-u-red);
+  position: relative;
+  container: pomodoro-face / inline-size;
+  min-width: 0;
+  padding: 18px 22px 22px;
+  border: 1px solid var(--mb-line-2);
+  border-radius: var(--mb-r3);
+  background: var(--mb-pomodoro-case);
+}
+
+:root[data-style="mobai"] .pomodoro-widget[data-phase="break"] {
+  --mb-pomodoro-phase: var(--mb-u-green);
+}
+
+:root[data-style="mobai"] .pomodoro-alignment {
+  justify-self: end;
+  margin-inline-end: 9px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+:root[data-style="mobai"] .pomodoro-frame:is(:hover, :focus-within) .pomodoro-alignment {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+:root[data-style="mobai"] .pomodoro-resize {
+  position: absolute;
+  z-index: 4;
+  top: calc(50% - 26px);
+  inset-inline-end: 0;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 52px;
+  border-radius: 7px;
+  cursor: ew-resize;
+  touch-action: none;
+  opacity: 0;
+}
+
+:root[data-style="mobai"] .pomodoro-resize::after {
+  content: "";
+  width: 4px;
+  height: 29px;
+  border-radius: 3px;
+  background: var(--mb-muted);
+  box-shadow: 0 0 0 1px var(--mb-paper);
+}
+
+:root[data-style="mobai"] .pomodoro-frame:is(:hover, [data-resizing]) .pomodoro-resize,
+:root[data-style="mobai"] .pomodoro-resize:focus-visible {
+  opacity: 1;
+}
+
+:root[data-style="mobai"] .pomodoro-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+:root[data-style="mobai"] .pomodoro-header .pomodoro-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--mb-ink);
+  font: 650 16px/1.45 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .pomodoro-dial {
+  position: relative;
+  flex: 0 0 15px;
+  height: 15px;
+  color: var(--mb-pomodoro-phase);
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
+
+:root[data-style="mobai"] .pomodoro-dial::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 5px;
+  border-left: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+}
+
+:root[data-style="mobai"] .pomodoro-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--mb-line-2);
+  border-radius: 8px;
+  background: var(--mb-pomodoro-control);
+}
+
+:root[data-style="mobai"] .pomodoro-switch button {
+  min-height: 29px;
+  padding: 2px 9px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--mb-side-text);
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+:root[data-style="mobai"] .pomodoro-switch button:hover {
+  color: var(--mb-ink);
+}
+
+:root[data-style="mobai"] .pomodoro-switch button[aria-pressed="true"] {
+  color: var(--mb-ink);
+  background: var(--mb-pomodoro-active);
+  border-color: var(--mb-pomodoro-edge);
+  font-weight: 650;
+}
+
+:root[data-style="mobai"] .pomodoro-display {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) .24fr repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(3px, 1.9cqw, 8px);
+  width: min(100%, 88cqw, 448px);
+  margin: 22px auto 10px;
+  user-select: none;
+}
+
+:root[data-style="mobai"] .pomodoro-digit {
+  position: relative;
+  aspect-ratio: .87;
+  min-width: 0;
+  border-radius: 8px;
+  background: var(--mb-pomodoro-plate-rear);
+  color: var(--mb-pomodoro-plate-ink);
+  perspective: 380px;
+  box-shadow: 0 2px 0 var(--mb-pomodoro-plate-rear), 0 5px 6px var(--mb-pomodoro-plate-shadow);
+  font: 680 clamp(10px, 17.8cqw, 98px)/1 "Bahnschrift", "Arial Narrow", sans-serif;
+  font-variation-settings: "wght" 680, "wdth" 85;
+  font-variant-numeric: tabular-nums;
+}
+
+:root[data-style="mobai"] .pomodoro-digit-half {
+  position: absolute;
+  height: 50%;
+  inset-inline: 0;
+  overflow: hidden;
+  border: 1px solid var(--mb-pomodoro-plate-edge);
+  backface-visibility: hidden;
+}
+
+:root[data-style="mobai"] .pomodoro-digit-half.upper {
+  top: 0;
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  background: var(--mb-pomodoro-plate-top);
+  transform-origin: 50% 100%;
+}
+
+:root[data-style="mobai"] .pomodoro-digit-half.lower {
+  bottom: 0;
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+  background: var(--mb-pomodoro-plate-bottom);
+  transform-origin: 50% 0;
+}
+
+:root[data-style="mobai"] .pomodoro-digit-half > span {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 200%;
+  display: grid;
+  place-items: center;
+  transform: translateY(.038em);
+}
+
+:root[data-style="mobai"] .pomodoro-digit-half.lower > span {
+  top: -100%;
+}
+
+:root[data-style="mobai"] .pomodoro-digit-seam {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  top: calc(50% - .5px);
+  inset-inline: 1px;
+  height: 1px;
+  background: var(--mb-pomodoro-joint);
+  box-shadow: 0 1px 0 var(--mb-pomodoro-seam);
+}
+
+:root[data-style="mobai"] .pomodoro-digit-seam::before,
+:root[data-style="mobai"] .pomodoro-digit-seam::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 6px;
+  top: -2px;
+  border-radius: 1px;
+  background: var(--mb-pomodoro-joint);
+}
+
+:root[data-style="mobai"] .pomodoro-digit-seam::before { left: -1px; }
+:root[data-style="mobai"] .pomodoro-digit-seam::after { right: -1px; }
+
+:root[data-style="mobai"] .pomodoro-digit-half.outgoing,
+:root[data-style="mobai"] .pomodoro-digit-half.incoming { z-index: 2; }
+
+:root[data-style="mobai"] .pomodoro-digit-half.outgoing {
+  animation: pomodoro-fold-down .155s cubic-bezier(.62, .08, .98, .7) both;
+}
+
+:root[data-style="mobai"] .pomodoro-digit-half.incoming {
+  animation: pomodoro-settle .195s .145s cubic-bezier(.22, .63, .3, 1) both;
+}
+
+@keyframes pomodoro-fold-down { to { transform: rotateX(-90deg); filter: brightness(.75); } }
+@keyframes pomodoro-settle { from { transform: rotateX(90deg); filter: brightness(.75); } }
+
+:root[data-style="mobai"] .pomodoro-separator {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  gap: clamp(3px, 3.8cqw, 14px);
+}
+
+:root[data-style="mobai"] .pomodoro-separator::before,
+:root[data-style="mobai"] .pomodoro-separator::after {
+  content: "";
+  width: clamp(1px, 1.4cqw, 5px);
+  aspect-ratio: 1;
+  border-radius: 1.5px;
+  background: var(--mb-muted);
+}
+
+:root[data-style="mobai"] .pomodoro-widget[data-face="vertical"] .pomodoro-display {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(100%, 236px);
+}
+
+:root[data-style="mobai"] .pomodoro-widget[data-face="vertical"] .pomodoro-digit { font-size: clamp(16px, 36cqw, 88px); }
+:root[data-style="mobai"] .pomodoro-widget[data-face="vertical"] .pomodoro-separator { display: none; }
+
+:root[data-style="mobai"] .pomodoro-meter {
+  width: min(100%, 88cqw, 448px);
+  margin: 0 auto 17px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+}
+
+:root[data-style="mobai"] .pomodoro-widget[data-face="vertical"] .pomodoro-meter { width: min(100%, 236px); }
+
+:root[data-style="mobai"] .pomodoro-meter progress {
+  appearance: none;
+  width: 100%;
+  min-width: 0;
+  height: 4px;
+  border: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--mb-pomodoro-edge);
+}
+
+:root[data-style="mobai"] .pomodoro-meter progress::-webkit-progress-bar { background: var(--mb-pomodoro-edge); }
+:root[data-style="mobai"] .pomodoro-meter progress::-webkit-progress-value { background: var(--mb-pomodoro-phase); }
+
+:root[data-style="mobai"] .pomodoro-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+:root[data-style="mobai"] .pomodoro-widget :is(.pomodoro-run, .pomodoro-reset, .pomodoro-gear) {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid var(--mb-line-2);
+  border-radius: 7px;
+  font-size: 13px;
+  line-height: 1;
+}
+
+:root[data-style="mobai"] .pomodoro-widget .pomodoro-run {
+  min-width: 136px;
+  padding: 0 19px;
+  background: var(--mb-pomodoro-primary);
+  border-color: var(--mb-pomodoro-primary);
+  color: var(--mb-pomodoro-primary-text);
+  font-weight: 650;
+}
+
+:root[data-style="mobai"] .pomodoro-widget .pomodoro-run:hover { opacity: .87; }
+
+:root[data-style="mobai"] .pomodoro-run-icon {
+  border-left: 7px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  height: 0;
+  width: 0;
+}
+
+:root[data-style="mobai"] .pomodoro-run[data-running="true"] .pomodoro-run-icon {
+  height: 10px;
+  width: 8px;
+  border: 0;
+  border-inline: 2px solid currentColor;
+}
+
+:root[data-style="mobai"] .pomodoro-widget .pomodoro-reset {
+  padding-inline: 9px;
+  background: transparent;
+  color: var(--mb-muted);
+}
+
+:root[data-style="mobai"] .pomodoro-widget :is(.pomodoro-reset, .pomodoro-gear):not(:disabled):hover {
+  background: var(--mb-pomodoro-control);
+  color: var(--mb-ink);
+}
+
+:root[data-style="mobai"] .pomodoro-widget .pomodoro-gear {
+  width: 42px;
+  padding: 0;
+  background: transparent;
+  color: var(--mb-muted);
+}
+
+:root[data-style="mobai"] .pomodoro-widget .pomodoro-status {
+  margin: 0;
+  color: var(--mb-side-text);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+:root[data-style="mobai"] .pomodoro-widget[data-running="true"] .pomodoro-status { font-weight: 650; }
+:root[data-style="mobai"] .pomodoro-widget .pomodoro-dismiss-alarm {
+  display: flex;
+  margin: 8px auto 0;
+  border-color: var(--mb-u-red);
+  background: var(--mb-tag-red);
+  color: var(--mb-tag-red-text);
+  white-space: normal;
+}
+
+@container pomodoro-frame (max-width: 378px) {
+  :root[data-style="mobai"] .pomodoro-widget { padding: 14px 12px 16px; }
+  :root[data-style="mobai"] .pomodoro-display { margin-block: 18px 9px; }
+  :root[data-style="mobai"] .pomodoro-controls { gap: 6px; }
+  :root[data-style="mobai"] .pomodoro-widget .pomodoro-run { min-width: 0; padding-inline: 12px; }
+}
+
+@container pomodoro-frame (max-width: 218px) {
+  :root[data-style="mobai"] .pomodoro-phases { justify-content: center; width: 100%; }
+  :root[data-style="mobai"] .pomodoro-phases button { padding-inline: 4px; }
+  :root[data-style="mobai"] .pomodoro-header .pomodoro-name,
+  :root[data-style="mobai"] .pomodoro-widget :is(.pomodoro-run, .pomodoro-reset) { font-size: 12px; }
+  :root[data-style="mobai"] .pomodoro-widget :is(.pomodoro-run, .pomodoro-reset, .pomodoro-gear) { min-height: 32px; }
+  :root[data-style="mobai"] .pomodoro-widget .pomodoro-run { padding-inline: 8px; }
+  :root[data-style="mobai"] .pomodoro-widget .pomodoro-reset { padding-inline: 5px; }
+  :root[data-style="mobai"] .pomodoro-widget .pomodoro-gear { width: 31px; }
+}
+
+@container pomodoro-frame (max-width: 142px) {
+  :root[data-style="mobai"] .pomodoro-widget { padding: 9px 4px 10px; }
+  :root[data-style="mobai"] .pomodoro-header .pomodoro-name { gap: 3px; }
+  :root[data-style="mobai"] .pomodoro-phases { flex-direction: column; }
+  :root[data-style="mobai"] .pomodoro-phases button { width: 100%; padding-inline: 1px; white-space: normal; }
+  :root[data-style="mobai"] :is(.pomodoro-mode-duration, .pomodoro-run-icon, .pomodoro-reset-label) { display: none; }
+  :root[data-style="mobai"] .pomodoro-display { width: 100%; gap: 3px; margin-block: 12px; }
+  :root[data-style="mobai"] .pomodoro-meter { width: 100%; gap: 4px; margin-bottom: 8px; grid-template-columns: minmax(0, 1fr); }
+  :root[data-style="mobai"] .pomodoro-widget:not([data-face="horizontal"]) .pomodoro-display { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  :root[data-style="mobai"] .pomodoro-widget:not([data-face="horizontal"]) .pomodoro-separator { display: none; }
+  :root[data-style="mobai"] .pomodoro-widget:not([data-face="horizontal"]) .pomodoro-digit { font-size: clamp(16px, 36cqw, 45px); }
+  :root[data-style="mobai"] .pomodoro-digit { border-radius: 4px; }
+  :root[data-style="mobai"] .pomodoro-digit-half.upper { border-radius: 4px 4px 0 0; }
+  :root[data-style="mobai"] .pomodoro-digit-half.lower { border-radius: 0 0 4px 4px; }
+  :root[data-style="mobai"] .pomodoro-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px; }
+  :root[data-style="mobai"] .pomodoro-widget .pomodoro-run { grid-column: 1 / -1; padding-inline: 1px; }
+  :root[data-style="mobai"] .pomodoro-widget :is(.pomodoro-controls .pomodoro-reset, .pomodoro-gear) { width: 100%; min-width: 0; min-height: 27px; padding: 0; }
+}
+
+@media (any-pointer: coarse) {
+  :root[data-style="mobai"] .pomodoro-frame :is(.pomodoro-resize, .pomodoro-alignment) { opacity: 1; pointer-events: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-style="mobai"] .pomodoro-digit-motion { display: none; }
+}
+
+:root[data-style="mobai"] dialog.pomodoro-settings-dialog {
+  position: fixed;
+  inset: 0;
+  inline-size: min(448px, calc(100% - 32px));
+  max-inline-size: none;
+  max-block-size: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--mb-line-2);
+  border-radius: var(--mb-r4);
+  background: var(--mb-paper);
+  box-shadow: var(--mb-dlg);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+:root[data-style="mobai"] dialog.pomodoro-settings-dialog::backdrop { background: var(--mb-scrim); }
+
+:root[data-style="mobai"] .pomodoro-settings-dialog > form {
+  display: flex;
+  flex-direction: column;
+  max-block-size: calc(100dvh - 34px);
+  margin: 0;
+}
+
+:root[data-style="mobai"] .pomodoro-settings-heading {
+  padding: 17px 24px 13px;
+  border-bottom: 1px solid var(--mb-line);
+}
+
+:root[data-style="mobai"] .pomodoro-settings-heading h2 {
+  margin: 0;
+  color: var(--mb-ink);
+  font: 650 21px/1.3 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .pomodoro-settings-content {
+  flex: 1;
+  min-block-size: 0;
+  padding-inline: 24px;
+  overflow-y: auto;
+}
+
+:root[data-style="mobai"] .pomodoro-settings-section {
+  min-width: 0;
+  padding: 10px 0 11px;
+}
+
+:root[data-style="mobai"] .pomodoro-settings-section + .pomodoro-settings-section { border-top: 1px solid var(--mb-line); }
+
+:root[data-style="mobai"] .pomodoro-settings-section h3 {
+  margin: 0 0 6px;
+  color: var(--mb-ink);
+  font: 650 14px/1.5 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .pomodoro-face-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid var(--mb-pomodoro-edge);
+  border-radius: 8px;
+  background: var(--mb-pomodoro-control);
+}
+
+:root[data-style="mobai"] .pomodoro-face-options label,
+:root[data-style="mobai"] .pomodoro-sound-switch { position: relative; cursor: pointer; }
+
+:root[data-style="mobai"] :is(.pomodoro-face-options, .pomodoro-sound-switch) input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+:root[data-style="mobai"] .pomodoro-face-options span {
+  display: grid;
+  place-items: center;
+  min-height: 34px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--mb-muted);
+}
+
+:root[data-style="mobai"] .pomodoro-face-options label:hover span { color: var(--mb-ink); }
+
+:root[data-style="mobai"] .pomodoro-face-options input:checked + span {
+  color: var(--mb-ink);
+  font-weight: 600;
+  background: var(--mb-pomodoro-active);
+  border-color: var(--mb-pomodoro-edge);
+}
+
+:root[data-style="mobai"] :is(.pomodoro-face-options, .pomodoro-sound-switch) input:focus-visible + span {
+  outline: 2px solid var(--mb-pomodoro-focus);
+  outline-offset: 2px;
+}
+
+:root[data-style="mobai"] :is(.pomodoro-settings-note, .pomodoro-file-feedback, .pomodoro-settings-status) {
+  margin: 7px 0 0;
+  color: var(--mb-muted);
+  font-size: 12px;
+}
+
+:root[data-style="mobai"] .pomodoro-settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 33px;
+  gap: 12px;
+}
+
+:root[data-style="mobai"] .pomodoro-settings-row + .pomodoro-settings-row { margin-top: 7px; }
+
+:root[data-style="mobai"] .pomodoro-duration {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--mb-muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+:root[data-style="mobai"] .pomodoro-duration input {
+  inline-size: 69px;
+  min-height: 36px;
+  padding-inline: 7px;
+  border: 1px solid var(--mb-pomodoro-edge);
+  border-radius: var(--mb-r2);
+  background: var(--mb-field);
+  color: var(--mb-ink);
+  font: 14px/1.5 var(--mb-sans);
+  font-variant-numeric: tabular-nums;
+}
+
+:root[data-style="mobai"] .pomodoro-settings-dialog .pomodoro-duration input:focus-visible {
+  outline: 2px solid var(--mb-pomodoro-focus);
+  box-shadow: none;
+}
+
+:root[data-style="mobai"] .pomodoro-sound-heading { min-height: 23px; margin-bottom: 6px; }
+:root[data-style="mobai"] .pomodoro-sound-heading h3 { margin: 0; }
+:root[data-style="mobai"] .pomodoro-sound-switch { display: inline-flex; }
+
+:root[data-style="mobai"] .pomodoro-sound-switch span {
+  position: relative;
+  display: block;
+  width: 33px;
+  height: 19px;
+  border-radius: 12px;
+  background: var(--mb-pomodoro-edge);
+}
+
+:root[data-style="mobai"] .pomodoro-sound-switch span::after {
+  content: "";
+  position: absolute;
+  inset: 2px auto auto 2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--mb-paper);
+}
+
+:root[data-style="mobai"] .pomodoro-sound-switch input:checked + span { background: var(--mb-pomodoro-primary); }
+:root[data-style="mobai"] .pomodoro-sound-switch input:checked + span::after { transform: translateX(14px); }
+
+:root[data-style="mobai"] .pomodoro-sound-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: var(--mb-muted);
+  font-size: 12px;
+}
+
+:root[data-style="mobai"] .pomodoro-sound-controls > label { white-space: nowrap; }
+
+:root[data-style="mobai"] .pomodoro-volume {
+  flex: 1;
+  display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr) 37px;
+  gap: 8px;
+  align-items: center;
+}
+
+:root[data-style="mobai"] .pomodoro-volume input {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  accent-color: var(--mb-pomodoro-primary);
+}
+
+:root[data-style="mobai"] .pomodoro-volume span { text-align: right; font-variant-numeric: tabular-nums; }
+
+:root[data-style="mobai"] .pomodoro-settings-dialog .pomodoro-settings-button {
+  min-height: 36px;
+  padding: 5px 12px;
+  border: 1px solid var(--mb-pomodoro-edge);
+  border-radius: var(--mb-r2);
+  background: var(--mb-paper);
+  color: var(--mb-ink);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+:root[data-style="mobai"] .pomodoro-settings-dialog .pomodoro-settings-button:not(:disabled):hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .pomodoro-preview-sound { min-width: 57px; }
+
+:root[data-style="mobai"] .pomodoro-file-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px 12px;
+  margin-top: 9px;
+}
+
+:root[data-style="mobai"] .pomodoro-file-meta {
+  display: grid;
+  flex: 1 1 145px;
+  min-width: 0;
+  color: var(--mb-muted);
+  font-size: 12px;
+}
+
+:root[data-style="mobai"] .pomodoro-file-name { color: var(--mb-ink); overflow-wrap: anywhere; }
+:root[data-style="mobai"] .pomodoro-file-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+:root[data-style="mobai"] .pomodoro-file-feedback { margin-top: 5px; }
+:root[data-style="mobai"] .pomodoro-settings-status { margin: 3px 24px 0; }
+:root[data-style="mobai"] :is(.pomodoro-file-feedback, .pomodoro-settings-status):empty { margin: 0; }
+:root[data-style="mobai"] :is(.pomodoro-file-feedback, .pomodoro-settings-status)[data-error] { color: var(--mb-u-red); }
+
+:root[data-style="mobai"] .pomodoro-settings-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 10px 24px 14px;
+  border-top: 1px solid var(--mb-line);
+}
+
+:root[data-style="mobai"] .pomodoro-settings-dialog .pomodoro-settings-save,
+:root[data-style="mobai"] .pomodoro-settings-dialog .pomodoro-settings-save:not(:disabled):hover {
+  border-color: var(--mb-pomodoro-primary);
+  background: var(--mb-pomodoro-primary);
+  color: var(--mb-pomodoro-primary-text);
+  font-weight: 600;
+}
+
+:root[data-style="mobai"] .pomodoro-settings-save:not(:disabled):hover { opacity: .85; }
+
+@media (max-width: 392px) {
+  :root[data-style="mobai"] :is(.pomodoro-settings-content, .pomodoro-settings-heading, .pomodoro-settings-footer) { padding-inline: 16px; }
+  :root[data-style="mobai"] .pomodoro-settings-status { margin-inline: 16px; }
+  :root[data-style="mobai"] :is(.pomodoro-settings-row, .pomodoro-volume, .pomodoro-sound-controls) { gap: 6px; }
+  :root[data-style="mobai"] .pomodoro-file-meta { flex-basis: 115px; }
+  :root[data-style="mobai"] .pomodoro-file-actions .pomodoro-settings-button { padding-inline: 8px; }
+}

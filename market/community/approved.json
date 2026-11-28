@@ -1,0 +1,50 @@
+[
+  {
+    "id": "community.dot-decision",
+    "version": "1.0.1",
+    "minAppVersion": "1.3.4",
+    "type": "component",
+    "title": "决策复盘",
+    "description": "先记下判断依据、预期、把握与复盘日期，再并排补入实际结果、结论和教训。可复制 Markdown。",
+    "source": "dot-decision",
+    "preview": "preview.png",
+    "author": "Dot · Life Atlas 移植",
+    "license": "Dot 交接作品"
+  },
+  {
+    "id": "community.dot-mingzhang",
+    "version": "1.0.3",
+    "minAppVersion": "1.3.4",
+    "type": "component",
+    "title": "明账 · 收支与储蓄",
+    "description": "分开记录收入、实际支出、储蓄存取和订阅预计扣费。按月查看现金流、分类支出和储蓄目标，可切换独立的演示账本。",
+    "source": "dot-mingzhang",
+    "preview": "preview.png",
+    "author": "Dot · Life Atlas 移植",
+    "license": "Dot 交接作品"
+  },
+  {
+    "id": "community.dot-whiteboard",
+    "version": "1.0.3",
+    "minAppVersion": "1.3.4",
+    "type": "component",
+    "title": "手绘白板",
+    "description": "使用 Excalidraw 绘制图形、箭头、自由线与文字，插入图片，在页面保存可继续编辑的画布。支持导入 Excalidraw 文件及复制备份文本。",
+    "source": "dot-whiteboard",
+    "preview": "preview.png",
+    "author": "Dot · Life Atlas 移植",
+    "license": "Excalidraw MIT，第三方声明见包内"
+  },
+  {
+    "id": "community.dot-carbon",
+    "version": "1.0.4",
+    "minAppVersion": "1.3.4",
+    "type": "component",
+    "title": "Carbon 代码卡片",
+    "description": "在石墨黑卡中编辑代码、切换高亮主题与语言，翻面调整设置，生成 PNG 预览或复制 SVG 源文本。",
+    "source": "dot-carbon",
+    "preview": "preview.png",
+    "author": "Dot · Life Atlas 移植",
+    "license": "Carbon MIT，第三方声明见包内"
+  }
+]

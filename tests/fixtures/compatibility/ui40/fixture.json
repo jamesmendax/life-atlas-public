@@ -1,0 +1,121 @@
+{
+  "fixtureVersion": 1,
+  "synthetic": true,
+  "source": {
+    "release": "v9-database-ui-40",
+    "appVersion": "1.0.0",
+    "appAsarSha256": "6f16c92c03349ed27d1e6325124b2325cdaf9983fb98cb9b2ba8c64c6dbd8856",
+    "packagedImplementation": true,
+    "fixtureClock": "2026-11-23T12:00:00.000Z"
+  },
+  "formats": {
+    "workspaceSchemaVersion": 16,
+    "backupManifestVersion": 1,
+    "encryptedContainer": {
+      "formatVersion": 1,
+      "magicHex": "4c41454e43310000",
+      "cipher": "A256GCM-STREAM",
+      "kdf": {
+        "alg": "argon2id",
+        "version": 19,
+        "memoryKiB": 131072,
+        "iterations": 3,
+        "parallelism": 1
+      }
+    },
+    "vault": {
+      "formatVersion": 1,
+      "padding": 512,
+      "kdf": {
+        "alg": "argon2id",
+        "version": 19,
+        "memoryKiB": 131072,
+        "iterations": 3,
+        "parallelism": 1
+      }
+    }
+  },
+  "credentials": {
+    "masterPassword": "UI40-FIXTURE-MASTER-p0rtable!2026",
+    "recoveryKey": "LA1-G1EE4-690HG-7RJ7B-4NT6C-K3YMJ-Y4GTX-EMQRG-CCPC3-FB95H-TF591-07T00",
+    "backupPassword": "UI40-FIXTURE-ARCHIVE-p0rtable!2026"
+  },
+  "expected": {
+    "workspaceId": "ws-ui40-golden-v1",
+    "schemaVersion": 16,
+    "page": {
+      "id": "ui40-page",
+      "title": "UI40 golden page",
+      "paragraphId": "ui40-paragraph",
+      "paragraphText": "UI40 legacy fixture paragraph 001"
+    },
+    "database": {
+      "sourceId": "ui40-source",
+      "viewId": "ui40-view",
+      "itemId": "ui40-row",
+      "recordPageId": "ui40-record-page",
+      "title": "UI40 golden database",
+      "recordTitle": "UI40 golden record"
+    },
+    "workspacePreferences": {
+      "theme": "dark"
+    },
+    "attachments": [
+      {
+        "id": "ui40-attachment",
+        "assetId": "fa61e5db5068765b99c8351bef015b3e530cd573c37099cb03b1b5d7e31cacbd",
+        "sha256": "fa61e5db5068765b99c8351bef015b3e530cd573c37099cb03b1b5d7e31cacbd",
+        "size": 41,
+        "name": "ui40-fixture.bin",
+        "mime": "application/octet-stream",
+        "base64": "AP+JyQpzeW50aGV0aWMgdWk0MCB3b3Jrc3BhY2UgYXR0YWNobWVudAo="
+      }
+    ],
+    "vault": {
+      "itemId": "vi_07a4dd52deb225b7a77257d88d6027eb",
+      "title": "UI40 synthetic vault item",
+      "secretFieldId": "f_3203de37",
+      "secretValue": "synthetic-ui40-vault-secret-0001",
+      "requiredSettings": {
+        "autoLockMinutes": 15,
+        "clipboardClearSeconds": 60,
+        "lockOnMinimize": true,
+        "verifyBeforeReveal": false
+      }
+    }
+  },
+  "files": {
+    "backupPlain": {
+      "file": "complete.lifeatlas",
+      "sha256": "abb94675310132c914b6d604c3e96a88230b8e5a541e0c6fe2147d0506398b8a",
+      "bytes": 7696
+    },
+    "backupEncrypted": {
+      "file": "complete-encrypted.lifeatlas",
+      "sha256": "504b7a4c3c8d33f3a64e4973a0c8d303ef19fd650a0f30a696515e84a124ba4e",
+      "bytes": 7983
+    },
+    "workspaceOnly": {
+      "file": "workspace-only.lifeatlas",
+      "sha256": "1d0224848dfa8b063c3d4c5f5d442f72f6f7fbef1390dfc8d871740e8655cc07",
+      "bytes": 5738
+    },
+    "vaultExport": {
+      "file": "vault.json",
+      "sha256": "776d4019c3fc35f80638f295c7eba292f5a58aa08a6fe1eaabbf51107635d3e2",
+      "bytes": 2526
+    },
+    "liveProfile": {
+      "file": "live-profile.zip",
+      "sha256": "feb8fab18dd7347008f2b85aae3dc6828a228bc78d446c24e6321a507626f8d5",
+      "bytes": 4618
+    }
+  },
+  "verification": {
+    "generatedByPublishedBackupService": true,
+    "outerEncryptedBackupOpenedByPublishedReader": true,
+    "originalMasterPasswordOpenedVault": true,
+    "excludedVaultInWorkspaceOnlyBackup": true,
+    "vaultAttachmentIncluded": false
+  }
+}

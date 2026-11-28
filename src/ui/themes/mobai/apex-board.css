@@ -1,0 +1,138 @@
+:root[data-style="mobai"] .db-board-scroll-frame {
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+}
+:root[data-style="mobai"] .db-board-scroll-frame::before,
+:root[data-style="mobai"] .db-board-scroll-frame::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  bottom: 18px;
+  width: 18px;
+  opacity: 0;
+  pointer-events: none;
+}
+:root[data-style="mobai"] .db-board-scroll-frame::before {
+  left: 0;
+  background: linear-gradient(to right, var(--mb-paper), transparent);
+}
+:root[data-style="mobai"] .db-board-scroll-frame::after {
+  right: 0;
+  background: linear-gradient(to left, var(--mb-paper), transparent);
+}
+:root[data-style="mobai"] .db-board-scroll-frame[data-overflow-start="true"]::before,
+:root[data-style="mobai"] .db-board-scroll-frame[data-overflow-end="true"]::after { opacity: 1; }
+:root[data-style="mobai"] .db-board-view {
+  min-width: 0;
+  max-width: 100%;
+  overscroll-behavior-x: contain;
+  scroll-padding-inline: 6px;
+  scrollbar-width: thin;
+}
+@media (prefers-reduced-motion: no-preference) {
+  :root[data-style="mobai"] .db-board-view { scroll-behavior: smooth; }
+}
+:root[data-style="mobai"] .db-board-view:focus-visible {
+  outline: 2px dashed var(--mb-muted);
+  outline-offset: -2px;
+}
+:root[data-style="mobai"] .db-board-column {
+  flex-basis: min(100%, clamp(196px, calc((100% - 24px) / 3), 264px));
+  min-width: 0;
+}
+:root[data-style="mobai"] .db-board-column > header > span {
+  min-width: 0;
+  overflow: hidden;
+  height: 22px;
+  padding-inline: 8px;
+  border-radius: 11px;
+  font: 500 12px/22px var(--mb-sans);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+:root[data-style="mobai"] .db-board-column > header > small,
+:root[data-style="mobai"] .db-board-group-actions { flex: none; }
+:root[data-style="mobai"] .db-board-card > button.db-board-card-open {
+  padding-inline: 10px;
+}
+:root[data-style="mobai"] .db-board-card-open > strong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+:root[data-style="mobai"] .db-board-card:not(.is-wrapped) > .db-board-card-open { white-space: nowrap; }
+:root[data-style="mobai"] .db-board-card-tools:not([hidden]) {
+  position: absolute;
+  z-index: 1;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  align-items: center;
+  padding: 1px;
+  border: 1px solid var(--mb-line-2);
+  border-radius: var(--mb-r2);
+  background: var(--mb-raised);
+  box-shadow: var(--mb-card);
+  opacity: 0;
+  pointer-events: none;
+}
+:root[data-style="mobai"] .db-board-card:is(:hover, :focus-within) .db-board-card-tools,
+:root[data-style="mobai"] .db-board-card .db-board-card-tools[data-open="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+:root[data-style="mobai"] .db-board-card-tools > button {
+  position: static;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  min-width: 0;
+  height: 22px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--mb-r1);
+  background: transparent;
+  color: var(--mb-muted);
+  opacity: 1;
+}
+:root[data-style="mobai"] .db-board-card-tools > .db-drag-handle { touch-action: none; }
+:root[data-style="mobai"] .db-board-card-tools > button:hover { background: var(--mb-hover); color: var(--mb-ink); }
+:root[data-style="mobai"] .db-board-card-tools > button:focus-visible {
+  outline: none;
+  box-shadow: var(--mb-focus);
+}
+@media (hover: none) {
+  :root[data-style="mobai"] .db-board-card .db-board-card-tools { opacity: 1; pointer-events: auto; }
+  :root[data-style="mobai"] .db-board-card:has(.db-board-card-tools:not([hidden])) > button.db-board-card-open { padding-inline-end: 84px; }
+  :root[data-style="mobai"] .db-board-card-tools > button { width: 24px; height: 24px; }
+}
+:root[data-style="mobai"] .db-board-title-input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 36px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: var(--mb-r2);
+  outline: none;
+  background: var(--mb-raised);
+  color: var(--mb-ink);
+  box-shadow: var(--mb-focus);
+  font: 500 13px/1.45 var(--mb-sans);
+}
+:root[data-style="mobai"] .db-v9-popover.db-board-record-menu {
+  inset: auto;
+  width: min(206px, calc(100vw - 16px));
+  margin: 0;
+}
+:root[data-style="mobai"] .db-board-record-menu .is-danger { color: var(--mb-danger); }
+:root[data-style="mobai"] .db-board-move-field {
+  margin-top: 4px;
+  padding: 6px 6px 2px;
+  border-top: 1px solid var(--mb-line);
+  font-size: 12px;
+}

@@ -1,0 +1,52 @@
+<main class="journal" aria-labelledby="journal-title">
+  <header class="journal-header">
+    <div><h1 id="journal-title">决策复盘</h1><p id="mode" class="secondary"></p></div>
+    <button id="dataset" type="button" class="quiet"></button>
+    <button id="add" class="primary" type="button">记录决策</button>
+  </header>
+  <div class="journal-layout">
+    <aside class="record-index" aria-labelledby="records-title">
+      <div class="record-tools"><h2 id="records-title">记录 <span id="record-count"></span></h2>
+        <label class="sr" for="filter">筛选决策</label>
+        <select id="filter"><option value="all">全部</option><option value="due">待复盘</option><option value="pending">未到期</option><option value="done">已复盘</option></select>
+      </div>
+      <div class="record-list" id="list"></div>
+      <label class="sr" for="record-picker">选择决策记录</label><select id="record-picker" class="record-picker"></select>
+    </aside>
+    <section aria-label="决策对照" class="record-detail" id="detail"></section>
+  </div>
+  <p class="status" id="status" role="status"></p>
+</main>
+
+<dialog id="record-dialog" aria-labelledby="record-heading">
+  <form id="record-form">
+    <header><h2 id="record-heading">记录一项决策</h2><p class="secondary">保存后，原判断会和复盘结果一起保留。</p></header>
+    <div class="form-fields">
+      <label>要做的决定<input maxlength="65" name="title" placeholder="例：把周会缩短到 30 分钟" required></label>
+      <label>当时的依据<textarea maxlength="1200" name="why" placeholder="为什么这样决定？有哪些关键假设？" required></textarea></label>
+      <label>预期及验收标准<textarea maxlength="1200" name="expect" placeholder="什么结果意味着这个决定有效？" required></textarea></label>
+      <div class="form-pair">
+        <label>复盘日期<input name="due" required type="date"></label>
+        <label>当时的把握（%）<input max="100" min="0" name="confidence" required step="1" type="number" value="70"></label>
+      </div>
+    </div>
+    <footer><button data-close="record-dialog" type="button">取消</button><button class="primary" type="submit">保存原判断</button></footer>
+  </form>
+</dialog>
+<dialog id="review-dialog" aria-labelledby="review-heading">
+  <form id="review-form">
+    <header><h2 id="review-heading">记录复盘结果</h2><p class="secondary" id="review-subject"></p></header>
+    <div class="form-fields">
+      <label>实际发生了什么<textarea maxlength="1600" name="actual" placeholder="写下事实、数据或证据" required></textarea></label>
+      <label>预期是否达成？<select name="verdict"><option value="met">达成</option><option value="part">部分达成</option><option value="miss">未达成</option><option value="unknown">暂无法判断</option></select></label>
+      <label>下次会怎么做<textarea maxlength="1600" name="lesson" placeholder="继续、调整还是停止？"></textarea></label>
+    </div>
+    <footer><button data-close="review-dialog" type="button">取消</button><button class="primary" type="submit">保存复盘</button></footer>
+  </form>
+</dialog>
+<dialog id="copy-dialog" aria-labelledby="copy-heading">
+  <div class="copy-sheet"><h2 id="copy-heading">复盘 Markdown</h2><p class="secondary">文本已选中，可使用系统复制命令。</p>
+    <textarea id="copy-text" aria-label="复盘 Markdown 文本" readonly></textarea>
+    <footer><button data-close="copy-dialog" type="button">关闭</button></footer>
+  </div>
+</dialog>

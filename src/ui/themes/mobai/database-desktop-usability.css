@@ -1,0 +1,74 @@
+:root[data-style="mobai"] .record-peek.ui-dialog.is-side {
+  width: min(680px, 50vw);
+}
+
+:root[data-style="mobai"] .record-peek.is-side .record-peek-body {
+  padding-inline: clamp(16px, 2.8vw, 40px);
+}
+
+:root[data-style="mobai"] .db-table-workspace > .db-horizontal-scroll-controls {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--mb-paper);
+}
+
+:root[data-style="mobai"] .db-calendar-chip > button.db-calendar-record {
+  padding-inline: 4px;
+}
+
+:root[data-style="mobai"] .db-calendar-record-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+:root[data-style="mobai"] .db-calendar-record:focus-visible .db-calendar-record-title {
+  display: block;
+}
+
+:root[data-style="mobai"] .db-calendar-chip > .db-date-picker {
+  position: absolute;
+  inset-inline-end: 0;
+  top: 0;
+  width: 23px;
+  pointer-events: none;
+}
+
+:root[data-style="mobai"] .db-calendar-chip > .db-date-picker > summary {
+  display: grid;
+  width: 23px;
+  height: 24px;
+  place-items: center;
+  background: var(--mb-raised);
+}
+
+:root[data-style="mobai"] .db-calendar-chip:is(:hover, :focus-within) > .db-date-picker,
+:root[data-style="mobai"] .db-calendar-chip > .db-date-picker[open] {
+  pointer-events: auto;
+}
+
+:root[data-style="mobai"] .db-calendar-chip:has(> .db-date-picker):is(:hover, :focus-within) > .db-calendar-record {
+  padding-inline: 15px 24px;
+}
+
+:root[data-style="mobai"] .db-calendar-chip:has(> .db-date-picker):is(:hover, :focus-within) .db-calendar-record-glyph,
+:root[data-style="mobai"] .db-calendar-chip > .db-drag-handle:disabled {
+  display: none;
+}
+
+:root[data-style="mobai"] .db-list-properties {
+  justify-content: flex-start;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+:root[data-style="mobai"] .db-list-property {
+  flex: none;
+}
+
+:root[data-style="mobai"] .db-list-property .db-date-picker > summary {
+  white-space: nowrap;
+}

@@ -1,0 +1,337 @@
+:root[data-style="mobai"] .life-editor {
+  --life-column-gap: 56px;
+  --life-editor-font: var(--mb-sans);
+  --page-body-line-height: 1.5;
+}
+
+:root[data-style="mobai"] .page-font-serif .life-editor {
+  --life-editor-font: var(--mb-serif);
+}
+
+:root[data-style="mobai"] .page-font-mono .life-editor {
+  --life-editor-font: var(--mb-mono);
+}
+
+:root[data-style="mobai"] .life-editor .bn-editor {
+  font-family: var(--life-editor-font);
+  font-size: var(--page-body-size);
+  line-height: var(--page-body-line-height);
+}
+
+:root[data-style="mobai"] .life-editor .bn-block-content:is([data-content-type="paragraph"], [data-content-type="bulletListItem"], [data-content-type="numberedListItem"], [data-content-type="checkListItem"], [data-content-type="toggleListItem"], [data-content-type="callout"]) {
+  font-family: var(--life-editor-font);
+  font-size: var(--page-body-size);
+  line-height: var(--page-body-line-height);
+}
+
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content:is([data-content-type="columnList"], [data-content-type="column"])) > .bn-block-group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content[data-content-type="columnList"]) > .bn-block-group {
+  column-gap: var(--life-column-gap);
+  align-items: stretch;
+}
+
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content:is([data-content-type="columnList"], [data-content-type="column"])) > .bn-block-group > .bn-block-outer::before {
+  content: none;
+  border: 0;
+}
+
+:root[data-style="mobai"] .life-editor .bn-block-content:is([data-content-type="columnList"], [data-content-type="column"]) {
+  padding-block: 0;
+  min-height: 0;
+}
+
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="heading"] {
+  --life-heading-size: var(--page-h1-size);
+  padding-block: 3px;
+  margin-block: 1em 0;
+  font-family: var(--life-editor-font) !important;
+  font-size: var(--life-heading-size) !important;
+  font-weight: 600;
+  line-height: 1.3 !important;
+  letter-spacing: 0;
+  transition: none;
+}
+
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="heading"][data-level="2"] {
+  --life-heading-size: var(--page-h2-size);
+}
+
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="heading"][data-level="3"] {
+  --life-heading-size: var(--page-h3-size);
+}
+
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="heading"]:is([data-level="4"], [data-level="5"], [data-level="6"]) {
+  --life-heading-size: 17px;
+}
+
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="heading"] .bn-inline-content {
+  margin: 0;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit;
+}
+
+:root[data-style="mobai"] .life-editor .bn-block-content[data-content-type="heading"]:has(.ProseMirror-trailingBreak:only-child)::after {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: normal;
+  line-height: inherit;
+  color: var(--mb-faint);
+}
+
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content[data-content-type="column"]) > .bn-block-group > .bn-block-outer:first-child > .bn-block > .bn-block-content[data-content-type="heading"],
+:root[data-style="mobai"] .life-editor .bn-editor > .bn-block-group > .bn-block-outer:first-child > .bn-block > .bn-block-content[data-content-type="heading"] {
+  margin-block-start: 0;
+}
+
+:root[data-style="mobai"] .life-editor .life-callout {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+:root[data-style="mobai"] .life-editor .life-callout-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+:root[data-style="mobai"] .life-editor .bn-block-content:is([data-content-type="paragraph"], [data-content-type="heading"], [data-content-type="bulletListItem"], [data-content-type="numberedListItem"], [data-content-type="checkListItem"], [data-content-type="toggleListItem"]) .bn-inline-content {
+  overflow-wrap: anywhere;
+}
+
+:root[data-style="mobai"] .life-editor .life-column-resizer {
+  width: var(--life-column-resizer-width, 12px);
+  right: var(--life-column-resizer-offset, -12px);
+  top: 0;
+  bottom: 0;
+  min-height: 24px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  outline: none;
+  cursor: col-resize;
+  touch-action: none;
+}
+
+:root[data-style="mobai"] .life-editor .life-column-resizer::after {
+  width: 2px;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 1px);
+  background: var(--mb-line-2);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 100ms ease;
+}
+
+:root[data-style="mobai"] .life-editor .bn-block-outer:hover .life-column-resizer:not(:hover):not(:focus-visible):not([data-resize-state="active"])::after {
+  opacity: 0;
+}
+
+:root[data-style="mobai"] .life-editor .life-column-resizer:is(:hover, :focus-visible, [data-resize-state="active"])::after {
+  opacity: 1;
+  background: var(--mb-muted);
+}
+
+:root[data-style="mobai"] .life-editor .life-column-resizer:focus-visible::after {
+  background: var(--mb-accent);
+}
+
+:root[data-style="mobai"] .life-editor .life-layout-trailing {
+  height: 26px;
+  min-height: 26px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: text;
+}
+
+:root[data-style="mobai"] .life-block-actions.bn-side-menu {
+  z-index: 110;
+  display: flex;
+  gap: 1px;
+  align-items: center;
+  padding: 0;
+  width: 41px;
+  height: 24px;
+  color: var(--mb-faint);
+  background: transparent;
+  opacity: 1;
+  transition: none;
+}
+
+:root[data-style="mobai"] .life-editor .life-block-actions button {
+  opacity: 1;
+}
+
+:root[data-style="mobai"] .life-block-action {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  min-width: 20px;
+  height: 24px;
+  min-height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  color: var(--mb-faint);
+  background: transparent;
+  cursor: pointer;
+}
+
+:root[data-style="mobai"] .life-block-action:hover,
+:root[data-style="mobai"] .life-block-action[data-expanded="true"] {
+  color: var(--mb-muted);
+  background: var(--mb-hover);
+}
+
+:root[data-style="mobai"] .life-block-action:focus-visible {
+  outline: none;
+  box-shadow: var(--mb-focus);
+  background: var(--mb-hover);
+}
+
+:root[data-style="mobai"] .life-block-handle {
+  cursor: grab;
+  touch-action: none;
+}
+
+:root[data-style="mobai"] .life-block-handle:active {
+  cursor: grabbing;
+}
+
+:root[data-style="mobai"] .life-block-drop-preview {
+  z-index: 120;
+  pointer-events: none;
+  border: 0;
+  border-radius: 2px;
+  background: var(--mb-accent);
+  box-shadow: 0 0 0 1px var(--mb-accent);
+  opacity: 0.94;
+}
+
+:root[data-style="mobai"] .life-block-drop-preview:is([data-drop-kind="wrap-columns"], [data-drop-kind="edge-column"]) {
+  box-shadow: 0 0 0 1.5px var(--mb-accent);
+  opacity: 1;
+}
+
+:root[data-style="mobai"] .life-block-drop-preview:is([data-drop-kind="wrap-columns"], [data-drop-kind="edge-column"])::after {
+  content: "并排分栏";
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2px 7px;
+  border-radius: var(--mb-r1);
+  background: var(--mb-accent);
+  color: var(--mb-tooltip-text);
+  font-family: var(--mb-sans);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  box-shadow: var(--mb-card);
+}
+
+:root[data-style="mobai"] :is(.life-block-menu, .life-block-conversion-menu, .life-block-colors-menu) {
+  width: 232px;
+  padding: 5px;
+  border: 1px solid var(--mb-line);
+  border-radius: 8px;
+  color: var(--mb-ink);
+  background: var(--mb-raised);
+  box-shadow: var(--mb-pop);
+  font: 400 14px/1.4 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .life-block-conversion-menu {
+  width: 270px;
+}
+
+:root[data-style="mobai"] .life-block-colors-menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 304px;
+}
+
+:root[data-style="mobai"] .life-editor .life-block-actions :is(.life-block-menu, .life-block-conversion-menu, .life-block-colors-menu) .bn-menu-item {
+  min-height: 29px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  color: var(--mb-ink);
+  font: inherit;
+}
+
+:root[data-style="mobai"] :is(.life-block-menu, .life-block-conversion-menu, .life-block-colors-menu) .bn-menu-item:is(:hover, [data-hovered="true"]) {
+  background: var(--mb-hover);
+}
+
+:root[data-style="mobai"] .life-editor .life-block-actions :is(.life-block-menu, .life-block-conversion-menu, .life-block-colors-menu) .bn-menu-item:disabled {
+  color: var(--mb-faint);
+  background: transparent;
+}
+
+:root[data-style="mobai"] .life-block-conversion-menu kbd {
+  color: var(--mb-faint);
+  font: 400 11px/1.3 var(--mb-sans);
+  white-space: nowrap;
+}
+
+:root[data-style="mobai"] .life-menu-check-space {
+  width: 15px;
+  height: 15px;
+}
+
+:root[data-style="mobai"] .life-block-menu-reason {
+  max-width: 256px;
+  padding: 6px 8px;
+  color: var(--mb-muted);
+  font: 400 12px/1.4 var(--mb-sans);
+  white-space: normal;
+}
+
+:root[data-style="mobai"] .life-block-menu .life-block-delete {
+  color: var(--mb-danger);
+}
+
+:root[data-style="mobai"] .life-block-color-chip {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--mb-line);
+  border-radius: 3px;
+  font: 500 12px/1 var(--mb-sans);
+  color: var(--life-color, var(--mb-ink));
+  background: transparent;
+}
+
+:root[data-style="mobai"] .life-block-color-chip[data-kind="backgroundColor"] {
+  color: var(--mb-ink);
+  background: var(--life-color-background, var(--mb-raised));
+}
+
+:root[data-style="mobai"] .life-block-color-chip[data-color="gray"] { --life-color: var(--mb-u-gray); --life-color-background: var(--mb-u-gray-bg); }
+:root[data-style="mobai"] .life-block-color-chip[data-color="brown"] { --life-color: var(--mb-u-brown); --life-color-background: var(--mb-u-brown-bg); }
+:root[data-style="mobai"] .life-block-color-chip[data-color="orange"] { --life-color: var(--mb-u-orange); --life-color-background: var(--mb-u-orange-bg); }
+:root[data-style="mobai"] .life-block-color-chip[data-color="yellow"] { --life-color: var(--mb-u-yellow); --life-color-background: var(--mb-u-yellow-bg); }
+:root[data-style="mobai"] .life-block-color-chip[data-color="green"] { --life-color: var(--mb-u-green); --life-color-background: var(--mb-u-green-bg); }
+:root[data-style="mobai"] .life-block-color-chip[data-color="blue"] { --life-color: var(--mb-u-blue); --life-color-background: var(--mb-u-blue-bg); }
+:root[data-style="mobai"] .life-block-color-chip[data-color="purple"] { --life-color: var(--mb-u-purple); --life-color-background: var(--mb-u-purple-bg); }
+:root[data-style="mobai"] .life-block-color-chip[data-color="pink"] { --life-color: var(--mb-u-pink); --life-color-background: var(--mb-u-pink-bg); }
+:root[data-style="mobai"] .life-block-color-chip[data-color="red"] { --life-color: var(--mb-u-red); --life-color-background: var(--mb-u-red-bg); }
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-style="mobai"] .life-editor .life-column-resizer::after {
+    transition: none;
+  }
+}

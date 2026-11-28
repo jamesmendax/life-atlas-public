@@ -1,0 +1,9 @@
+:root[data-style="mobai"] .database-view .db-navigation-row { display: flex; min-width: 0; align-items: center; border-bottom: 1px solid var(--mb-line); }
+:root[data-style="mobai"] .database-view .db-view-tabs { min-width: 0; flex: 1 1 auto; overflow-x: auto; border: 0; }
+:root[data-style="mobai"] .database-view .db-view-tabs > button { white-space: nowrap; }
+:root[data-style="mobai"] .database-view .db-add-view { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 0; border-radius: var(--mb-r2); background: transparent; color: var(--mb-muted); }
+:root[data-style="mobai"] .database-view .db-add-view:hover { background: var(--mb-hover); color: var(--mb-ink); }
+:root[data-style="mobai"] .database-view .db-add-view-panel { display: grid; gap: 10px; width: min(320px, 100%); padding: 12px; border: 1px solid var(--mb-line); background: var(--mb-raised); color: var(--mb-ink); }
+:root[data-style="mobai"] .database-view .db-add-view-panel label { display: grid; gap: 5px; }
+:root[data-style="mobai"] .database-view .db-add-view-panel input, :root[data-style="mobai"] .database-view .db-add-view-panel select { min-width: 0; width: 100%; }
+:root[data-style="mobai"] .database-view .db-add-view-panel > div { display: flex; justify-content: flex-end; gap: 8px; }

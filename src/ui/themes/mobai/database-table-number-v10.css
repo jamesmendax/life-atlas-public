@@ -1,0 +1,5 @@
+:root[data-style="mobai"] .db-table .db-table-number-read { display: block; width: 100%; min-height: 30px; padding: 4px 8px; border: 0; background: transparent; color: inherit; font: inherit; font-variant-numeric: tabular-nums; text-align: right; cursor: text; }
+:root[data-style="mobai"] .db-table .db-table-number-read:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .db-v9-popover.db-table-number-popover { width: min(240px, calc(100vw - 16px)); padding: 4px; }
+:root[data-style="mobai"] .db-table-number-popover input { width: 100%; }
+:root[data-style="mobai"] .db-table-number-popover .db-field-error { display: block; padding: 3px 5px; }

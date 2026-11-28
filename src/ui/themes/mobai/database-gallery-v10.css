@@ -1,0 +1,122 @@
+:root[data-style="mobai"] .db-gallery-group-title { color: var(--mb-ink); }
+:root[data-style="mobai"] .db-gallery-group-title small { color: var(--mb-muted); }
+:root[data-style="mobai"] .db-gallery-view {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  align-items: start;
+  gap: 12px;
+  padding: 12px 0;
+  min-width: 0;
+}
+:root[data-style="mobai"] .db-gallery-view.size-small {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr));
+}
+:root[data-style="mobai"] .db-gallery-view.size-large {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
+}
+:root[data-style="mobai"] .db-gallery-card { min-width: 0; }
+:root[data-style="mobai"] .db-gallery-open { width: 100%; padding: 0; text-align: left; }
+:root[data-style="mobai"] .db-gallery-preview {
+  display: block;
+  box-sizing: border-box;
+  height: 130px;
+  min-height: 130px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--mb-line);
+  background-color: var(--mb-hover);
+  background-image: none;
+}
+:root[data-style="mobai"] .db-gallery-view.size-small .db-gallery-preview { height: 100px; min-height: 100px; }
+:root[data-style="mobai"] .db-gallery-view.size-large .db-gallery-preview { height: 180px; min-height: 180px; }
+:root[data-style="mobai"] .db-gallery-content {
+  padding: 12px;
+  color: var(--mb-muted);
+  font: 400 12px/1.5 var(--mb-sans);
+  overflow-wrap: anywhere;
+}
+:root[data-style="mobai"] .db-gallery-file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 12px;
+  color: var(--mb-muted);
+  font: 400 12px/1.5 var(--mb-sans);
+}
+:root[data-style="mobai"] .db-gallery-file-name { max-width: 100%; overflow-wrap: anywhere; }
+:root[data-style="mobai"] .db-gallery-content[data-has-image="true"],
+:root[data-style="mobai"] .db-gallery-file[data-has-image="true"] { padding: 0; }
+:root[data-style="mobai"] .db-gallery-open > .db-gallery-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  min-height: 36px;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  font: 600 14px/20px var(--mb-sans);
+}
+:root[data-style="mobai"] .db-gallery-title-icon {
+  display: inline-flex;
+  flex: 0 0 16px;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 20px;
+  color: var(--mb-muted);
+  font-size: 16px;
+}
+:root[data-style="mobai"] .db-gallery-title-icon svg,
+:root[data-style="mobai"] .db-gallery-title-icon img { width: 16px; height: 16px; object-fit: contain; }
+:root[data-style="mobai"] .db-gallery-title-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+:root[data-style="mobai"] .db-gallery-properties { gap: 4px; padding: 0 10px 8px; }
+:root[data-style="mobai"] .db-gallery-properties > span {
+  display: block;
+  color: var(--mb-muted);
+  font: 400 12px/20px var(--mb-sans);
+}
+:root[data-style="mobai"] .db-gallery-properties .db-card-tags {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+:root[data-style="mobai"] .db-gallery-properties .db-gallery-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  box-sizing: border-box;
+  border: 1px solid var(--mb-muted);
+  border-radius: var(--mb-r1);
+  vertical-align: middle;
+}
+:root[data-style="mobai"] .db-gallery-checkbox[data-checked="true"] {
+  border-color: var(--mb-accent);
+  background: var(--mb-accent);
+  color: var(--mb-tooltip-text);
+}
+:root[data-style="mobai"] .db-gallery-create {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 0;
+  align-self: stretch;
+  height: auto;
+  min-height: 30px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  border: 1px solid var(--mb-line);
+  border-radius: var(--mb-r2);
+  background: none;
+  color: var(--mb-muted);
+  font: 400 13px/20px var(--mb-sans);
+  cursor: pointer;
+}
+:root[data-style="mobai"] .db-gallery-create:hover { background: var(--mb-hover); color: var(--mb-ink); }
+:root[data-style="mobai"] .db-gallery-create:focus-visible { outline: none; box-shadow: var(--mb-focus); }
+:root[data-style="mobai"] .db-card-preview-file { display: inline-flex; align-items: center; gap: 6px; overflow-wrap: anywhere; }
+:root[data-style="mobai"] .db-gallery-preview[data-preview-kind="video"] { padding: 0; overflow: hidden; }
+:root[data-style="mobai"] .db-gallery-preview[data-preview-kind="video"] > video { display: block; width: 100%; height: 100%; pointer-events: none; }

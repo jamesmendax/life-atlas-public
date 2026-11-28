@@ -1,0 +1,122 @@
+export function emptyDocument() {
+  return [
+    {
+      type: "paragraph",
+      content: "",
+    },
+  ];
+}
+
+const starterDocument = (title, description) => [
+  {
+    type: "heading",
+    props: { level: 2 },
+    content: title,
+  },
+  {
+    type: "paragraph",
+    content: description,
+  },
+  {
+    type: "paragraph",
+    content: "输入 / 可以添加标题、清单、图片、引用、代码等区块。每个区块都可以独立移动、转换和继续嵌套。",
+  },
+];
+
+export const seedWorkspace = {
+  schemaVersion: 6,
+  dataSources: [],
+  databaseItems: [],
+  databaseViews: [],
+  relations: [],
+  folders: [
+    { id: "wanhua", parentId: null, name: "万华", color: "cyan", sortIndex: 10, lastOpenedPageId: "wanhua-overview", createdAt: "2026-09-01T08:00:00.000Z", updatedAt: "2026-09-18T01:42:00.000Z" },
+    { id: "learning", parentId: null, name: "my mind is ready to learn", color: "stone", sortIndex: 20, lastOpenedPageId: null, createdAt: "2026-09-02T08:00:00.000Z", updatedAt: "2026-09-02T08:00:00.000Z" },
+    { id: "life-knowledge", parentId: null, name: "生活小知识", color: "stone", sortIndex: 30, lastOpenedPageId: "chemistry", createdAt: "2026-09-03T08:00:00.000Z", updatedAt: "2026-09-18T01:30:00.000Z" },
+    { id: "parenting", parentId: "life-knowledge", name: "家教篇", color: "terracotta", sortIndex: 10, lastOpenedPageId: "chemistry", createdAt: "2026-09-10T08:00:00.000Z", updatedAt: "2026-09-18T01:30:00.000Z" },
+    { id: "travel", parentId: "life-knowledge", name: "旅游篇", color: "indigo", sortIndex: 20, lastOpenedPageId: null },
+    { id: "games", parentId: "life-knowledge", name: "游戏篇", color: "teal", sortIndex: 30, lastOpenedPageId: null },
+    { id: "notes", parentId: null, name: "笔记篇", color: "stone", sortIndex: 40, lastOpenedPageId: "all-in-one" },
+    { id: "shopping", parentId: null, name: "购物篇", color: "stone", sortIndex: 50, lastOpenedPageId: null },
+    { id: "cleaning", parentId: null, name: "清洁篇", color: "blue", sortIndex: 60, lastOpenedPageId: null },
+    { id: "dogs", parentId: null, name: "曾小狗与程小猪", color: "orange", sortIndex: 70, lastOpenedPageId: null },
+    { id: "career", parentId: null, name: "就业", color: "stone", sortIndex: 80, lastOpenedPageId: null },
+    { id: "templates", parentId: null, name: "template", color: "stone", sortIndex: 90, lastOpenedPageId: "q1" },
+    { id: "2026", parentId: "templates", name: "2026", color: "green", sortIndex: 10, lastOpenedPageId: "q1" },
+  ],
+  pages: [
+    {
+      id: "wanhua-overview",
+      folderId: "wanhua",
+      title: "万华 · 项目首页",
+      icon: "📄",
+      cover: null,
+      sortIndex: 10,
+      createdAt: "2026-09-01T08:00:00.000Z",
+      updatedAt: "2026-09-18T01:42:00.000Z",
+      summary: "万华项目的长期说明、项目背景与需要持续推进的核心事项。",
+      content: starterDocument("项目说明", "这是一篇真正的 Page。文件夹只负责归类，正文从这里开始。"),
+    },
+    {
+      id: "chemistry",
+      folderId: "parenting",
+      title: "化学",
+      icon: "icon:flask",
+      iconColor: "#a887df",
+      cover: { kind: "gallery", value: "hokusai-landscape", position: 50 },
+      sortIndex: 10,
+      createdAt: "2026-09-14T06:20:00.000Z",
+      updatedAt: "2026-09-18T01:30:00.000Z",
+      summary: "化学家教中的知识点整理、讲解方法、典型例题以及每次课程后的复盘记录。",
+      content: starterDocument("化学家教笔记", "把需要讲解、复盘和长期保留的化学知识放在这里。"),
+    },
+    {
+      id: "all-in-one",
+      folderId: "notes",
+      title: "All in one 笔记",
+      icon: "📘",
+      cover: null,
+      sortIndex: 10,
+      createdAt: "2026-09-06T08:00:00.000Z",
+      updatedAt: "2026-09-17T18:08:00.000Z",
+      summary: "集中收纳零散信息，再逐步整理为长期可复用的结构化知识。",
+      content: starterDocument("All in one", "把零散信息先收进来，再慢慢整理结构。"),
+    },
+    {
+      id: "para",
+      folderId: "notes",
+      title: "P A R A 笔记",
+      icon: "📗",
+      cover: null,
+      sortIndex: 20,
+      createdAt: "2026-09-07T08:00:00.000Z",
+      updatedAt: "2026-09-15T10:00:00.000Z",
+      summary: "围绕 Projects、Areas、Resources、Archives 的长期整理和复盘页面。",
+      content: starterDocument("P A R A", "Projects / Areas / Resources / Archives 的长期整理页面。"),
+    },
+    {
+      id: "q1",
+      folderId: "2026",
+      title: "Q1 / 重新开始",
+      icon: "✨",
+      cover: null,
+      sortIndex: 10,
+      createdAt: "2026-09-14T08:00:00.000Z",
+      updatedAt: "2026-09-14T10:00:00.000Z",
+      summary: "记录这一阶段真正值得继续推进的目标、行动和阶段性复盘。",
+      content: starterDocument("重新开始", "记录这一阶段真正值得继续推进的事情。"),
+    },
+  ],
+  ui: {
+    expandedFolderIds: ["life-knowledge", "parenting", "notes", "templates", "2026"],
+    selectedFolderId: "parenting",
+    selectedPageId: null,
+    privateExpanded: true,
+    assetPreferences: {
+      recentEmojiIds: [],
+      recentIconIds: ["flask"],
+      recentCoverIds: ["hokusai-landscape"],
+      favoriteCoverIds: [],
+    },
+  },
+};

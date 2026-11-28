@@ -1,0 +1,15 @@
+:root[data-style="mobai"] .db-v9-popover.db-view-create-chooser,
+:root[data-style="mobai"] .db-v9-popover.db-view-create-panel { width: min(320px, calc(100vw - 16px)); }
+
+:root[data-style="mobai"] .db-view-create-heading { display: flex; align-items: center; justify-content: space-between; padding: 4px 4px 8px; color: var(--mb-muted); }
+:root[data-style="mobai"] .db-view-create-heading > button { width: 26px; height: 26px; border: 0; border-radius: var(--mb-r2); background: transparent; color: var(--mb-muted); font-size: 18px; }
+:root[data-style="mobai"] .db-view-create-heading > button:hover { background: var(--mb-hover); color: var(--mb-ink); }
+:root[data-style="mobai"] .db-view-create-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
+:root[data-style="mobai"] .db-view-create-grid > button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; min-width: 0; min-height: 60px; padding: 6px 3px; border: 1px solid transparent; border-radius: var(--mb-r2); background: transparent; color: var(--mb-ink); }
+:root[data-style="mobai"] .db-view-create-grid > button:hover { background: var(--mb-hover); }
+:root[data-style="mobai"] .db-view-create-grid > button > span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+:root[data-style="mobai"] .db-view-create-error { margin: 6px 4px; color: var(--mb-danger); }
+:root[data-style="mobai"] .db-view-create-panel .db-v9-layout-grid { margin: 6px 2px 8px; }
+:root[data-style="mobai"] .db-view-create-source { padding: 4px 7px 8px; overflow-wrap: anywhere; color: var(--mb-ink-2); }
+:root[data-style="mobai"] .db-view-create-done { display: block; width: 100%; min-height: 30px; margin-top: 8px; border: 0; border-radius: var(--mb-r2); background: var(--mb-accent); color: var(--mb-tooltip-text); font-weight: 500; }
+:root[data-style="mobai"] .db-view-create-done:hover { background: var(--mb-accent-hover); }

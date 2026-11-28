@@ -1,0 +1,33 @@
+# Dependencies & Build Artifacts
+node_modules/
+dist/
+/release/
+
+# Local QA, Test Dumps & Agent Runtime
+.qa/
+.visual-qa/
+.harness/
+.openai/
+.parallel-work.json
+design-prototypes/
+docs/notion-gap-evidence/
+
+# Logs & Scratch Artifacts
+*.log
+dev4175.out.log
+qa-implementation-default.jpg
+
+# Local Secrets, Databases & Binaries
+.env
+.env.*
+*.db
+*.db-shm
+*.db-wal
+*.db.bak*
+*.sqlite
+*.sqlite3
+*.zip
+!tests/fixtures/compatibility/*/live-profile.zip
+*.exe
+.DS_Store
+Thumbs.db

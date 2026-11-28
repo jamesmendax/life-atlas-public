@@ -1,0 +1,75 @@
+:root[data-style="mobai"] .db-map-search {
+  position: relative;
+  flex: 0 1 270px;
+  min-width: 145px;
+  max-width: 100%;
+  color: var(--mb-ink);
+}
+:root[data-style="mobai"] .db-map-search form {
+  display: flex;
+  align-items: center;
+  padding: 0 3px 0 9px;
+  border: 1px solid var(--mb-field-line);
+  border-radius: 6px;
+  background: var(--mb-field);
+}
+:root[data-style="mobai"] .db-map-search form:focus-within { box-shadow: var(--mb-focus); }
+:root[data-style="mobai"] .db-map-search input {
+  width: 100%;
+  min-width: 0;
+  height: 30px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+}
+:root[data-style="mobai"] .db-map-search form button {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 28px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--mb-muted);
+}
+:root[data-style="mobai"] .db-map-search form button:hover:enabled,
+:root[data-style="mobai"] .db-map-search-results button:hover,
+:root[data-style="mobai"] .db-map-search-results button:focus-visible { background: var(--mb-hover); }
+:root[data-style="mobai"] .db-map-search-results {
+  position: absolute;
+  z-index: 1010;
+  top: calc(100% + 4px);
+  inset-inline-start: 0;
+  width: min(355px, 75vw);
+  max-height: 260px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  display: grid;
+  gap: 2px;
+  padding: 5px;
+  border: 1px solid var(--mb-line);
+  border-radius: 6px;
+  background: var(--mb-raised);
+  box-shadow: var(--mb-pop);
+  font-size: 13px;
+}
+:root[data-style="mobai"] .db-map-search-results button {
+  display: grid;
+  gap: 3px;
+  padding: 6px 8px;
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  text-align: start;
+}
+:root[data-style="mobai"] .db-map-search-results strong { font-weight: 550; }
+:root[data-style="mobai"] .db-map-search-results small { color: var(--mb-muted); line-height: 1.4; overflow-wrap: anywhere; }
+:root[data-style="mobai"] .db-map-search-results > :is(span, small) { padding: 5px 8px; }

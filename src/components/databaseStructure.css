@@ -1,0 +1,30 @@
+.db-structure-fields { display: grid; gap: 12px; }
+.db-structure-fields > label { display: grid; gap: 5px; }
+.db-structure-fields select, .db-structure-fields input[type="search"] {
+  border: 1px solid var(--mb-line, var(--la-c-3d4551));
+  border-radius: 6px;
+  background: var(--mb-raised, var(--la-c-292d34));
+  color: inherit;
+  font: inherit;
+  min-width: 0;
+  min-height: 32px;
+  padding: 5px 8px;
+}
+.db-structure-fields .db-structure-check { display: flex; align-items: center; gap: 7px; min-width: 0; overflow-wrap: anywhere; }
+.db-structure-check > input { margin: 0; flex: none; }
+.db-structure-fields p { margin: 0; color: var(--mb-faint, var(--la-c-9399a4)); font-size: 12px; }
+.db-structure-fields p[role="alert"] { color: var(--mb-danger, var(--la-c-f08a8a, #d17070)); }
+.db-structure-choices { display: grid; gap: 9px; max-height: min(38vh, 240px); overflow: auto; padding: 3px; }
+.db-structure-actions { display: flex; justify-content: end; gap: 6px; }
+.db-structure-actions button { border: 1px solid var(--mb-line, var(--la-c-3d4551)); border-radius: 6px; background: transparent; color: inherit; padding: 5px 10px; font: inherit; }
+.db-structure-actions > button[type="submit"] { background: var(--mb-ink, var(--la-c-cbd3df)); color: var(--mb-bg, var(--la-c-23262c)); }
+.db-structure-toggle { flex: none; display: inline-grid; place-items: center; width: 22px; height: 22px; border: 0; border-radius: 4px; padding: 0; background: transparent; color: var(--mb-faint, var(--la-c-9399a4)); }
+.db-structure-toggle[aria-expanded="true"] svg { transform: rotate(90deg); }
+.db-structure-toggle:hover { background: var(--mb-hover, var(--la-c-2c313a)); color: inherit; }
+.db-card-subitems { border-top: 1px solid var(--mb-line, var(--la-c-3d4551)); margin: 5px 9px 8px; font-size: 12px; }
+.db-card-subitems > summary { cursor: pointer; padding: 6px 0 3px; color: var(--mb-faint, var(--la-c-9399a4)); }
+.db-card-subitems > div { display: grid; }
+.db-card-subitems button { border: 0; padding: 4px; background: transparent; color: inherit; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: start; }
+.db-card-subitems button:hover { background: var(--mb-hover, var(--la-c-2c313a)); }
+.db-table .db-structure-title { display: flex; align-items: center; min-width: 0; }
+.db-structure-title > .db-title-control { flex: 1 1 auto; }

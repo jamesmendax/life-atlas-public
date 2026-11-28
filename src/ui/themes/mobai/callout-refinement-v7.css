@@ -1,0 +1,17 @@
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content[data-content-type="callout"]) {
+  background: var(--mb-u-gray-bg);
+  border-radius: 4px;
+}
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content > .life-callout-brown) { background: var(--mb-u-brown-bg); }
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content > .life-callout-blue) { background: var(--mb-u-blue-bg); }
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content > .life-callout-yellow) { background: var(--mb-u-yellow-bg); }
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content > .life-callout-red) { background: var(--mb-u-red-bg); }
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content > .life-callout-green) { background: var(--mb-u-green-bg); }
+:root[data-style="mobai"] .life-editor .life-callout { background: transparent; }
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content[data-content-type="callout"]) > .bn-block-group {
+  padding: 0 16px 12px 24px;
+}
+:root[data-style="mobai"] .life-editor .bn-block:has(> .react-renderer > .bn-block-content[data-content-type="callout"]) > .bn-block-group > .bn-block-outer::before {
+  content: none;
+  border: 0;
+}

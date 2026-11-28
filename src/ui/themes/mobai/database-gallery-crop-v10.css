@@ -1,0 +1,11 @@
+/* Medium cards follow the stable native Gallery reference at actual size. */
+:root[data-style="mobai"] .db-gallery-view { gap: 14px; }
+:root[data-style="mobai"] .db-gallery-view.size-medium .db-gallery-preview {
+  height: 146px;
+  min-height: 146px;
+}
+:root[data-style="mobai"] .db-gallery-open > .db-gallery-title {
+  min-height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

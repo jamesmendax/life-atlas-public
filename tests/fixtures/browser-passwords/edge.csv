@@ -1,0 +1,7 @@
+note,password,username,url,name
+"note, with comma",csv-edge-test-1,alice,https://mail.example.invalid,Example Mail
+ordinary note,csv-edge-test-2,bob,https://quoted.example.invalid,"Quoted ""Name"""
+"first line
+second line",csv-edge-test-3,charlie,https://lines.example.invalid,Multi line
+中文备注,csv-edge-test-4,测试用户,https://zh.example.invalid,中文服务
+empty name,csv-edge-test-5,delta,https://fallback.example.invalid,

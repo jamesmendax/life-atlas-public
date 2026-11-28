@@ -1,0 +1,103 @@
+:root[data-style="mobai"] .workspace-scroll.is-page-editor {
+  --la-reading-width: var(--page-content-width);
+}
+
+:root[data-style="mobai"] .database-view .db-view-tabs {
+  flex-wrap: nowrap;
+  scrollbar-color: var(--mb-muted) var(--mb-hover-soft);
+}
+
+:root[data-style="mobai"] .database-view .db-view-tabs > button {
+  flex-shrink: 0;
+}
+
+:root[data-style="mobai"] .database-view .db-view-tabs::-webkit-scrollbar {
+  display: block;
+}
+
+:root[data-style="mobai"] .database-view .db-table-scroll {
+  scrollbar-width: auto;
+  scrollbar-color: var(--mb-muted) var(--mb-hover-soft);
+}
+
+:root[data-style="mobai"] .db-horizontal-scroll-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  min-height: 28px;
+  color: var(--mb-muted);
+  font: 400 12px/1.5 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .db-horizontal-scroll-controls span {
+  margin-right: 4px;
+}
+
+:root[data-style="mobai"] .db-horizontal-scroll-controls button {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  color: var(--mb-muted);
+  background: transparent;
+}
+
+:root[data-style="mobai"] .db-horizontal-scroll-controls button:hover:not(:disabled) {
+  color: var(--mb-ink);
+  background: var(--mb-hover);
+}
+
+:root[data-style="mobai"] .trash-header {
+  border-bottom-color: var(--mb-line);
+}
+
+:root[data-style="mobai"] .trash-eyebrow,
+:root[data-style="mobai"] .trash-row-copy span,
+:root[data-style="mobai"] .trash-row-copy small {
+  color: color-mix(in srgb, var(--mb-muted) 92%, var(--mb-ink));
+  font: 400 12px/1.5 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .trash-header p {
+  color: color-mix(in srgb, var(--mb-muted) 92%, var(--mb-ink));
+  font: 400 14px/1.5 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .trash-row-copy {
+  gap: 3px;
+}
+
+:root[data-style="mobai"] .trash-row-copy strong {
+  color: var(--mb-ink);
+  font: 500 14px/1.5 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .trash-row-actions button,
+:root[data-style="mobai"] .trash-empty-button {
+  color: color-mix(in srgb, var(--mb-muted) 92%, var(--mb-ink));
+  font: 400 14px/1 var(--mb-sans);
+}
+
+:root[data-style="mobai"] .trash-empty-button {
+  border-color: var(--mb-line-2);
+}
+
+:root[data-style="mobai"] .trash-row-actions .trash-delete-button,
+:root[data-style="mobai"] .trash-empty-button {
+  color: color-mix(in srgb, var(--mb-danger) 70%, var(--mb-ink));
+}
+
+:root[data-style="mobai"] .trash-restore-button:hover {
+  color: var(--mb-ink);
+  background: var(--mb-hover);
+}
+
+:root[data-style="mobai"] .trash-row-actions .trash-delete-button:hover,
+:root[data-style="mobai"] .trash-empty-button:hover:not(:disabled) {
+  color: color-mix(in srgb, var(--mb-danger) 70%, var(--mb-ink));
+  background: var(--mb-u-red-bg);
+}

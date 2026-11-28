@@ -1,0 +1,80 @@
+.db-record-layout-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.db-record-layout-tabs {
+  display: flex;
+  gap: 4px;
+  overflow: auto;
+  padding: 2px;
+  border-bottom: 1px solid var(--mb-line, var(--la-c-353e4e));
+}
+
+.db-record-layout-tabs button {
+  flex: none;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  border-radius: 5px 5px 0 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.db-record-layout-tabs [aria-selected="true"] {
+  border-color: var(--mb-line, var(--la-c-353e4e));
+  border-bottom-color: currentColor;
+  font-weight: 650;
+}
+
+.db-record-layout-pinned,
+.db-record-layout-panel {
+  padding-block: 7px;
+  min-width: 0;
+}
+
+.db-record-layout-panel h3 {
+  margin: 2px 0 7px;
+  font-size: 1em;
+}
+
+.db-record-layout-editor,
+.db-record-layout-group {
+  display: grid;
+  gap: 8px;
+}
+
+.db-record-layout-editor {
+  padding: 8px 0;
+}
+
+.db-record-layout-editor fieldset {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--mb-line, var(--la-c-353e4e));
+}
+
+.db-record-layout-editor label {
+  display: grid;
+  gap: 5px;
+}
+
+.db-record-layout-editor :is(input, select) {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.db-record-layout-order {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.db-record-order-actions {
+  display: inline-flex;
+  gap: 3px;
+  flex-shrink: 0;
+}

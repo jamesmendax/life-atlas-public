@@ -1,0 +1,142 @@
+:root[data-style="mobai"] .record-peek.ui-dialog {
+  width: min(980px, calc(100vw - 32px));
+}
+
+:root[data-style="mobai"] .record-peek-body {
+  padding: 40px 24px;
+}
+
+:root[data-style="mobai"] .record-peek-content {
+  width: min(100%, 708px);
+  min-width: 0;
+  margin-inline: auto;
+}
+
+:root[data-style="mobai"] .record-peek .db-record-properties.is-compact {
+  margin: 0 0 14px;
+  padding: 0 0 14px;
+  border-top: 0;
+}
+
+:root[data-style="mobai"] .record-peek .db-record-properties.is-compact .db-record-property {
+  min-height: 34px;
+  padding: 0;
+  gap: 8px;
+  align-items: start;
+}
+
+:root[data-style="mobai"] .record-peek .db-record-properties.is-compact .db-record-property-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 34px;
+  padding: 0 0 0 6px;
+}
+
+:root[data-style="mobai"] .record-peek .db-record-property-label > svg {
+  flex: none;
+  color: var(--mb-muted);
+}
+
+:root[data-style="mobai"] .record-peek .db-record-property-label > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+:root[data-style="mobai"] .record-peek .db-record-properties.is-compact .db-cell-input {
+  min-width: 0;
+  min-height: 34px;
+  box-sizing: border-box;
+}
+
+:root[data-style="mobai"] .record-peek .db-record-properties.is-compact .db-record-property > .db-draft-field {
+  padding: 0;
+}
+
+:root[data-style="mobai"] .record-peek .db-record-properties.is-compact .db-record-property > .db-real-checkbox {
+  align-self: center;
+}
+
+:root[data-style="mobai"] .record-peek .db-record-properties.is-compact textarea.db-cell-input {
+  display: block;
+  field-sizing: content;
+  height: auto;
+  max-height: none;
+  resize: none;
+  overflow-wrap: anywhere;
+}
+
+:root[data-style="mobai"] .record-peek .db-record-properties.is-compact .db-cell-input::placeholder {
+  color: var(--mb-faint);
+  opacity: 1;
+}
+
+:root[data-style="mobai"] .record-peek .db-calendar-scroller {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 600px) {
+  :root[data-style="mobai"] .record-peek-body { padding: 24px 16px; }
+  :root[data-style="mobai"] .record-peek .db-record-properties.is-compact .db-record-property { grid-template-columns: minmax(80px, 120px) minmax(0, 1fr); }
+}
+
+:root[data-style="mobai"] .page-document .record-properties.is-compact {
+  margin-block: 0 14px;
+  padding: 0 0 14px;
+  border-top: 0;
+}
+
+:root[data-style="mobai"] .page-document .record-properties.is-compact .db-record-property {
+  min-height: 34px;
+  padding: 0;
+  gap: 8px;
+  align-items: start;
+}
+
+:root[data-style="mobai"] .page-document .record-properties.is-compact .db-record-property-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 34px;
+  padding: 0 0 0 6px;
+}
+
+:root[data-style="mobai"] .page-document .record-properties.is-compact .db-record-property-label > svg {
+  flex: none;
+  color: var(--mb-muted);
+}
+
+:root[data-style="mobai"] .page-document .record-properties.is-compact .db-record-property-label > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+:root[data-style="mobai"] .page-document .record-properties.is-compact .db-cell-input {
+  min-width: 0;
+  min-height: 34px;
+  box-sizing: border-box;
+}
+
+:root[data-style="mobai"] .page-document .record-properties.is-compact .db-record-property > .db-draft-field { padding: 0; }
+:root[data-style="mobai"] .page-document .record-properties.is-compact .db-record-property > .db-real-checkbox { align-self: center; }
+
+:root[data-style="mobai"] .page-document .record-properties.is-compact textarea.db-cell-input {
+  display: block;
+  field-sizing: content;
+  height: auto;
+  max-height: none;
+  resize: none;
+  overflow-wrap: anywhere;
+}
+
+:root[data-style="mobai"] .page-document .record-properties.is-compact .db-cell-input::placeholder {
+  color: var(--mb-faint);
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  :root[data-style="mobai"] .page-document .record-properties.is-compact .db-record-property { grid-template-columns: minmax(80px, 120px) minmax(0, 1fr); }
+}

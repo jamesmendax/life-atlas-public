@@ -1,0 +1,16 @@
+{
+  "title": "专注学习页",
+  "icon": "📖",
+  "blocks": [
+    { "type": "image", "props": { "url": "asset:assets/study.png", "caption": "日光下的笔记本" } },
+    { "type": "heading", "props": { "level": 2 }, "content": "今天的目标" },
+    { "type": "paragraph", "content": "给这一轮学习定一个可以检验的小目标。结束时，你想讲清哪个问题？" },
+    { "type": "checkListItem", "props": { "checked": false }, "content": "学习前，写下要弄懂的一件事" },
+    { "type": "checkListItem", "props": { "checked": false }, "content": "学完后，合上资料，用自己的话讲一遍" },
+    { "type": "heading", "props": { "level": 2 }, "content": "学习笔记" },
+    { "type": "bulletListItem", "content": "用一句话记下核心概念。" },
+    { "type": "bulletListItem", "content": "用一个新例子检验自己是否理解。" },
+    { "type": "heading", "props": { "level": 2 }, "content": "下次从这里开始" },
+    { "type": "paragraph", "content": "留下一句提醒，记下还没弄懂的地方或下一道要做的题。" }
+  ]
+}

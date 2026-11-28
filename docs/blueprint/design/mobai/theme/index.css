@@ -1,0 +1,9 @@
+/* 墨白主题入口：在 main.jsx 里放在全部样式表之后导入。 */
+@import "./tokens.css";
+@import "./base.css";
+@import "./shell.css";
+@import "./page.css";
+@import "./editor.css";
+@import "./overlays.css";
+@import "./views.css";
+@import "./database.css";

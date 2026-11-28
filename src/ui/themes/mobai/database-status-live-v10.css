@@ -1,0 +1,2 @@
+:root[data-style="mobai"] .db-status-live .db-status-inline-input { display: block; width: calc(100% - 10px); min-width: 0; margin: 3px 5px 5px; padding: 5px 7px; border: 1px solid var(--mb-line-2); border-radius: var(--mb-r2); background: var(--mb-field); color: var(--mb-ink); }
+:root[data-style="mobai"] .db-status-live .db-status-inline-input:focus-visible { outline: 2px solid var(--mb-muted); outline-offset: 1px; box-shadow: none; }

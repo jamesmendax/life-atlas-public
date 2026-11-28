@@ -1,0 +1,109 @@
+/* The nested document ends at its content. Keep the main editor's page-end space. */
+:root[data-style="mobai"] .life-synced-editor .bn-editor {
+  min-height: 0;
+  padding: 2px 8px !important;
+}
+
+:root[data-style="mobai"] .bn-block-content[data-content-type="syncedBlock"] {
+  padding-block: 0;
+}
+
+/* The nested editor's root is a fresh document, not an indented child block. */
+:root[data-style="mobai"] .life-synced-editor .bn-editor > .bn-block-group {
+  margin-inline-start: 0;
+}
+
+:root[data-style="mobai"] .life-synced-editor .bn-editor > .bn-block-group > .bn-block-outer::before {
+  content: none;
+}
+
+/* Keep the click-to-append target immediately below the final line. */
+:root[data-style="mobai"] .life-synced-editor .bn-editor > .bn-block-group > .life-layout-trailing {
+  min-height: 6px;
+  height: 6px;
+}
+
+:root[data-style="mobai"] .life-synced-source {
+  position: relative;
+  margin-block: 1px;
+  box-shadow: none;
+}
+
+:root[data-style="mobai"] .life-synced-source:is(:hover, :focus-within) {
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--mb-u-red) 72%, transparent);
+}
+
+/* BlockNote draws its blue node-selection overlay on the selected block's child. */
+:root[data-style="mobai"] .life-synced-source::after,
+:root[data-style="mobai"] .node-syncedBlock.ProseMirror-selectednode::after,
+:root[data-style="mobai"] .bn-block-content[data-content-type="syncedBlock"].ProseMirror-selectednode::after {
+  content: none;
+}
+
+:root[data-style="mobai"] .life-synced-source > header {
+  position: absolute;
+  inset-block-end: calc(100% - 1px);
+  inset-inline-end: 2px;
+  z-index: 4;
+  max-width: calc(100% - 4px);
+  min-height: 24px;
+  gap: 6px;
+  padding: 0 4px 0 8px;
+  white-space: nowrap;
+  border-radius: var(--mb-r2);
+  background: var(--mb-raised);
+  box-shadow: var(--mb-card);
+  pointer-events: none;
+}
+
+:root[data-style="mobai"] .life-synced-source:is(:hover, :focus-within) > header,
+:root[data-style="mobai"] .life-synced-source > header:has(> details[open]) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+:root[data-style="mobai"] .life-synced-source:has(.life-synced-source:is(:hover, :focus-within)) > header:not(:focus-within) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+:root[data-style="mobai"] .life-synced-source > header > span {
+  color: var(--mb-u-red);
+}
+
+:root[data-style="mobai"] .life-synced-source > header > small {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+:root[data-style="mobai"] .life-synced-source > header summary {
+  display: grid;
+  place-content: center;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0;
+  border-radius: var(--mb-r2);
+  color: var(--mb-muted);
+}
+
+:root[data-style="mobai"] .life-synced-source > header summary:is(:hover, :focus-visible) {
+  background: var(--mb-hover);
+}
+
+@media (hover: none) {
+  :root[data-style="mobai"] .life-synced-source > header:has(> details) {
+    inset-block: 0 auto;
+    padding: 0;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  :root[data-style="mobai"] .life-synced-source > header:has(> details) > :is(span, small) {
+    display: none;
+  }
+
+  :root[data-style="mobai"] .life-synced-source:has(> header > details) > .life-synced-editor .bn-editor {
+    padding-inline-end: 32px !important;
+  }
+}

@@ -1,0 +1,26 @@
+<main class="shell" id="app" aria-labelledby="ledger-title">
+  <header class="ledger-header">
+    <div><h1 id="ledger-title">明账</h1><p id="mode" class="ledger-mode"></p></div>
+    <div class="row ledger-options">
+      <button class="mini bare" id="switchData" type="button"></button>
+      <button class="mini bare" id="theme" type="button"></button>
+    </div>
+  </header>
+  <div class="ledger-period row between" id="ledger-period">
+    <div class="row period" aria-label="账本月份">
+      <button id="previous-month" class="month-step" type="button" aria-label="上个月">‹</button>
+      <input id="report-month" type="month" aria-label="账本月份" min="1900-01" max="9999-11">
+      <button id="next-month" class="month-step" type="button" aria-label="下个月">›</button>
+      <button id="current-month" class="mini bare" type="button">本月</button>
+    </div>
+    <div class="row ledger-actions" id="ledger-actions">
+      <button id="newincome" type="button">记收入</button><button class="primary" id="newexpense" type="button">记支出</button>
+    </div>
+  </div>
+  <section aria-label="收支概览" class="summary" id="summary"></section>
+  <nav aria-label="账本视图" class="ledger-nav" id="tabs"></nav>
+  <section class="screen" id="screen"></section>
+  <details class="ledger-notes"><summary>账本数据说明</summary><p>我的账本和演示账本分开保存。按本机日期统计，预计扣费需确认后才计入支出，储蓄存取按内部转账处理。</p></details>
+</main>
+<dialog aria-label="账目表单" id="dialog"><form id="form"></form></dialog>
+<div class="toast" id="toast" role="status"></div>

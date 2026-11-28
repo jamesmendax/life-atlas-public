@@ -1,0 +1,23 @@
+# Database map sources
+
+## Offline overview
+
+Natural Earth's public-domain 1:110m land polygons provide the initial world overview. Opening the offline map and viewing database records works locally. The bundled `src/assets/ne_110m_land.json` contains 127 features, 138,160 bytes, SHA-256 `9e0729ee253ca7d7a5c4ae9395fb1902264c5377c52e224d13dd85010e2835d9`. On-map credit is **Made with Natural Earth · 1:110m**. [Source polygons](https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_land.geojson) · [Natural Earth terms](https://www.naturalearthdata.com/about/terms-of-use/)
+
+## Streets
+
+The online street layer displays the OpenStreetMap Foundation's Standard raster map, from world overview to street zoom 19. It shows the streets, buildings and labels mapped by contributors. Credit **© OpenStreetMap contributors** and link the credit to the copyright page. The map requests visible tiles on demand, identifies the application and project contact in its User-Agent, honors upstream HTTP cache headers, and omits bulk downloads. The public service has limited capacity and availability. [OpenStreetMap copyright and licensing](https://www.openstreetmap.org/copyright) · [OSMF Standard tile usage policy](https://operations.osmfoundation.org/policies/tiles/)
+
+## Satellite imagery
+
+At zooms 0–7, NASA GIBS serves the **Blue Marble Next Generation** historical global mosaic. It uses MODIS observations from 2004 with a source resolution of up to 500 m. Credit **NASA Blue Marble / NASA GIBS**. NASA permits informational use with acknowledgement. [NASA dataset and use](https://science.nasa.gov/earth/earth-observatory/history-of-the-blue-marble/) · [NASA GIBS tile service](https://nasa-gibs.github.io/gibs-api-docs/access-basics/) · [NASA media guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/)
+
+At zooms 8–14, the Terrascope WMTS serves the **2021 ESA WorldCover Sentinel-2 annual true-colour composite**, layer `esa-worldcover-s2rgbnir-10m-2021-v2_tcc`. Its land imagery covers approximately 60°S–83°N with 10 m source pixels. Higher display zooms enlarge the same pixels. The resolution and capture year matter when interpreting individual buildings and changes since 2021. The service is publicly available without an account. WorldCover is licensed under CC BY 4.0. Map credit is **© ESA WorldCover project 2021 / Contains modified Copernicus Sentinel data (2021) processed by ESA WorldCover consortium**. [ESA data, attribution and licence](https://esa-worldcover.org/en/data-access) · [Terrascope WMTS layer catalogue](https://docs.terrascope.be/Developers/WebServices/OGC/WMTSv2.html#esa-worldcover-s2rgbnir-10m-2021-v2-tcc) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+
+## Requests and local storage
+
+Enabling an online layer sends only the tile grid coordinates for the displayed area and fixed service parameters. These reveal the approximate area in view and the network address used to connect. Saved place names, precise marker coordinates, record fields and workspace identifiers stay in Life Atlas. The workspace renderer receives image bytes through its private desktop bridge. Only the main process determines the HTTPS service, and it uses a separate Chromium tile cache without account credentials. Concurrent requests for the same tile share one transfer. Navigation and tile removal can cancel pending requests.
+
+Submitting an online place search sends the entered public place keyword to **Nominatim / OpenStreetMap** with fixed response language, format and result limit. A device's database and travel components share the same in-flight Nominatim searches, one-per-1.2-second cooldown and in-memory result cache. Nominatim's public usage limit applies across all users of an application; deployments with significant aggregate traffic need a coordinated endpoint of appropriate capacity. Display **© OpenStreetMap contributors** with the search results. [Nominatim usage policy](https://operations.osmfoundation.org/policies/nominatim/) · [OpenStreetMap attribution](https://www.openstreetmap.org/copyright)
+
+Operators can switch the Nominatim-compatible search endpoint without updating the app. Set `LIFE_ATLAS_NOMINATIM_SEARCH_URL` to the full HTTPS search path of an operator-controlled Nominatim service or shared proxy, then restart Life Atlas. Both native database searches and Nominatim travel searches use that address. The main process rejects URLs with embedded credentials, query parameters or fragments. An invalid override returns a configuration error. The search result identifies the actual service hostname. A multi-user deployment can centrally coordinate its aggregate rate and cache through the configured proxy.

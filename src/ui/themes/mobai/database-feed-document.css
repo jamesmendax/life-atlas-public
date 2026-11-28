@@ -1,0 +1,15 @@
+:root[data-style="mobai"] .db-feed-document { white-space: normal; min-width: 0; }
+:root[data-style="mobai"] .db-feed-document :is(p,ul,ol,blockquote,pre,table,h2,h3,h4,h5,h6) { margin: .45em 0; }
+:root[data-style="mobai"] .db-feed-document :is(p,li,h2,h3,h4,h5,h6,code,td,th) { white-space: pre-wrap; }
+:root[data-style="mobai"] .db-feed-document :is(h2,h3,h4,h5,h6) { color: var(--mb-ink); font-weight: 650; line-height: 1.35; }
+:root[data-style="mobai"] .db-feed-document h2 { font-size: 1.22em; }
+:root[data-style="mobai"] .db-feed-document h3 { font-size: 1.12em; }
+:root[data-style="mobai"] .db-feed-document blockquote { border-inline-start: 3px solid var(--mb-faint); padding-inline-start: .8em; }
+:root[data-style="mobai"] .db-feed-document pre { overflow: auto; padding: .7rem; border-radius: var(--mb-r2); background: var(--mb-hover); }
+:root[data-style="mobai"] .db-feed-document pre code { white-space: pre; }
+:root[data-style="mobai"] .db-feed-document :is(audio,video) { display: block; max-inline-size: 100%; max-block-size: 20rem; }
+:root[data-style="mobai"] .db-feed-table { overflow-x: auto; }
+:root[data-style="mobai"] .db-feed-table table { border-collapse: collapse; }
+:root[data-style="mobai"] .db-feed-table :is(td,th) { padding: .25em .55em; border: 1px solid var(--mb-line-2); }
+:root[data-style="mobai"] .db-feed-document .db-feed-children { padding-inline-start: 1.2em; }
+:root[data-style="mobai"] .db-dashboard-filter-scope > .db-dashboard-toolbar { justify-content: flex-start; }

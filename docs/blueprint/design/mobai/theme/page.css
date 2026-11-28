@@ -1,0 +1,41 @@
+/* 墨白：页面头部，贴近 Notion：大图标、40 px 粗体无衬线标题，下面直接是正文，没有分隔线。 */
+:root[data-style="mobai"] .page-document { color: var(--mb-ink); }
+:root[data-style="mobai"] .workspace-scroll.is-page-editor .page-document-header:not(.has-cover) { padding-top: 64px; }
+:root[data-style="mobai"] .workspace-scroll.is-page-editor .page-document-header { padding-bottom: 0; margin-bottom: 6px; }
+:root[data-style="mobai"] .workspace-scroll.is-page-editor .editor-hint { margin-top: 0; margin-bottom: 2px; }
+:root[data-style="mobai"] .page-icon-button { border-radius: var(--mb-r2); }
+:root[data-style="mobai"] .page-icon-button:hover { background: var(--mb-hover); opacity: 1; }
+:root[data-style="mobai"] input.page-title-input {
+  height: auto; min-height: 0; margin: 6px 0 4px; padding: 3px 2px;
+  font: 700 var(--page-title-size)/var(--page-title-line-height) var(--mb-sans) !important; letter-spacing: 0; color: var(--mb-ink); background: transparent;
+}
+:root[data-style="mobai"] input.page-title-input::placeholder { color: var(--mb-line-2); }
+:root[data-style="mobai"] .page-document-meta {
+  gap: 6px; margin-top: 2px; padding-top: 0; border-top: 0; font: 400 12px/1.4 var(--mb-sans); color: var(--mb-faint);
+}
+:root[data-style="mobai"] .page-document-meta .save-state { color: var(--mb-faint); }
+:root[data-style="mobai"] .page-path { margin-top: 2px; font: 400 12px/1.4 var(--mb-sans); color: var(--mb-faint); }
+/* “工作区工具”“添加封面”这类小按钮：平时是灰字，悬停有灰底，像 Notion 标题上方的“添加图标 / 添加封面” */
+:root[data-style="mobai"] .page-workspace-trigger, :root[data-style="mobai"] .page-add-cover-action, :root[data-style="mobai"] .cover-action {
+  height: 28px; padding: 0 8px; border: 0; border-radius: var(--mb-r2); background: transparent; color: var(--mb-muted); font: 400 14px/1 var(--mb-sans); box-shadow: none;
+}
+:root[data-style="mobai"] .page-workspace-trigger:hover, :root[data-style="mobai"] .page-add-cover-action:hover { color: var(--mb-ink); background: var(--mb-hover); box-shadow: none; }
+:root[data-style="mobai"] .cover-action { background: rgba(255, 255, 255, 0.9); color: #37352f; box-shadow: 0 0 0 1px rgba(15, 15, 15, 0.1); }
+:root[data-style="mobai"] .cover-action:hover { background: #fff; color: #37352f; }
+:root[data-style="mobai"] .editor-hint { color: var(--mb-faint); font: 400 12px/1.4 var(--mb-sans); }
+:root[data-style="mobai"] .editor-hint strong { color: var(--mb-muted); font-weight: 500; }
+/* 标题下面的元信息、路径、“工作区工具”：和 Notion 一样平时不出现，鼠标移到页面头部（或键盘焦点进来）时才显示 */
+:root[data-style="mobai"] .page-document-header .page-document-meta,
+:root[data-style="mobai"] .page-document-header .page-path,
+:root[data-style="mobai"] .page-document-header .page-workspace-tools { opacity: 0; transition: opacity 120ms ease; }
+:root[data-style="mobai"] .page-document-header:hover .page-document-meta,
+:root[data-style="mobai"] .page-document-header:hover .page-path,
+:root[data-style="mobai"] .page-document-header:hover .page-workspace-tools,
+:root[data-style="mobai"] .page-document-header:focus-within .page-document-meta,
+:root[data-style="mobai"] .page-document-header:focus-within .page-path,
+:root[data-style="mobai"] .page-document-header:focus-within .page-workspace-tools { opacity: 1; }
+/* 页面字体：默认 / 衬线 / 等宽（Notion 的同名选项） */
+:root[data-style="mobai"] .page-document.page-font-serif .page-title-input,
+:root[data-style="mobai"] .page-document.page-font-serif .bn-block-content { font-family: var(--mb-serif) !important; }
+:root[data-style="mobai"] .page-document.page-font-mono .page-title-input,
+:root[data-style="mobai"] .page-document.page-font-mono .bn-block-content { font-family: var(--mb-mono) !important; }
